@@ -10,10 +10,10 @@ import SwiftUI
 import SnapKit
 
 // protocol SwiftUIKitViewController: UIViewController {
-	
+
 //	fileprivate var viewModel: VM
-	
-	
+
+
 //	init(viewModel: VM, view: V) {
 //		self.viewModel = viewModel
 //		super.init(nibName: nil, bundle: nil)
