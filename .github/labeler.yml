@@ -1,0 +1,28 @@
+ci/cd:
+  - .github/workflows/*
+
+core:
+  - Cheffin/Core/**
+
+resource:
+  - Cheffin/Resource/**
+
+domain:
+  - Cheffin/Features/**/Domain/**
+
+data:
+  - Cheffin/Features/**/Data/**
+
+presentation:
+  - Cheffin/Features/**/Presentation/**
+
+feature:
+  - Cheffin/Features/**
+
+test:
+  - CheffinTests/**
+  - CheffinUITests/**
+
+documentation:
+  - README.md
+  - ./*.md
