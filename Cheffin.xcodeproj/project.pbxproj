@@ -26,6 +26,10 @@
 		9B5FAD422A46018700D41030 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD402A46018700D41030 /* Strings+Generated.swift */; };
 		9B5FAD452A4601D600D41030 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9B5FAD442A4601D600D41030 /* SnapKit */; };
 		9B5FAD492A46021400D41030 /* SwiftUIKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD482A46021400D41030 /* SwiftUIKitViewController.swift */; };
+		9B7BCC192A48991D00328B41 /* Utensil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC182A48991D00328B41 /* Utensil.swift */; };
+		9B7BCC1B2A489A1E00328B41 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC1A2A489A1E00328B41 /* Ingredient.swift */; };
+		9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC1C2A489A6400328B41 /* Instruction.swift */; };
+		9B7BCC1F2A489D8800328B41 /* StepByStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC1E2A489D8800328B41 /* StepByStep.swift */; };
 		9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788282A4036DE003E834B /* InjectionContainer.swift */; };
 		9BC7882C2A40373C003E834B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882B2A40373C003E834B /* Swinject */; };
 		9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882E2A40375A003E834B /* SwinjectAutoregistration */; };
@@ -54,6 +58,10 @@
 		9B5FAD3F2A46018700D41030 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		9B5FAD402A46018700D41030 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		9B5FAD482A46021400D41030 /* SwiftUIKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIKitViewController.swift; sourceTree = "<group>"; };
+		9B7BCC182A48991D00328B41 /* Utensil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utensil.swift; sourceTree = "<group>"; };
+		9B7BCC1A2A489A1E00328B41 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		9B7BCC1C2A489A6400328B41 /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		9B7BCC1E2A489D8800328B41 /* StepByStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStep.swift; sourceTree = "<group>"; };
 		9BC788282A4036DE003E834B /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 		9BC788352A4038AE003E834B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BC788382A4038C9003E834B /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -241,6 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				9B5FAD2D2A45EF5600D41030 /* Recipe.swift */,
+				9B7BCC182A48991D00328B41 /* Utensil.swift */,
+				9B7BCC1A2A489A1E00328B41 /* Ingredient.swift */,
+				9B7BCC1C2A489A6400328B41 /* Instruction.swift */,
+				9B7BCC1E2A489D8800328B41 /* StepByStep.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -409,14 +421,18 @@
 				9B3565B62A3C577500005425 /* ViewController.swift in Sources */,
 				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
+				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B5FAD2E2A45EF5600D41030 /* Recipe.swift in Sources */,
 				9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */,
+				9B7BCC1F2A489D8800328B41 /* StepByStep.swift in Sources */,
 				9BC788392A4038C9003E834B /* Failure.swift in Sources */,
 				9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */,
 				9BC788362A4038AE003E834B /* UseCase.swift in Sources */,
+				9B7BCC192A48991D00328B41 /* Utensil.swift in Sources */,
 				9B5FAD262A45EF2000D41030 /* RecipeCard.swift in Sources */,
 				9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */,
 				9B5FAD302A45EF6000D41030 /* RecipeRepository.swift in Sources */,
+				9B7BCC1B2A489A1E00328B41 /* Ingredient.swift in Sources */,
 				9B5FAD422A46018700D41030 /* Strings+Generated.swift in Sources */,
 				9B5FAD412A46018700D41030 /* XCAssets+Generated.swift in Sources */,
 				9B5FAD2A2A45EF3C00D41030 /* RecipeViewModel.swift in Sources */,
