@@ -9,12 +9,12 @@ import Foundation
 
 struct Recipe: Identifiable, Hashable {
     let id: UUID
-	let name: String
-	let description: String
-	let duration: String
-	let image: String
-	let utensils: [Utensil]
-	let ingredients: [Ingredient]
-	let instruction: [Instruction]
-	
+    let name: String
+    let description: String
+    let duration: String
+    let image: String
+    let utensils: [Utensil]
+    let ingredients: [Ingredient]
+    let instruction: [Instruction]
+
 }

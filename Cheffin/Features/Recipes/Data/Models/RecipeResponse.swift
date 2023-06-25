@@ -8,9 +8,9 @@
 import Foundation
 
 struct RecipeResponse: Codable {
-	let id, name, description, duration: String?
-	let image: String?
-	let utensils: [UtensilResponse]?
-	let ingredients: [IngredientResponse]?
-	let instructions: [InstructionResponse]?
+    let id, name, description, duration: String?
+    let image: String?
+    let utensils: [UtensilResponse]?
+    let ingredients: [IngredientResponse]?
+    let instructions: [InstructionResponse]?
 }

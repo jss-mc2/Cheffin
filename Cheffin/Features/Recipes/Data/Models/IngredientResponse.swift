@@ -8,6 +8,6 @@
 import Foundation
 
 struct IngredientResponse: Codable {
-	let id, name, image, amount: String?
-	let unit: String?
+    let id, name, image, amount: String?
+    let unit: String?
 }

@@ -34,6 +34,7 @@
 		9B7BCC232A48AB5100328B41 /* UtensilResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC222A48AB5100328B41 /* UtensilResponse.swift */; };
 		9B7BCC252A48AB7100328B41 /* IngredientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC242A48AB7100328B41 /* IngredientResponse.swift */; };
 		9B7BCC272A48AB9600328B41 /* InstructionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC262A48AB9600328B41 /* InstructionResponse.swift */; };
+		9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */; };
 		9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788282A4036DE003E834B /* InjectionContainer.swift */; };
 		9BC7882C2A40373C003E834B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882B2A40373C003E834B /* Swinject */; };
 		9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882E2A40375A003E834B /* SwinjectAutoregistration */; };
@@ -70,6 +71,7 @@
 		9B7BCC222A48AB5100328B41 /* UtensilResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtensilResponse.swift; sourceTree = "<group>"; };
 		9B7BCC242A48AB7100328B41 /* IngredientResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientResponse.swift; sourceTree = "<group>"; };
 		9B7BCC262A48AB9600328B41 /* InstructionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionResponse.swift; sourceTree = "<group>"; };
+		9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		9BC788282A4036DE003E834B /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 		9BC788352A4038AE003E834B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BC788382A4038C9003E834B /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		9B3565C72A3C57AB00005425 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9B7BCC282A48ACBD00328B41 /* Utils */,
 				9B5FAD462A4601E800D41030 /* Presentation */,
 				9BC788332A403884003E834B /* Domain */,
 				9B3565C92A3C57D200005425 /* DI */,
@@ -218,6 +221,14 @@
 				9B5FAD482A46021400D41030 /* SwiftUIKitViewController.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		9B7BCC282A48ACBD00328B41 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		9BC7881F2A40363C003E834B /* ViewModels */ = {
@@ -435,6 +446,7 @@
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
+				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
 				9B5FAD2E2A45EF5600D41030 /* Recipe.swift in Sources */,
 				9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */,
 				9B7BCC1F2A489D8800328B41 /* StepByStep.swift in Sources */,
