@@ -21,11 +21,11 @@ class RecipeRemoteDataSourceGithubImpl: RecipeRemoteDataSource {
     }
     func getRecipes() -> AnyPublisher<[RecipeResponse], Failure> {
         guard let request = try? ApiConstants.createRequest(path: "recipes.json") else {
-			debugPrint("cannot create request")
+            debugPrint("cannot create request")
             return Fail(error: Failure.recipeFailure).eraseToAnyPublisher()
         }
 
-		return apiClient.dataTaskPublisher(for: request)
+        return apiClient.dataTaskPublisher(for: request)
             .tryMap { (data: Data, response: URLResponse) in
                 guard let httpResponse = response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
@@ -36,7 +36,7 @@ class RecipeRemoteDataSourceGithubImpl: RecipeRemoteDataSource {
             .decode(type: RecipeApiResponse.self, decoder: JSONDecoder())
             .map { $0.data ?? [] }
             .mapError { error in
-				debugPrint(error)
+                debugPrint(error)
                 return Failure.recipeFailure
             }
             .eraseToAnyPublisher()

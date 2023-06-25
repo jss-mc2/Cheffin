@@ -16,3 +16,14 @@ struct UtensilResponse: Codable {
         case isEssential = "is_essential"
     }
 }
+
+extension UtensilResponse {
+    func toDomain() -> Utensil {
+        Utensil(
+            id: .init(uuidString: id ?? UUID().uuidString) ?? UUID(),
+            name: name ?? "",
+            image: image ?? "",
+            isEssential: isEssential ?? false
+        )
+    }
+}

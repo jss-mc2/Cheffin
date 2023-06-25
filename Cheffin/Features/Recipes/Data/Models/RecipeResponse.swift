@@ -14,3 +14,18 @@ struct RecipeResponse: Codable {
     let ingredients: [IngredientResponse]?
     let instructions: [InstructionResponse]?
 }
+
+extension RecipeResponse {
+    func toDomain() -> Recipe {
+        Recipe(
+            id: .init(uuidString: id ?? UUID().uuidString) ?? UUID(),
+            name: name ?? "",
+            description: description ?? "",
+            duration: duration ?? "",
+            image: image ?? "",
+            utensils: utensils?.map { $0.toDomain() } ?? [],
+            ingredients: ingredients?.map { $0.toDomain() } ?? [],
+            instruction: instructions?.map { $0.toDomain() } ?? []
+        )
+    }
+}

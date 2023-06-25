@@ -18,7 +18,7 @@ struct Instruction: Identifiable, Hashable {
 }
 
 enum InstructionMediaType {
-    case gif, photo, video
+    case gif, photo, video, others
 }
 
 extension InstructionMediaType {
@@ -27,14 +27,15 @@ extension InstructionMediaType {
         case .gif: return "gif"
         case .photo: return "photo"
         case .video: return "video"
+        case .others: return "others"
         }
     }
-    static func fromStringType(stringMediaType: String) throws -> InstructionMediaType {
+    static func fromStringType(stringMediaType: String) -> InstructionMediaType {
         switch stringMediaType {
         case "gif": return .gif
         case "photo": return .photo
         case "video": return .video
-        default: throw Failure.recipeFailure
+        default: return .others
         }
     }
 }

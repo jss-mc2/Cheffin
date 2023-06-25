@@ -21,3 +21,17 @@ struct InstructionResponse: Codable {
         case usedIngredients = "used_ingredients"
     }
 }
+
+extension InstructionResponse {
+    func toDomain() -> Instruction {
+        Instruction(
+            id: .init(uuidString: id ?? UUID().uuidString) ?? UUID(),
+            order: order ?? 1,
+            description: description ?? "",
+            media: media ?? "",
+            mediaType: InstructionMediaType.fromStringType(stringMediaType: mediaType ?? ""),
+            usedUtensils: usedUtensils?.map { $0.toDomain() } ?? [],
+            usedIngredients: usedIngredients?.map { $0.toDomain() } ?? []
+        )
+    }
+}
