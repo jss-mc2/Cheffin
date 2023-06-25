@@ -33,6 +33,7 @@ final class InjectionContainer {
         let container = Container()
         // register component here
         self.registerSharedContainer(container)
+		self.registerRecipeContainer(container)
 
         return container
     }
@@ -46,5 +47,9 @@ final class InjectionContainer {
         }
         .inObjectScope(.container)
     }
+	
+	private func registerRecipeContainer(_ container: Container) {
+		
+	}
 
 }
