@@ -26,6 +26,7 @@ extension InstructionResponse {
     func toDomain() -> Instruction {
         Instruction(
             id: .init(uuidString: id ?? UUID().uuidString) ?? UUID(),
+            title: title ?? "",
             order: order ?? 1,
             description: description ?? "",
             media: media ?? "",
