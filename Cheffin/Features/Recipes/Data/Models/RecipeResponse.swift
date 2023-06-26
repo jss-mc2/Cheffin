@@ -25,7 +25,7 @@ extension RecipeResponse {
             image: image ?? "",
             utensils: utensils?.map { $0.toDomain() } ?? [],
             ingredients: ingredients?.map { $0.toDomain() } ?? [],
-            instruction: instructions?.map { $0.toDomain() } ?? []
+            instructions: instructions?.map { $0.toDomain() } ?? []
         )
     }
 }

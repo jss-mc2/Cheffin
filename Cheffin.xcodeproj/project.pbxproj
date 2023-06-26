@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */; };
+		967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */; };
+		967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */; };
+		967B95652A49C9E100F1E5A7 /* RecipeFakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */; };
 		9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B12A3C577500005425 /* AppDelegate.swift */; };
 		9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B32A3C577500005425 /* SceneDelegate.swift */; };
 		9B3565B62A3C577500005425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B52A3C577500005425 /* ViewController.swift */; };
@@ -54,6 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
+		967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstructionParserTest.swift; path = ../../../../../../../../InstructionParserTest.swift; sourceTree = "<group>"; };
+		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
+		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
 		9B3565AE2A3C577500005425 /* Cheffin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheffin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3565B12A3C577500005425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3565B32A3C577500005425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +119,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		967B953F2A496C7F00F1E5A7 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		967B955A2A49B1F100F1E5A7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				967B955C2A49B1FE00F1E5A7 /* Recipes */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		967B955C2A49B1FE00F1E5A7 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				967B955D2A49B20700F1E5A7 /* Domain */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		967B955D2A49B20700F1E5A7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				967B955E2A49B20A00F1E5A7 /* Parser */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		967B955E2A49B20A00F1E5A7 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		9B3565A52A3C577500005425 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +260,7 @@
 		9B3565CC2A3C5A2C00005425 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				967B953F2A496C7F00F1E5A7 /* Parser */,
 				9BC788242A40365F003E834B /* UseCases */,
 				9BC788232A40365A003E834B /* Entities */,
 				9BC788222A403653003E834B /* Repositories */,
@@ -302,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5FAD2B2A45EF4900D41030 /* GetRecipes.swift */,
+				967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -330,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5FAD312A45EF7100D41030 /* RecipeRemoteDataSource.swift */,
+				967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -362,6 +413,7 @@
 		9BEC5C9C2A49AD7000A1E72E /* CheffinTests */ = {
 			isa = PBXGroup;
 			children = (
+				967B955A2A49B1F100F1E5A7 /* Features */,
 				9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */,
 			);
 			path = CheffinTests;
@@ -502,7 +554,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B3565B62A3C577500005425 /* ViewController.swift in Sources */,
+				967B95652A49C9E100F1E5A7 /* RecipeFakeDataSource.swift in Sources */,
+				967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */,
 				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
+				967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */,
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
@@ -536,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BEC5C9E2A49AD7000A1E72E /* CheffinTests.swift in Sources */,
+				967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
