@@ -6,4 +6,38 @@
   
 */
 
-"appName" = "Cheffin";
+"appName" = "Chefin";
+
+/*
+ ====================== HOME PAGE ======================
+ */
+
+"welcomeToChefin" = "Welcome to Chefin!";
+"whatDoYouWantToCookToday?" = "What do you want to cook today?";
+"essentialUtensils" = "Essential Utensils";
+
+/*
+ ====================== RECIPE PAGE ======================
+ */
+
+"ingredients" = "Ingredients";
+"utensils" = "Utensils";
+"stepByStep" = "Step-By-Step";
+"stepByStepMode" = "Step-By-Step Mode";
+
+/*
+ ====================== STEP-BY-STEP PAGE ======================
+ */
+
+"stepOf" = "%d of %d";
+"trySaying" = "try saying";
+"voiceCommand" = "\"%@\"";
+
+/*
+ ====================== BON-APETIT PAGE ======================
+ */
+
+"bonApetit" = "Bon Apetit!";
+"congratulationMessage" = "Congratulations on successfully making your %@!";
+"takeAPicture" = "Take a picture";
+

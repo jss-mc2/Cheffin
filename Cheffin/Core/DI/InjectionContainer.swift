@@ -57,7 +57,7 @@ final class InjectionContainer {
     private func registerRecipeContainer(_ container: Container) {
 
         container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeRemoteDataSourceGithubImpl.init)
-		container.autoregister(RecipeRepository.self, initializer: RecipeRepositoryImpl.init)
+        container.autoregister(RecipeRepository.self, initializer: RecipeRepositoryImpl.init)
     }
 
 }

@@ -41,7 +41,18 @@
 		9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882E2A40375A003E834B /* SwinjectAutoregistration */; };
 		9BC788362A4038AE003E834B /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788352A4038AE003E834B /* UseCase.swift */; };
 		9BC788392A4038C9003E834B /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788382A4038C9003E834B /* Failure.swift */; };
+		9BEC5C9E2A49AD7000A1E72E /* CheffinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BEC5C9F2A49AD7000A1E72E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B3565A62A3C577500005425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B3565AD2A3C577500005425;
+			remoteInfo = Cheffin;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		967B953D2A496C6C00F1E5A7 /* InstructionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionParser.swift; sourceTree = "<group>"; };
@@ -77,6 +88,8 @@
 		9BC788282A4036DE003E834B /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 		9BC788352A4038AE003E834B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BC788382A4038C9003E834B /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		9BEC5C9B2A49AD7000A1E72E /* CheffinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheffinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheffinTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +100,13 @@
 				9B5FAD452A4601D600D41030 /* SnapKit in Frameworks */,
 				9BC7882C2A40373C003E834B /* Swinject in Frameworks */,
 				9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BEC5C982A49AD7000A1E72E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3565B02A3C577500005425 /* Cheffin */,
+				9BEC5C9C2A49AD7000A1E72E /* CheffinTests */,
 				9B3565AF2A3C577500005425 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3565AE2A3C577500005425 /* Cheffin.app */,
+				9BEC5C9B2A49AD7000A1E72E /* CheffinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,6 +370,14 @@
 			path = Failure;
 			sourceTree = "<group>";
 		};
+		9BEC5C9C2A49AD7000A1E72E /* CheffinTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */,
+			);
+			path = CheffinTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +404,24 @@
 			productReference = 9B3565AE2A3C577500005425 /* Cheffin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9BEC5C9A2A49AD7000A1E72E /* CheffinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BEC5CA32A49AD7000A1E72E /* Build configuration list for PBXNativeTarget "CheffinTests" */;
+			buildPhases = (
+				9BEC5C972A49AD7000A1E72E /* Sources */,
+				9BEC5C982A49AD7000A1E72E /* Frameworks */,
+				9BEC5C992A49AD7000A1E72E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BEC5CA02A49AD7000A1E72E /* PBXTargetDependency */,
+			);
+			name = CheffinTests;
+			productName = CheffinTests;
+			productReference = 9BEC5C9B2A49AD7000A1E72E /* CheffinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -386,6 +434,10 @@
 				TargetAttributes = {
 					9B3565AD2A3C577500005425 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					9BEC5C9A2A49AD7000A1E72E = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 9B3565AD2A3C577500005425;
 					};
 				};
 			};
@@ -408,6 +460,7 @@
 			projectRoot = "";
 			targets = (
 				9B3565AD2A3C577500005425 /* Cheffin */,
+				9BEC5C9A2A49AD7000A1E72E /* CheffinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,6 +473,13 @@
 				9B3565BE2A3C577500005425 /* LaunchScreen.storyboard in Resources */,
 				9B5FAD3C2A46006E00D41030 /* Localizable.strings in Resources */,
 				9B3565BB2A3C577500005425 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BEC5C992A49AD7000A1E72E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +543,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9BEC5C972A49AD7000A1E72E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BEC5C9E2A49AD7000A1E72E /* CheffinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BEC5CA02A49AD7000A1E72E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B3565AD2A3C577500005425 /* Cheffin */;
+			targetProxy = 9BEC5C9F2A49AD7000A1E72E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9B3565BC2A3C577500005425 /* LaunchScreen.storyboard */ = {
@@ -675,6 +751,42 @@
 			};
 			name = Release;
 		};
+		9BEC5CA12A49AD7000A1E72E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9299QHCW64;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.jss.mc.CheffinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cheffin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cheffin";
+			};
+			name = Debug;
+		};
+		9BEC5CA22A49AD7000A1E72E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9299QHCW64;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.jss.mc.CheffinTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cheffin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cheffin";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -692,6 +804,15 @@
 			buildConfigurations = (
 				9B3565C32A3C577500005425 /* Debug */,
 				9B3565C42A3C577500005425 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BEC5CA32A49AD7000A1E72E /* Build configuration list for PBXNativeTarget "CheffinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BEC5CA12A49AD7000A1E72E /* Debug */,
+				9BEC5CA22A49AD7000A1E72E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
