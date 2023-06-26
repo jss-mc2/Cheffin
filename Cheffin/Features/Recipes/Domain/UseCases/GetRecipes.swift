@@ -21,7 +21,7 @@ class GetRecipeImpl: GetRecipes {
         self.repository = repository
     }
 
-    func execute(params: NoParams, completion: @escaping (AnyPublisher<[Recipe], Failure>) -> Void) {
+    func execute(params: Params, completion: @escaping (AnyPublisher<ReturnType, Failure>) -> Void) {
         completion(repository.getRecipes())
     }
 

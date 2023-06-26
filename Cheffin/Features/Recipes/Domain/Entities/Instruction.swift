@@ -18,7 +18,7 @@ struct Instruction: Identifiable, Hashable {
 }
 
 enum InstructionMediaType: String {
-    case gif, photo, video, others	
+    case gif, photo, video, others
 }
 
 extension InstructionMediaType {
