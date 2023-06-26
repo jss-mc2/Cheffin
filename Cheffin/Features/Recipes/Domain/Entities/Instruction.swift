@@ -17,19 +17,11 @@ struct Instruction: Identifiable, Hashable {
     let usedIngredients: [Ingredient]
 }
 
-enum InstructionMediaType {
-    case gif, photo, video, others
+enum InstructionMediaType: String {
+    case gif, photo, video, others	
 }
 
 extension InstructionMediaType {
-    func toStringType() -> String {
-        switch self {
-        case .gif: return "gif"
-        case .photo: return "photo"
-        case .video: return "video"
-        case .others: return "others"
-        }
-    }
     static func fromStringType(stringMediaType: String) -> InstructionMediaType {
         switch stringMediaType {
         case "gif": return .gif
