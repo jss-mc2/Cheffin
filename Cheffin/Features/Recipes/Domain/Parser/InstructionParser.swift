@@ -17,8 +17,9 @@ class InstructionParserImpl: InstructionParser {
         
         let steps = recipe.instructions.map { instruction in
             let parsedIngredient = parseIngredients(
-                description: instruction.description, usedIngredients: instruction.usedIngredients)
-            let parsedUtensils = parseUtensils(description: parsedIngredient, usedUtensils: instruction.usedUtensils)
+                description: instruction.description, usedIngredients: instruction.usedIngredients.map { $0.name })
+            let parsedUtensils = parseUtensils(
+                description: parsedIngredient, usedUtensils: instruction.usedUtensils.map { $0.name })
             let parsedTimer = parseTimer(description: parsedUtensils)
             
             return StepByStep(
@@ -39,29 +40,29 @@ class InstructionParserImpl: InstructionParser {
     
     // expected description: "Add steak to pan rest for 1 hour and 5 minutes"
     // expected output: "Add [steak] to pan rest for 1 hour and 5 minutes"
-    private func parseIngredients(description: String, usedIngredients: [Ingredient]) -> String {
+    internal func parseIngredients(description: String, usedIngredients: [String]) -> String {
         var parsedDescription = description
         for ingredient in usedIngredients {
             parsedDescription = parsedDescription.replacingOccurrences(
-                of: "\\b(?i)\(ingredient.name)\\b", with: "[\(ingredient.name)]", options: .regularExpression)
+                of: "\\b(?i)\(ingredient)\\b", with: "[\(ingredient)]", options: .regularExpression)
         }
         return parsedDescription
     }
     
-    // expected description: "Add [steak] to pan rest for 1 hour and  5 minutes"
+    // expected description: "Add [steak] to pan rest for 1 hour and 5 minutes"
     // expected output: "Add [steak] to {pan} rest for 1 hour and 5 minutes"
-    private func parseUtensils(description: String, usedUtensils: [Utensil]) -> String {
+    internal func parseUtensils(description: String, usedUtensils: [String]) -> String {
         var parsedDescription = description
         for utensil in usedUtensils {
             parsedDescription = parsedDescription.replacingOccurrences(
-                of: "\\b(?i)\(utensil.name)\\b", with: "{\(utensil.name)}", options: .regularExpression)
+                of: "\\b(?i)\(utensil)\\b", with: "{\(utensil)}", options: .regularExpression)
         }
         return parsedDescription
     }
     
     // expected description: "Add [steak] to {pan} rest for 1 hour and 5 minutes"
     // expected output: "Add [steak] to {pan} rest for <1 hour> and <5 minutes>"
-    private func parseTimer(description: String) -> String {
+    internal func parseTimer(description: String) -> String {
         var parsedDescription = description
         
         parsedDescription = parsedDescription.replacingOccurrences(
