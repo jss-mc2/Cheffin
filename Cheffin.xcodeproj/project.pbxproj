@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		967B953E2A496C6C00F1E5A7 /* InstructionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* InstructionParser.swift */; };
+		967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */; };
 		967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */; };
 		967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */; };
 		967B95652A49C9E100F1E5A7 /* RecipeFakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */; };
@@ -58,7 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		967B953D2A496C6C00F1E5A7 /* InstructionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionParser.swift; sourceTree = "<group>"; };
+		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstructionParserTest.swift; path = ../../../../../../../../InstructionParserTest.swift; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
 		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		967B953F2A496C7F00F1E5A7 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				967B953D2A496C6C00F1E5A7 /* InstructionParser.swift */,
+				967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -557,7 +557,7 @@
 				967B95652A49C9E100F1E5A7 /* RecipeFakeDataSource.swift in Sources */,
 				967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */,
 				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
-				967B953E2A496C6C00F1E5A7 /* InstructionParser.swift in Sources */,
+				967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */,
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,

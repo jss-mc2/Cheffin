@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol InstructionParser {
+protocol StepByStepParser {
     func parse(recipe: Recipe) -> AnyPublisher<[StepByStep], Failure>
 }
 
-class InstructionParserImpl: InstructionParser {
+class StepByStepParserImpl: StepByStepParser {
     func parse(recipe: Recipe) -> AnyPublisher<[StepByStep], Failure> {
         
         let steps = recipe.instructions.map { instruction in
@@ -28,7 +28,8 @@ class InstructionParserImpl: InstructionParser {
                 media: instruction.media,
                 mediaType: instruction.mediaType,
                 order: instruction.order,
-                instruction: parsedTimer
+                instruction: parsedTimer,
+                timer: convertTimer(description: instruction.description)
             )
         }
         
@@ -72,5 +73,33 @@ class InstructionParserImpl: InstructionParser {
         )
         
         return parsedDescription
+    }
+    
+    // expected description: "Add steak to pan rest for 1 hour and 5 minutes"
+    // expected output: 3900
+    internal func convertTimer(description: String) -> TimeInterval? {
+        let words = description.components(separatedBy: " ")
+        
+        var timeInterval: TimeInterval = 0
+        
+        for i in 0..<words.count - 1 {
+            let value = words[i]
+            let unit = words[i + 1]
+            
+            if let intValue = Double(value) {
+                switch unit {
+                case "minute", "minutes":
+                    timeInterval += intValue * 60
+                case "second", "seconds":
+                    timeInterval += intValue
+                case "hour", "hours":
+                    timeInterval += intValue * 3600
+                default:
+                    break
+                }
+            }
+        }
+        
+        return timeInterval != 0 ? timeInterval : nil
     }
 }

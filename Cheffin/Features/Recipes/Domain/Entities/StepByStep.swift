@@ -14,4 +14,5 @@ struct StepByStep: Identifiable, Hashable {
     let mediaType: InstructionMediaType
     let order: Int
     let instruction: String
+    let timer: TimeInterval?
 }

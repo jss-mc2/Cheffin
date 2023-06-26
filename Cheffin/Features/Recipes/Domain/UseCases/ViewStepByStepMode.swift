@@ -14,9 +14,9 @@ protocol ViewStepByStepMode: UseCaseProtocol {
 }
 
 class ViewStepByStepModeImpl: ViewStepByStepMode {
-    let parser: InstructionParser
+    let parser: StepByStepParser
     
-    init(parser: InstructionParser) {
+    init(parser: StepByStepParser) {
         self.parser = parser
     }
     
