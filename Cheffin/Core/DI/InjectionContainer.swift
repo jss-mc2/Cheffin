@@ -33,18 +33,31 @@ final class InjectionContainer {
         let container = Container()
         // register component here
         self.registerSharedContainer(container)
+        self.registerRecipeContainer(container)
 
         return container
     }
 
     private func registerSharedContainer(_ container: Container) {
 
-        // MARK: UserDefaults
+        // MARK: - UserDefaults
         container.register(UserDefaults.self) { _ in
             return UserDefaults.standard
 
         }
         .inObjectScope(.container)
+
+        // MARK: - UrlSession
+        container.register(URLSession.self) { _ in
+            URLSession.shared
+        }
+        .inObjectScope(.container)
+    }
+
+    private func registerRecipeContainer(_ container: Container) {
+
+        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeRemoteDataSourceGithubImpl.init)
+		container.autoregister(RecipeRepository.self, initializer: RecipeRepositoryImpl.init)
     }
 
 }

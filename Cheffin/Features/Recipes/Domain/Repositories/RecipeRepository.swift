@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Combine
+
+protocol RecipeRepository {
+    func getRecipes() -> AnyPublisher<[Recipe], Failure>
+}

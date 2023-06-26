@@ -13,9 +13,7 @@ protocol UseCaseProtocol {
     associatedtype ReturnType
     associatedtype Params: Equatable
 
-    typealias Callback = (AnyPublisher<ReturnType, Failure>) -> Void
-
-    func execute(params: Params, completion: @escaping Callback )
+    func execute(params: Params, completion: @escaping (AnyPublisher<ReturnType, Failure>) -> Void )
 }
 
 struct AnyUseCase<T, P: Equatable>: UseCaseProtocol {
@@ -29,7 +27,7 @@ struct AnyUseCase<T, P: Equatable>: UseCaseProtocol {
     }
 
 
-    private let proceed: (P, @escaping Callback) -> Void
+    private let proceed: (P, @escaping (AnyPublisher<ReturnType, Failure>) -> Void) -> Void
 
     typealias ReturnType = T
     typealias Params = P
