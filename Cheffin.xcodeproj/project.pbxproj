@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 3264971B2A49F5E6005DFE42 /* SwiftUITooltip */; };
 		967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */; };
 		967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */; };
 		967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */; };
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */,
 				9B5FAD452A4601D600D41030 /* SnapKit in Frameworks */,
 				9BC7882C2A40373C003E834B /* Swinject in Frameworks */,
 				9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */,
@@ -440,6 +442,7 @@
 				9BC7882B2A40373C003E834B /* Swinject */,
 				9BC7882E2A40375A003E834B /* SwinjectAutoregistration */,
 				9B5FAD442A4601D600D41030 /* SnapKit */,
+				3264971B2A49F5E6005DFE42 /* SwiftUITooltip */,
 			);
 			productName = Cheffin;
 			productReference = 9B3565AE2A3C577500005425 /* Cheffin.app */;
@@ -495,6 +498,7 @@
 				9BC7882A2A40373C003E834B /* XCRemoteSwiftPackageReference "Swinject" */,
 				9BC7882D2A40375A003E834B /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 				9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3264971A2A49F5E6005DFE42 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
 			);
 			productRefGroup = 9B3565AF2A3C577500005425 /* Products */;
 			projectDirPath = "";
@@ -864,6 +868,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3264971A2A49F5E6005DFE42 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quassum/SwiftUI-Tooltip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 		9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -891,6 +903,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3264971B2A49F5E6005DFE42 /* SwiftUITooltip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3264971A2A49F5E6005DFE42 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */;
+			productName = SwiftUITooltip;
+		};
 		9B5FAD442A4601D600D41030 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */;
