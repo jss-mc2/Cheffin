@@ -15,6 +15,6 @@ struct Recipe: Identifiable, Hashable {
     let image: String
     let utensils: [Utensil]
     let ingredients: [Ingredient]
-    let instruction: [Instruction]
+    let instructions: [Instruction]
 
 }
