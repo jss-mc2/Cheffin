@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol State: Equatable {
+protocol ViewModelState: Equatable {
 	
 	static func initial() -> Self
 }

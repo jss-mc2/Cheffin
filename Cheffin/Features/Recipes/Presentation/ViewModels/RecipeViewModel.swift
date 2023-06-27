@@ -45,7 +45,7 @@ class RecipeViewModel: ViewModel<RecipeState> {
 	
 }
 
-struct RecipeState: State {
+struct RecipeState: ViewModelState {
 	
 	let status: RecipeStatus
 	let recipes: [Recipe]

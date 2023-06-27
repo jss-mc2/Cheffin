@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ViewModel<S: State>: ObservableObject {
+class ViewModel<S: ViewModelState>: ObservableObject {
 	
 	@Published private(set) var state: S = .initial()
 
