@@ -43,6 +43,10 @@
 		9B9DE8962A4AF0AC00E8075C /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DE8952A4AF0AC00E8075C /* StepByStepParser.swift */; };
 		9B9DE8982A4AF0BC00E8075C /* RecipeFakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DE8972A4AF0BC00E8075C /* RecipeFakeDataSource.swift */; };
 		9B9DE89A2A4AF0DD00E8075C /* ViewStepByStepMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DE8992A4AF0DD00E8075C /* ViewStepByStepMode.swift */; };
+		9BC4FA992A4AF9A50045B6BD /* SpeechRecognizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4FA982A4AF9A50045B6BD /* SpeechRecognizerView.swift */; };
+		9BC4FA9D2A4AF9C90045B6BD /* WrappingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */; };
+		9BC4FA9E2A4AF9C90045B6BD /* ButtonHighlightHiddenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4FA9C2A4AF9C90045B6BD /* ButtonHighlightHiddenView.swift */; };
+		9BC4FAA02A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */; };
 		9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788282A4036DE003E834B /* InjectionContainer.swift */; };
 		9BC7882C2A40373C003E834B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882B2A40373C003E834B /* Swinject */; };
 		9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882E2A40375A003E834B /* SwinjectAutoregistration */; };
@@ -97,6 +101,10 @@
 		9B9DE8952A4AF0AC00E8075C /* StepByStepParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		9B9DE8972A4AF0BC00E8075C /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
 		9B9DE8992A4AF0DD00E8075C /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
+		9BC4FA982A4AF9A50045B6BD /* SpeechRecognizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerView.swift; sourceTree = "<group>"; };
+		9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
+		9BC4FA9C2A4AF9C90045B6BD /* ButtonHighlightHiddenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenView.swift; sourceTree = "<group>"; };
+		9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenViewModel.swift; sourceTree = "<group>"; };
 		9BC788282A4036DE003E834B /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 		9BC788352A4038AE003E834B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BC788382A4038C9003E834B /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 		9B1823242A4AD49B0047CA46 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */,
 				9B1823252A4AD4AB0047CA46 /* ViewModel.swift */,
 				9B1823272A4AD4DB0047CA46 /* ViewModelState.swift */,
 			);
@@ -258,6 +267,7 @@
 		9B5FAD462A4601E800D41030 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9BC4FA9A2A4AF9C90045B6BD /* Components */,
 				9B1823242A4AD49B0047CA46 /* ViewModels */,
 				9B5FAD472A4601F800D41030 /* Pages */,
 			);
@@ -289,6 +299,15 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
+		9BC4FA9A2A4AF9C90045B6BD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */,
+				9BC4FA9C2A4AF9C90045B6BD /* ButtonHighlightHiddenView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9BC7881F2A40363C003E834B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +328,7 @@
 		9BC788212A40364C003E834B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9BC4FA982A4AF9A50045B6BD /* SpeechRecognizerView.swift */,
 				9B5FAD252A45EF2000D41030 /* RecipeCard.swift */,
 			);
 			path = Components;
@@ -543,6 +563,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC4FA9D2A4AF9C90045B6BD /* WrappingHStack.swift in Sources */,
+				9BC4FA9E2A4AF9C90045B6BD /* ButtonHighlightHiddenView.swift in Sources */,
 				9B3565B62A3C577500005425 /* ViewController.swift in Sources */,
 				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
@@ -557,9 +579,11 @@
 				9BC788392A4038C9003E834B /* Failure.swift in Sources */,
 				9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */,
 				9BC788362A4038AE003E834B /* UseCase.swift in Sources */,
+				9BC4FA992A4AF9A50045B6BD /* SpeechRecognizerView.swift in Sources */,
 				9B9DE8962A4AF0AC00E8075C /* StepByStepParser.swift in Sources */,
 				9B9DE8982A4AF0BC00E8075C /* RecipeFakeDataSource.swift in Sources */,
 				9B7BCC192A48991D00328B41 /* Utensil.swift in Sources */,
+				9BC4FAA02A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift in Sources */,
 				9B5FAD262A45EF2000D41030 /* RecipeCard.swift in Sources */,
 				9B7BCC252A48AB7100328B41 /* IngredientResponse.swift in Sources */,
 				9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */,
