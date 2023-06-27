@@ -7,88 +7,6 @@
 
 import SwiftUI
 
-class TimerViewModel: ObservableObject {
-    let defaultCountDownTime: TimeInterval
-    
-    private var userSetCountDownTime: TimeInterval? {
-        didSet {
-            if let userSetCountDownTime {
-                displayedCountDownTime = TimeInterval.FORMATTER.string(from: userSetCountDownTime) ?? "0"
-            }
-        }
-    }
-    
-    @Published var displayedCountDownTime: String
-    
-    private var timer: Timer?
-    private var endTime: Date?
-    
-    var execute: () -> Void
-    
-    /**
-     - Parameter execute: executes after timer ends
-     */
-    init(_ defaultCountDownTime: TimeInterval, execute: @escaping () -> Void) {
-        self.defaultCountDownTime = defaultCountDownTime
-        self.displayedCountDownTime = TimeInterval.FORMATTER.string(from: defaultCountDownTime) ?? "0"
-        self.execute = execute
-    }
-    
-    func setTimer(_ countDownTime: TimeInterval) {
-        if timer != nil {
-            stopTimer()
-        }
-        userSetCountDownTime = countDownTime
-    }
-    
-    func toggleTimer() {
-        if timer != nil {
-            stopTimer()
-        } else {
-            startTimer()
-        }
-    }
-    
-    private func startTimer() {
-        print("\(#function)")
-        let countDownTime = userSetCountDownTime ?? defaultCountDownTime
-        endTime = Date().addingTimeInterval(countDownTime)
-        displayedCountDownTime = TimeInterval.FORMATTER.string(from: countDownTime) ?? ""
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            self.updateDisplayedCountDownTime()
-        }
-    }
-    
-    private func updateDisplayedCountDownTime() {
-        print("\(#function) \(displayedCountDownTime)")
-        guard let endTime else {
-            stopTimer()
-            print("\(#function) endTime is nil, this is not supposed to happen")
-            return
-        }
-        
-        // expected elapsedTime: 60 -> 59 -> 58 ...
-        let elapsedTime = endTime.timeIntervalSince(Date()).rounded()
-        displayedCountDownTime = elapsedTime >= 0 ? (TimeInterval.FORMATTER.string(from: elapsedTime) ?? "0") : "0"
-        
-        if displayedCountDownTime == "0" {
-            stopTimer()
-            execute()
-        }
-    }
-    
-    private func stopTimer() {
-        print("\(#function)")
-        if timer == nil {
-            print("\(#function) timer is nil, this is not supposed to happen")
-            return
-        }
-        timer?.invalidate()
-        timer = nil
-        endTime = nil
-    }
-}
-
 struct TimerView: View {
     @ObservedObject var state: TimerViewModel
     
@@ -97,30 +15,36 @@ struct TimerView: View {
     }
     
     var body: some View {
-        Button(
-            action: {
-                state.toggleTimer()
-            },
-            label: {
-                HStack {
-                    Image(systemName: "stopwatch")
-                        .foregroundColor(.black)
-                        .bold()
-                    Text(state.displayedCountDownTime)
-                        .foregroundColor(.black)
-                        .bold()
-                }
-                .padding(12)
-                .background(I.primary.swiftUIColor)
-                .cornerRadius(10)
+        Group {
+            if let displayedCountDownTime = state.displayedCountDownTime {
+                Button(
+                    action: {
+                        state.toggleTimer()
+                    },
+                    label: {
+                        HStack {
+                            Image(systemName: "stopwatch")
+                                .foregroundColor(.black)
+                                .bold()
+                            Text(displayedCountDownTime)
+                                .foregroundColor(.black)
+                                .bold()
+                        }
+                        .padding(12)
+                        .background(I.primary.swiftUIColor)
+                        .cornerRadius(10)
+                    }
+                )
+            } else {
+                EmptyView()
             }
-        )
+        }
     }
 }
 
 #if DEBUG
 struct TimerViewPreviews: View {
-    @ObservedObject var timerViewModel = TimerViewModel(5) {
+    @ObservedObject var timerViewModel = TimerViewModel {
         print("\(#function) do something")
     }
     
