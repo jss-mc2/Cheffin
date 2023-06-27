@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1823262A4AD4AB0047CA46 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1823252A4AD4AB0047CA46 /* ViewModel.swift */; };
+		9B1823282A4AD4DB0047CA46 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1823272A4AD4DB0047CA46 /* State.swift */; };
+		9B18232A2A4AE6E00047CA46 /* FailureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1823292A4AE6E00047CA46 /* FailureHandler.swift */; };
+		9B18232E2A4AE7600047CA46 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B18232D2A4AE7600047CA46 /* AlertToast */; };
 		9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B12A3C577500005425 /* AppDelegate.swift */; };
 		9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B32A3C577500005425 /* SceneDelegate.swift */; };
 		9B3565B62A3C577500005425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B52A3C577500005425 /* ViewController.swift */; };
@@ -54,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1823252A4AD4AB0047CA46 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9B1823272A4AD4DB0047CA46 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		9B1823292A4AE6E00047CA46 /* FailureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureHandler.swift; sourceTree = "<group>"; };
 		9B3565AE2A3C577500005425 /* Cheffin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheffin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B3565B12A3C577500005425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B3565B32A3C577500005425 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B5FAD452A4601D600D41030 /* SnapKit in Frameworks */,
+				9B18232E2A4AE7600047CA46 /* AlertToast in Frameworks */,
 				9BC7882C2A40373C003E834B /* Swinject in Frameworks */,
 				9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */,
 			);
@@ -111,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1823242A4AD49B0047CA46 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9B1823252A4AD4AB0047CA46 /* ViewModel.swift */,
+				9B1823272A4AD4DB0047CA46 /* State.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		9B3565A52A3C577500005425 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +249,7 @@
 		9B5FAD462A4601E800D41030 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9B1823242A4AD49B0047CA46 /* ViewModels */,
 				9B5FAD472A4601F800D41030 /* Pages */,
 			);
 			path = Presentation;
@@ -248,6 +266,7 @@
 		9B7BCC282A48ACBD00328B41 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9B1823292A4AE6E00047CA46 /* FailureHandler.swift */,
 				9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */,
 			);
 			path = Utils;
@@ -388,6 +407,7 @@
 				9BC7882B2A40373C003E834B /* Swinject */,
 				9BC7882E2A40375A003E834B /* SwinjectAutoregistration */,
 				9B5FAD442A4601D600D41030 /* SnapKit */,
+				9B18232D2A4AE7600047CA46 /* AlertToast */,
 			);
 			productName = Cheffin;
 			productReference = 9B3565AE2A3C577500005425 /* Cheffin.app */;
@@ -443,6 +463,7 @@
 				9BC7882A2A40373C003E834B /* XCRemoteSwiftPackageReference "Swinject" */,
 				9BC7882D2A40375A003E834B /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 				9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9B18232C2A4AE7600047CA46 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 9B3565AF2A3C577500005425 /* Products */;
 			projectDirPath = "";
@@ -507,6 +528,8 @@
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
 				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
+				9B1823262A4AD4AB0047CA46 /* ViewModel.swift in Sources */,
+				9B18232A2A4AE6E00047CA46 /* FailureHandler.swift in Sources */,
 				9B5FAD2E2A45EF5600D41030 /* Recipe.swift in Sources */,
 				9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */,
 				9B7BCC1F2A489D8800328B41 /* StepByStep.swift in Sources */,
@@ -528,6 +551,7 @@
 				9B5FAD492A46021400D41030 /* SwiftUIKitViewController.swift in Sources */,
 				9B5FAD342A45EFA900D41030 /* RecipeApiResponse.swift in Sources */,
 				9B5FAD362A45EFB700D41030 /* RecipeRepositoryImpl.swift in Sources */,
+				9B1823282A4AD4DB0047CA46 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +832,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9B18232C2A4AE7600047CA46 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -835,6 +867,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9B18232D2A4AE7600047CA46 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B18232C2A4AE7600047CA46 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
 		9B5FAD442A4601D600D41030 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */;
