@@ -25,6 +25,8 @@ internal enum S {
   internal static let essentialUtensils = S.tr("Localizable", "essentialUtensils", fallback: "Essential Utensils")
   /// ====================== RECIPE PAGE ======================
   internal static let ingredients = S.tr("Localizable", "ingredients", fallback: "Ingredients")
+  /// ====================== Failure ======================
+  internal static let recipeFailure = S.tr("Localizable", "recipeFailure", fallback: "We encountered error while fetching the recipes, please refresh the page.")
   /// Step-By-Step
   internal static let stepByStep = S.tr("Localizable", "stepByStep", fallback: "Step-By-Step")
   /// Step-By-Step Mode
