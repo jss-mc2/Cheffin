@@ -85,13 +85,15 @@ struct RecipeCard_Previews: PreviewProvider {
                 Utensil(
                     id: UUID(),
                     name: "Knife",
-                    image: "Knife",
-                    isEssential: true),
+                    image: "https://pngimg.com/d/knife_PNG106098.png",
+                    isEssential: true
+                ),
                 Utensil(
                     id: UUID(),
                     name: "Thermometer",
-                    image: "Thermometer",
-                    isEssential: true)
+                    image: "https://pngimg.com/d/thermometer_PNG63.png",
+                    isEssential: true
+                )
             ],
             ingredients: [],
             instructions: []
@@ -104,16 +106,46 @@ struct RecipeCard_Previews: PreviewProvider {
 
 struct Tooltip: View {
     
-    @State var tooltipVisible = false
-    @State var utensil: Utensil
+    @State private var tooltipVisible = false
+    
+    let utensil: Utensil
+    var tooltipConfig = DefaultTooltipConfig()
+    
+    init(utensil: Utensil) {
+        self.tooltipConfig.enableAnimation = true
+        self.tooltipConfig.animationOffset = 10
+        self.tooltipConfig.animationTime = 1
+        self.tooltipConfig.borderColor = .white
+        self.tooltipConfig.backgroundColor = .white
+        self.utensil = utensil
+    }
     
     var body: some View {
-        Image(utensil.image)
-            .onTapGesture {
+        AsyncImage(url: URL(string: utensil.image)) { image in
+            image
+                .resizable()
+                .frame(
+                    width: UIScreen.main.bounds.width * (1 / 20),
+                    height: UIScreen.main.bounds.height * (1 / 20)
+                    )
+                .scaledToFit()
+        } placeholder: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundStyle(I.primary.swiftUIColor)
+                    .frame(height: UIScreen.main.bounds.height * (1 / 4))
+                ProgressView()
+                    .background(I.primary.swiftUIColor)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+        }
+        .onTapGesture {
+            withAnimation {
                 tooltipVisible.toggle()
             }
-            .tooltip(self.tooltipVisible, side: .top) {
-                Text(utensil.name)
-            }
+        }
+        .tooltip(self.tooltipVisible, side: .top, config: tooltipConfig) {
+            Text(utensil.name)
+        }
     }
 }
