@@ -15,11 +15,21 @@ struct RecipeCard: View {
     var body: some View {
         VStack {
             // MARK: Recipe Image
-            Image(recipe.image)
-                .resizable()
-                .frame(height: UIScreen.main.bounds.height * (1 / 4))
-                .scaledToFill()
-            
+            AsyncImage(url: URL(string: recipe.image)) { image in
+                image
+                    .resizable()
+                    .frame(height: UIScreen.main.bounds.height * (1 / 4))
+                    .scaledToFit()
+            } placeholder: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundStyle(I.primary.swiftUIColor)
+                        .frame(height: UIScreen.main.bounds.height * (1 / 4))
+                    ProgressView()
+                        .background(I.primary.swiftUIColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+            }
             VStack(alignment: .leading) {
                 // MARK: Recipe Description
                 Text(recipe.name)
@@ -70,7 +80,7 @@ struct RecipeCard_Previews: PreviewProvider {
         various complementary herbs and spices.
         """,
             duration: "30 - 45 Minutes",
-            image: "GarlicButterSteak",
+            image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
             utensils: [
                 Utensil(
                     id: UUID(),
