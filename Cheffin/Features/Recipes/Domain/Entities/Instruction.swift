@@ -9,6 +9,7 @@ import Foundation
 
 struct Instruction: Identifiable, Hashable {
     let id: UUID
+    let title: String
     let order: Int
     let description: String
     let media: String
