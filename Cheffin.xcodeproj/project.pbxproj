@@ -11,6 +11,8 @@
 		967B956B2A49E7D800F1E5A7 /* WrappingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */; };
 		967B956D2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956C2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift */; };
 		967B956F2A4AB9EB00F1E5A7 /* ButtonHighlightHiddenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956E2A4AB9EB00F1E5A7 /* ButtonHighlightHiddenViewModel.swift */; };
+		32DD094C2A4AC1B0009823EC /* StepByStepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD094B2A4AC1B0009823EC /* StepByStepProgress.swift */; };
+		32DD094E2A4AC1D7009823EC /* StepByStepImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD094D2A4AC1D7009823EC /* StepByStepImage.swift */; };
 		967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */; };
 		967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */; };
 		967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */; };
@@ -66,6 +68,8 @@
 		967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
 		967B956C2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenView.swift; sourceTree = "<group>"; };
 		967B956E2A4AB9EB00F1E5A7 /* ButtonHighlightHiddenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenViewModel.swift; sourceTree = "<group>"; };
+		32DD094B2A4AC1B0009823EC /* StepByStepProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepProgress.swift; sourceTree = "<group>"; };
+		32DD094D2A4AC1D7009823EC /* StepByStepImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepImage.swift; sourceTree = "<group>"; };
 		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstructionParserTest.swift; path = ../../../../../../../../InstructionParserTest.swift; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 			children = (
 				9B5FAD252A45EF2000D41030 /* RecipeCard.swift */,
 				967B95682A49D92800F1E5A7 /* SpeechRecognizerView.swift */,
+				32DD094B2A4AC1B0009823EC /* StepByStepProgress.swift */,
+				32DD094D2A4AC1D7009823EC /* StepByStepImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -587,7 +593,9 @@
 				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
 				967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */,
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
+				32DD094E2A4AC1D7009823EC /* StepByStepImage.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
+				32DD094C2A4AC1B0009823EC /* StepByStepProgress.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
 				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
 				9B5FAD2E2A45EF5600D41030 /* Recipe.swift in Sources */,
