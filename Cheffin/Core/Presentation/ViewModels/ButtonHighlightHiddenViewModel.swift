@@ -8,24 +8,41 @@
 import Foundation
 
 class ButtonHighlightHiddenViewModel: ObservableObject {
+    let key: String
+    
     let name: String
-    @Published var isHighlighted: Bool {
+    @Published var isHighlighted = false {
         didSet {
-            onHighlighted(isHighlighted)
+            if isHighlighted {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.isHighlighted = false
+                }
+                
+                onHighlighted()
+            }
         }
     }
     @Published var isHidden: Bool
     
-    var onHighlighted: (_ isHiglighted: Bool) -> Void
+    var onHighlighted: () -> Void
     
+    /**
+     - Parameters:
+        - key: expected value: "set timer"
+        - name: expected value: "set timer 1 minutes"
+     */
     init(
+        key: String? = nil,
         name: String,
-        isHighlighted: Bool,
         isHidden: Bool,
-        onHighlighted: @escaping (_ isHighlighted: Bool) -> Void
+        onHighlighted: @escaping () -> Void
     ) {
+        if let key {
+            self.key = key
+        } else {
+            self.key = name
+        }
         self.name = name
-        self.isHighlighted = isHighlighted
         self.isHidden = isHidden
         self.onHighlighted = onHighlighted
     }

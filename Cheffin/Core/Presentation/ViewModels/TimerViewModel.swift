@@ -6,15 +6,18 @@
 //
 
 import Foundation
+import AVFoundation
 
 class TimerViewModel: ObservableObject {
     let defaultCountDownTime: TimeInterval?
     
     private var userSetCountDownTime: TimeInterval? {
         didSet {
-            if let userSetCountDownTime {
-                displayedCountDownTime = TimeInterval.FORMATTER.string(from: userSetCountDownTime) ?? "0"
+            guard let userSetCountDownTime else {
+                displayedCountDownTime = nil
+                return
             }
+            displayedCountDownTime = TimeInterval.FORMATTER.string(from: userSetCountDownTime)
         }
     }
     
@@ -23,20 +26,26 @@ class TimerViewModel: ObservableObject {
     private var timer: Timer?
     private var endTime: Date?
     
-    var execute: () -> Void
+    var onStartTimer: () -> Void
+    var onTimerEnd: () -> Void
+    private var isPlayAlert = false
     
     /**
      - Parameter execute: executes after timer ends
      */
-    init(_ defaultCountDownTime: TimeInterval? = nil, execute: @escaping () -> Void) {
+    init(_ defaultCountDownTime: TimeInterval? = nil, onStartTimer: @escaping () -> Void = {}, onTimerEnd: @escaping () -> Void = {}) {
         self.defaultCountDownTime = defaultCountDownTime
         if let defaultCountDownTime {
             self.displayedCountDownTime = TimeInterval.FORMATTER.string(from: defaultCountDownTime)
         }
-        self.execute = execute
+        self.onStartTimer = onStartTimer
+        self.onTimerEnd = onTimerEnd
     }
     
-    func setTimer(_ countDownTime: TimeInterval) {
+    /**
+     - Important: if timer is running, it will stop timer.
+     */
+    func setTimer(_ countDownTime: TimeInterval? = nil) {
         if timer != nil {
             stopTimer()
         }
@@ -51,15 +60,41 @@ class TimerViewModel: ObservableObject {
         }
     }
     
-    private func startTimer() {
+    func toggleAlarm() {
+        if isPlayAlert {
+            stopAlarm()
+        } else {
+            startAlarm()
+        }
+    }
+    
+    func startAlarm() {
+        self.isPlayAlert = true
+        AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(1304)) {
+            if self.isPlayAlert == true {
+                self.startAlarm()
+            }
+        }
+    }
+    
+    func stopAlarm() {
+        self.isPlayAlert = false
+    }
+    
+    func startTimer() {
 #if DEBUG
         print("\(#function)")
 #endif
+        onStartTimer()
+        
+        stopTimer()
+        stopAlarm()
+        
         guard let countDownTime = userSetCountDownTime ?? defaultCountDownTime else {
             return
         }
         endTime = Date().addingTimeInterval(countDownTime)
-        displayedCountDownTime = TimeInterval.FORMATTER.string(from: countDownTime) ?? ""
+        displayedCountDownTime = TimeInterval.FORMATTER.string(from: countDownTime)
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.updateDisplayedCountDownTime()
         }
@@ -77,24 +112,25 @@ class TimerViewModel: ObservableObject {
         
         // expected elapsedTime: 60 -> 59 -> 58 ...
         let elapsedTime = endTime.timeIntervalSince(Date()).rounded()
-        displayedCountDownTime = elapsedTime >= 0 ? (TimeInterval.FORMATTER.string(from: elapsedTime) ?? "0") : "0"
+        displayedCountDownTime = elapsedTime >= 0 ? TimeInterval.FORMATTER.string(from: elapsedTime) : "0"
         
         if displayedCountDownTime == "0" {
             stopTimer()
-            execute()
+            onTimerEnd()
+            
+            startAlarm()
         }
     }
     
-    private func stopTimer() {
+    func stopTimer() {
 #if DEBUG
         print("\(#function)")
 #endif
-        if timer == nil {
-            print("\(#function) timer is nil, this is not supposed to happen")
-            return
-        }
         timer?.invalidate()
         timer = nil
         endTime = nil
+        if let countDownTime = userSetCountDownTime ?? defaultCountDownTime {
+            displayedCountDownTime = TimeInterval.FORMATTER.string(from: countDownTime)
+        }
     }
 }

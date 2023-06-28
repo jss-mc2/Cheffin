@@ -44,9 +44,7 @@ struct TimerView: View {
 
 #if DEBUG
 struct TimerViewPreviews: View {
-    @ObservedObject var timerViewModel = TimerViewModel {
-        print("\(#function) do something")
-    }
+    @ObservedObject var timerViewModel = TimerViewModel(5)
     
     var body: some View {
         VStack {
