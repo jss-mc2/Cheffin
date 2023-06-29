@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 3264971B2A49F5E6005DFE42 /* SwiftUITooltip */; };
+		9657DC392A4C164A003CA477 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */; };
+		9657DC3C2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */; };
+		9657DC3E2A4C18F3003CA477 /* AVAudioSession+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */; };
+		9657DC402A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */; };
+		9657DC422A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */; };
+		9657DC462A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
 		96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40B2A4B1BE8000EC050 /* ViewController.swift */; };
 		96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40C2A4B1BE8000EC050 /* HomePage.swift */; };
@@ -73,6 +79,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
+		9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizerViewModel+Error.swift"; sourceTree = "<group>"; };
+		9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Authorization.swift"; sourceTree = "<group>"; };
+		9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Authorization.swift"; sourceTree = "<group>"; };
+		9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizerViewModel+MAPPING.swift"; sourceTree = "<group>"; };
+		9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StepByStepPageView+SpeechRecognizerViewModel.swift"; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
 		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
 		967B95722A4AC2B000F1E5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -156,12 +168,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9657DC3A2A4C18A8003CA477 /* SpeechRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */,
+				9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */,
+				9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */,
+			);
+			path = SpeechRecognizer;
+			sourceTree = "<group>";
+		};
 		96E1D40A2A4B1BE8000EC050 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
 				96E1D40B2A4B1BE8000EC050 /* ViewController.swift */,
 				96E1D40C2A4B1BE8000EC050 /* HomePage.swift */,
 				96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */,
+				9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -183,6 +206,7 @@
 		96F82E762A4B1AF50036FC03 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9657DC3A2A4C18A8003CA477 /* SpeechRecognizer */,
 				96F82E732A4B1AB60036FC03 /* ViewModel.swift */,
 				96F82E772A4B1AF50036FC03 /* ViewModelState.swift */,
 				96F82E782A4B1AF50036FC03 /* ButtonHighlightHiddenViewModel.swift */,
@@ -336,6 +360,8 @@
 				9B1823292A4AE6E00047CA46 /* FailureHandler.swift */,
 				9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */,
 				967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */,
+				9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */,
+				9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -607,6 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F82E742A4B1AB60036FC03 /* ViewModel.swift in Sources */,
+				9657DC3C2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift in Sources */,
 				96F82E722A4B1A8F0036FC03 /* MultiPickerTime.swift in Sources */,
 				96F82E702A4B1A710036FC03 /* ViewStepByStepMode.swift in Sources */,
 				96F82E6E2A4B1A2E0036FC03 /* RecipeFakeDataSource.swift in Sources */,
@@ -618,9 +645,12 @@
 				96F82E7A2A4B1AF50036FC03 /* ButtonHighlightHiddenViewModel.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
+				9657DC462A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift in Sources */,
 				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
 				9B18232A2A4AE6E00047CA46 /* FailureHandler.swift in Sources */,
 				9B5FAD2E2A45EF5600D41030 /* Recipe.swift in Sources */,
+				9657DC422A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift in Sources */,
+				9657DC3E2A4C18F3003CA477 /* AVAudioSession+Authorization.swift in Sources */,
 				9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */,
 				96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */,
 				96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */,
@@ -642,8 +672,10 @@
 				96F82E792A4B1AF50036FC03 /* ViewModelState.swift in Sources */,
 				9B5FAD412A46018700D41030 /* XCAssets+Generated.swift in Sources */,
 				9B5FAD2A2A45EF3C00D41030 /* RecipeViewModel.swift in Sources */,
+				9657DC402A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift in Sources */,
 				9B7BCC232A48AB5100328B41 /* UtensilResponse.swift in Sources */,
 				9B7BCC272A48AB9600328B41 /* InstructionResponse.swift in Sources */,
+				9657DC392A4C164A003CA477 /* SpeechRecognizerViewModel.swift in Sources */,
 				9B5FAD322A45EF7100D41030 /* RecipeRemoteDataSource.swift in Sources */,
 				96E1D41A2A4B3AE7000EC050 /* PageViewModel.swift in Sources */,
 				9B5FAD492A46021400D41030 /* SwiftUIKitViewController.swift in Sources */,
@@ -815,6 +847,8 @@
 				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Listen to keywords \"Next Page\", \"Previous Page\" to navigate and \"Set Timer\" to set the timer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -843,6 +877,8 @@
 				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Listen to keywords \"Next Page\", \"Previous Page\" to navigate and \"Set Timer\" to set the timer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = "";

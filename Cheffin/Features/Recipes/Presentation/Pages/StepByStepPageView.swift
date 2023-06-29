@@ -13,6 +13,7 @@ struct StepByStepPageView: View {
     
     @StateObject var timerViewModel: TimerViewModel
     @StateObject var pageViewModel: PageViewModel<StepByStepView>
+    @StateObject var speechRecognizerViewModel = SpeechRecognizerViewModel()
     
     var buttonStates: [ButtonHighlightHiddenViewModel] = []
     
@@ -20,7 +21,6 @@ struct StepByStepPageView: View {
         self.steps = steps
         
         var tempButtonStates: [ButtonHighlightHiddenViewModel] = []
-        
         let tempTimerViewModel = TimerViewModel(
             onStartTimer: {
                 tempButtonStates.first { $0.key == "start timer" }?.isHidden = true
@@ -31,7 +31,6 @@ struct StepByStepPageView: View {
                 tempButtonStates.first { $0.key == "stop alarm" }?.isHidden = false
             }
         )
-        
         let tempPageViewModel = PageViewModel(steps.map { step in StepByStepView(step) })
         tempButtonStates.append(
             ButtonHighlightHiddenViewModel(name: "next", isHidden: false) {
@@ -84,6 +83,7 @@ struct StepByStepPageView: View {
         
         self._timerViewModel = StateObject(wrappedValue: tempTimerViewModel)
         self._pageViewModel = StateObject(wrappedValue: tempPageViewModel)
+        
         self.buttonStates = tempButtonStates
     }
     
@@ -141,6 +141,8 @@ struct StepByStepPageView: View {
                 ButtonHighlightHiddenView(state: state)
             })
             .padding(.bottom, 32)
+        }.onAppear {
+            toggleTranscribing()
         }
     }
 }
