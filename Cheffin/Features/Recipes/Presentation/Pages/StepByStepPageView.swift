@@ -9,12 +9,16 @@ import SwiftUI
 import AVFoundation
 
 struct StepByStepPageView: View {
+    let steps: [StepByStep]
+    
     @StateObject var timerViewModel: TimerViewModel
     @StateObject var pageViewModel: PageViewModel<StepByStepView>
     
     var buttonStates: [ButtonHighlightHiddenViewModel] = []
     
     init(_ steps: [StepByStep]) {
+        self.steps = steps
+        
         var tempButtonStates: [ButtonHighlightHiddenViewModel] = []
         
         let tempTimerViewModel = TimerViewModel(
@@ -29,7 +33,6 @@ struct StepByStepPageView: View {
         )
         
         let tempPageViewModel = PageViewModel(steps.map { step in StepByStepView(step) })
-        
         tempButtonStates.append(
             ButtonHighlightHiddenViewModel(name: "next", isHidden: false) {
                 if !tempPageViewModel.nextPage() {
@@ -75,7 +78,6 @@ struct StepByStepPageView: View {
         tempButtonStates.append(
             ButtonHighlightHiddenViewModel(name: "stop alarm", isHidden: true) {
                 tempTimerViewModel.stopAlarm()
-                
                 tempButtonStates.first { $0.key == "stop alarm" }?.isHidden = true
             }
         )
@@ -87,43 +89,58 @@ struct StepByStepPageView: View {
     
     var body: some View {
         VStack {
-            Button(
-                action: {
-                    _ = pageViewModel.nextPage()
-                },
-                label: {
-                    Text("next")
-                }
-            )
-            Button(
-                action: {
-                    _ = pageViewModel.previousPage()
-                },
-                label: {
-                    Text("back")
-                }
-            )
+//            Button(
+//                action: {
+//                    _ = pageViewModel.nextPage()
+//                },
+//                label: {
+//                    Text("next")
+//                }
+//            )
+//            Button(
+//                action: {
+//                    _ = pageViewModel.previousPage()
+//                },
+//                label: {
+//                    Text("back")
+//                }
+//            )
+            Text(steps[pageViewModel.currentPage].title)
+                .font(.system(.title2, weight: .semibold))
+                .padding(.top, 32)
+            ZStack {
+                ProgressView(
+                    value: Double(pageViewModel.currentPage + 1),
+                    total: Double(pageViewModel.pages.count)
+                )
+                    .progressViewStyle(LinearProgressViewStyle())
+                    .tint(.accentColor)
+                    .scaleEffect(CGSize(width: 1.1, height: 7.0))
+                Text("\(pageViewModel.currentPage + 1) of \(pageViewModel.pages.count)")
+            }
             pageViewModel.pages[pageViewModel.currentPage]
-            Button(
-                action: {
-                    timerViewModel.toggleAlarm()
-                },
-                label: {
-                    Text("Toggle alarm")
-                }
-            )
-            Button(
-                action: {
-                    buttonStates.first { $0.key == "set timer" }?.isHidden.toggle()
-                },
-                label: {
-                    Text("Toggle set timer isHidden variable")
-                }
-            )
+            Spacer()
+//            Button(
+//                action: {
+//                    timerViewModel.toggleAlarm()
+//                },
+//                label: {
+//                    Text("Toggle alarm")
+//                }
+//            )
+//            Button(
+//                action: {
+//                    buttonStates.first { $0.key == "set timer" }?.isHidden.toggle()
+//                },
+//                label: {
+//                    Text("Toggle set timer isHidden variable")
+//                }
+//            )
             TimerView(timerViewModel)
             SpeechRecognizerView(buttonStates.map { state in
                 ButtonHighlightHiddenView(state: state)
             })
+            .padding(.bottom, 32)
         }
     }
 }

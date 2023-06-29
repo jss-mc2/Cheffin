@@ -20,6 +20,7 @@ struct SpeechRecognizerView: View {
                 Image(systemName: "mic.fill").foregroundColor(I.accentColor.swiftUIColor)
                 Text("try saying:").italic()
             }
+            .font(.system(.title))
             WrappingHStack(alignment: .center) {
                 ForEach(buttonViews.indices, id: \.self) {
                     buttonViews[$0]

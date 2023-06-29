@@ -7,16 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		967B95692A49D92800F1E5A7 /* SpeechRecognizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95682A49D92800F1E5A7 /* SpeechRecognizerView.swift */; };
-		967B956B2A49E7D800F1E5A7 /* WrappingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */; };
-		967B956D2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956C2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift */; };
-		967B956F2A4AB9EB00F1E5A7 /* ButtonHighlightHiddenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956E2A4AB9EB00F1E5A7 /* ButtonHighlightHiddenViewModel.swift */; };
-		32DD094C2A4AC1B0009823EC /* StepByStepProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD094B2A4AC1B0009823EC /* StepByStepProgress.swift */; };
-		32DD094E2A4AC1D7009823EC /* StepByStepImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD094D2A4AC1D7009823EC /* StepByStepImage.swift */; };
-		967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */; };
-		967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */; };
-		967B95632A49C88600F1E5A7 /* ViewStepByStepMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */; };
-		967B95652A49C9E100F1E5A7 /* RecipeFakeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */; };
 		3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 3264971B2A49F5E6005DFE42 /* SwiftUITooltip */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
 		96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40B2A4B1BE8000EC050 /* ViewController.swift */; };
@@ -83,12 +73,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		967B95682A49D92800F1E5A7 /* SpeechRecognizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerView.swift; sourceTree = "<group>"; };
-		967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
-		32DD094B2A4AC1B0009823EC /* StepByStepProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepProgress.swift; sourceTree = "<group>"; };
-		32DD094D2A4AC1D7009823EC /* StepByStepImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepImage.swift; sourceTree = "<group>"; };
-		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
-		967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstructionParserTest.swift; path = ../../../../../../../../InstructionParserTest.swift; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
 		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
 		967B95722A4AC2B000F1E5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -388,8 +372,6 @@
 			children = (
 				9BC4FA982A4AF9A50045B6BD /* SpeechRecognizerView.swift */,
 				9B5FAD252A45EF2000D41030 /* RecipeCard.swift */,
-				32DD094B2A4AC1B0009823EC /* StepByStepProgress.swift */,
-				32DD094D2A4AC1D7009823EC /* StepByStepImage.swift */,
 				96E1D41D2A4B4D31000EC050 /* StepByStepView.swift */,
 			);
 			path = Components;
@@ -633,10 +615,8 @@
 				9BC4FA9D2A4AF9C90045B6BD /* WrappingHStack.swift in Sources */,
 				9BC4FA9E2A4AF9C90045B6BD /* ButtonHighlightHiddenView.swift in Sources */,
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
-				32DD094E2A4AC1D7009823EC /* StepByStepImage.swift in Sources */,
 				96F82E7A2A4B1AF50036FC03 /* ButtonHighlightHiddenViewModel.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
-				32DD094C2A4AC1B0009823EC /* StepByStepProgress.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
 				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
 				9B18232A2A4AE6E00047CA46 /* FailureHandler.swift in Sources */,
