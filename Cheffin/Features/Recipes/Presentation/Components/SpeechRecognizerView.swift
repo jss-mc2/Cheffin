@@ -18,7 +18,8 @@ struct SpeechRecognizerView: View {
         VStack {
             HStack {
                 Image(systemName: "mic.fill").foregroundColor(I.accentColor.swiftUIColor)
-                Text("try saying:").italic()
+                Text("try saying:")
+                    .italic()
             }
             .font(.system(.title))
             WrappingHStack(alignment: .center) {
@@ -26,6 +27,7 @@ struct SpeechRecognizerView: View {
                     buttonViews[$0]
                 }
             }
+            .font(.system(.title))
         }
     }
 }

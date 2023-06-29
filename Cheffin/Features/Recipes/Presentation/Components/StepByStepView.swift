@@ -33,7 +33,7 @@ struct StepByStepView: View {
                     ProgressView()
                         .background(I.primary.swiftUIColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .scaleEffect(5.0)
+                        .scaleEffect(3.0)
                 }
             }
             .padding(EdgeInsets(.init(top: -8, leading: 0, bottom: 24, trailing: 0)))

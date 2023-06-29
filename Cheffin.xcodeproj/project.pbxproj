@@ -184,7 +184,6 @@
 				96E1D40B2A4B1BE8000EC050 /* ViewController.swift */,
 				96E1D40C2A4B1BE8000EC050 /* HomePage.swift */,
 				96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */,
-				9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -388,6 +387,7 @@
 		9BC7881F2A40363C003E834B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */,
 				9B5FAD292A45EF3C00D41030 /* RecipeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -844,7 +844,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9299QHCW64;
+				DEVELOPMENT_TEAM = WMK9L7H7UT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
@@ -874,7 +874,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9299QHCW64;
+				DEVELOPMENT_TEAM = WMK9L7H7UT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
