@@ -66,7 +66,7 @@ struct StepByStepDescriptionView: View {
     
     /**
      - Parameters:
-     - string: "something something Add [steak] to {pan} for <5 minutes>"
+        - string: "something something Add [steak] to {pan} for <5 minutes>"
      */
     private func separateString(_ string: String, delimiters: [Character]) -> [String] {
         var result: [String] = []
