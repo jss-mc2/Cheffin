@@ -45,6 +45,11 @@ class HomeViewController: UIViewController {
         hostingController.didMove(toParent: self)
 
     }
+	
+	func navigateToRecipePage(recipe: Recipe) {
+		let recipeVC = RecipeViewController(recipe: recipe)
+		navigationController?.pushViewController(recipeVC, animated: true)
+	}
 
 
 }

@@ -25,6 +25,9 @@ struct HomePage: View {
 				ForEach(viewModel.state.recipes) { recipe in
 					RecipeCard(recipe: recipe)
 						.listRowInsets(.none)
+						.onTapGesture {
+							controller.navigateToRecipePage(recipe: recipe)
+						}
 				}
 				
 				.listRowSeparator(.hidden)
