@@ -56,11 +56,8 @@ final class InjectionContainer {
 
     private func registerRecipeContainer(_ container: Container) {
 
-//        #if DEBUG
-        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeFakeDataSource.init)
-//        #else
-//        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeRemoteDataSourceGithubImpl.init)
-//        #endif
+//        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeFakeDataSource.init)
+        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeRemoteDataSourceGithubImpl.init)
         container.autoregister(RecipeRepository.self, initializer: RecipeRepositoryImpl.init)
         
         container.register(AnyUseCase<[Recipe], NoParams>.self, name: "GetRecipe") { resolver in
