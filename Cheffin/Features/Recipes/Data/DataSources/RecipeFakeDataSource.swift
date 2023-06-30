@@ -20,6 +20,15 @@ class RecipeFakeDataSource: RecipeRemoteDataSource {
             .setFailureType(to: Failure.self)
             .eraseToAnyPublisher()
     }
+	
+	func getRecipes() -> [RecipeResponse] {
+		var recipes: [RecipeResponse] = []
+		
+		recipes.append(buildRecipeResponse())
+		recipes.append(buildRecipeResponse())
+
+		return recipes
+	}
     
     private func buildUtensilResponse() -> [UtensilResponse] {
 		return [

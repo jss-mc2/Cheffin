@@ -80,6 +80,11 @@ final class InjectionContainer {
 			let usecase = resolver.resolve(AnyUseCase<[Recipe], NoParams>.self, name: "GetRecipe")!
 			return RecipeViewModel(useCase: usecase)
 		}
+		
+		container.register(RecipeDetailViewModel.self) { resolver in
+			let usecase = resolver.resolve(AnyUseCase<[StepByStep], ViewStepByStepModeParams >.self, name: "ViewStepByStepMode")!
+			return RecipeDetailViewModel(stepByStepMode: usecase)
+		}
     }
 
 }

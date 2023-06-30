@@ -34,6 +34,9 @@ struct StepByStepPageView: View {
             
             viewModel.toggleTranscribing()
         }
+		.onDisappear {
+			viewModel.toggleTranscribing()
+		}
     }
 }
 

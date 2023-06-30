@@ -9,66 +9,71 @@ import SwiftUI
 
 struct RecipePageView: View {
     
-    let steps: [StepByStep]
+	 var recipe: Recipe
+	@State var isStepByStepModeOn = false
+	@StateObject var viewModel: RecipeDetailViewModel
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 VStack {
-                    Image("recipe_image")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
+					AsyncImage(url: URL(string: recipe.image)) { image in
+						image
+							.resizable()
+							.aspectRatio(contentMode: .fill)
+					} placeholder: {
+						ProgressView()
+					}
                 }
                 HStack {
-                    Text("Garlic-Butter Steak")
+					Text(recipe.name)
                         .padding(.horizontal)
                         .font(Font.title.weight(.bold))
-                    Spacer()
                 }
                 HStack {
                     Image("clock")
                         .padding(.leading)
-                    Text("10 - 20 Minutes")
-                    Spacer()
+					Text(recipe.duration)
                 }
                 .padding(.bottom)
                 HStack {
-                    Text("Lorem ipsum dolor sit amet,asdfasdfasdfasdfasdfas dasdfasdfasdfasdfasd fasdfasdf")
+					Text(recipe.description)
                         .padding(.horizontal)
                         .multilineTextAlignment(.leading)
                         .font(.body)
                 }
                 .padding(.bottom)
                 HStack {
-                    Text("Ingredients")
+					Text(S.ingredients)
+                        .font(Font.title2.weight(.bold))
+                        .padding(.leading)
+                }
+				IngredientsGridView(ingredients: recipe.ingredients)
+                    .padding(.bottom)
+                
+                HStack {
+					Text(S.utensils)
                         .font(Font.title2.weight(.bold))
                         .padding(.leading)
                     Spacer()
                 }
-                IngredientsGridView()
+				UtensilsGridView(utensils: recipe.utensils)
                     .padding(.bottom)
                 
                 HStack {
-                    Text("Utensils")
-                        .font(Font.title2.weight(.bold))
-                        .padding(.leading)
-                    Spacer()
-                }
-                UtensilsGridView()
-                    .padding(.bottom)
-                
-                HStack {
-                    Text("Steps")
+					Text(S.stepByStep)
                         .font(Font.title2.weight(.bold))
                         .padding(.leading)
                     Spacer()
                 }
                 .padding(.bottom)
-                StepsView(steps: steps)
+				
+				StepsView(instructions: recipe.instructions)
                     .padding(.bottom)
             }
             
             Button(action: {
+				isStepByStepModeOn.toggle()
                         // Button action code
                     }) {
                         Text("Let's Cook!")
@@ -79,13 +84,22 @@ struct RecipePageView: View {
                             .foregroundColor(.black)
                     }
             
-        }
+		}
+		.sheet(isPresented: $isStepByStepModeOn) {
+			StepByStepPageView(viewModel.state.stepBySteps)
+		}
     }
 }
 
 struct RecipePageView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipePageView(steps: StepByStep.SAMPLEDATA)
+		let fakeData = RecipeFakeDataSource()
+		let response: [RecipeResponse] = fakeData.getRecipes()
+		let recipe = response.map {
+			$0.toDomain()
+		}
+		let viewModel = InjectionContainer.shared.container.resolve(RecipeDetailViewModel.self)!
+        RecipePageView(recipe: recipe[0], viewModel: viewModel)
     }
 }
 

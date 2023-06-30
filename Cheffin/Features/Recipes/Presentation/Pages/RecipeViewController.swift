@@ -11,8 +11,10 @@ class RecipeViewController: UIViewController {
 
 	
 	let recipe: Recipe
+	let viewModel: RecipeDetailViewModel
 	
-	init(recipe: Recipe) {
+	init(recipe: Recipe, viewModel: RecipeDetailViewModel) {
+		self.viewModel = viewModel
 		self.recipe = recipe
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -22,8 +24,21 @@ class RecipeViewController: UIViewController {
 	}
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.backgroundColor = .red
-
+		self.viewModel.generateStepByStep(recipe: recipe)
+		let hostingController = SwiftUIKitViewController(
+			shouldShowNavigationBar: true,
+			rootView: RecipePageView(recipe: recipe, viewModel: self.viewModel)
+		)
+		
+		addChild(hostingController)
+		
+		view.addSubview(hostingController.view)
+		
+		hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+		hostingController.view.snp.makeConstraints { make in
+			make.leading.trailing.top.bottom.equalTo(view)
+		}
+		hostingController.didMove(toParent: self)
         // Do any additional setup after loading the view.
     }
     
