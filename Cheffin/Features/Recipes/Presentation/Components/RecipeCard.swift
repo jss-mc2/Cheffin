@@ -33,7 +33,7 @@ struct RecipeCard: View {
             VStack(alignment: .leading) {
                 // MARK: Recipe Description
                 Text(recipe.name)
-                    .font(.system(.title, weight: .bold))
+					.font(.system(size: 22, weight: .bold))
                 HStack {
                     Image(systemName: "clock")
                     Text(recipe.duration)
