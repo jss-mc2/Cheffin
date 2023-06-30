@@ -14,6 +14,8 @@
 		9657DC402A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */; };
 		9657DC422A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */; };
 		9657DC462A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */; };
+		9657DC4D2A4C3CE6003CA477 /* StepByStepParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */; };
+		9657DC522A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC512A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
 		96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40B2A4B1BE8000EC050 /* ViewController.swift */; };
 		96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40C2A4B1BE8000EC050 /* HomePage.swift */; };
@@ -85,6 +87,8 @@
 		9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Authorization.swift"; sourceTree = "<group>"; };
 		9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizerViewModel+MAPPING.swift"; sourceTree = "<group>"; };
 		9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StepByStepPageView+SpeechRecognizerViewModel.swift"; sourceTree = "<group>"; };
+		9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParserTest.swift; sourceTree = "<group>"; };
+		9657DC512A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModelTest.swift; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
 		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
 		967B95722A4AC2B000F1E5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -176,6 +180,62 @@
 				9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */,
 			);
 			path = SpeechRecognizer;
+			sourceTree = "<group>";
+		};
+		9657DC472A4C3C69003CA477 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC482A4C3C75003CA477 /* Recipes */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9657DC482A4C3C75003CA477 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC492A4C3C7D003CA477 /* Domain */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		9657DC492A4C3C7D003CA477 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC4A2A4C3C89003CA477 /* Parser */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9657DC4A2A4C3C89003CA477 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		9657DC4E2A4C3E16003CA477 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC4F2A4C3E19003CA477 /* Presentation */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9657DC4F2A4C3E19003CA477 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC502A4C3E23003CA477 /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9657DC502A4C3E23003CA477 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9657DC512A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		96E1D40A2A4B1BE8000EC050 /* Pages */ = {
@@ -489,6 +549,8 @@
 		9BEC5C9C2A49AD7000A1E72E /* CheffinTests */ = {
 			isa = PBXGroup;
 			children = (
+				9657DC4E2A4C3E16003CA477 /* Core */,
+				9657DC472A4C3C69003CA477 /* Features */,
 				9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */,
 			);
 			path = CheffinTests;
@@ -689,7 +751,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9657DC522A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift in Sources */,
 				9BEC5C9E2A49AD7000A1E72E /* CheffinTests.swift in Sources */,
+				9657DC4D2A4C3CE6003CA477 /* StepByStepParserTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
