@@ -17,7 +17,6 @@
 		9657DC4D2A4C3CE6003CA477 /* StepByStepParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */; };
 		9657DC522A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC512A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
-		96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40B2A4B1BE8000EC050 /* ViewController.swift */; };
 		96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40C2A4B1BE8000EC050 /* HomePage.swift */; };
 		96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4132A4B297A000EC050 /* TimerViewModel.swift */; };
 		96E1D4182A4B2F7C000EC050 /* StepByStepPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */; };
@@ -34,10 +33,10 @@
 		9B18232E2A4AE7600047CA46 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B18232D2A4AE7600047CA46 /* AlertToast */; };
 		9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B12A3C577500005425 /* AppDelegate.swift */; };
 		9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B32A3C577500005425 /* SceneDelegate.swift */; };
-		9B3565B62A3C577500005425 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B52A3C577500005425 /* HomeViewController.swift */; };
 		9B3565BB2A3C577500005425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3565BA2A3C577500005425 /* Assets.xcassets */; };
 		9B3565BE2A3C577500005425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3565BC2A3C577500005425 /* LaunchScreen.storyboard */; };
-		9B3C15582A4EB9980029FB78 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */; };
+		9B41C0542A4ED08D00682F40 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */; };
+		9B41C0562A4ED08D00682F40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41C0522A4ED08D00682F40 /* HomeViewController.swift */; };
 		9B5FAD262A45EF2000D41030 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD252A45EF2000D41030 /* RecipeCard.swift */; };
 		9B5FAD2A2A45EF3C00D41030 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD292A45EF3C00D41030 /* RecipeViewModel.swift */; };
 		9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD2B2A45EF4900D41030 /* GetRecipes.swift */; };
@@ -96,7 +95,6 @@
 		967B95722A4AC2B000F1E5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		967B95742A4AEC0000F1E5A7 /* MultiPickerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPickerTime.swift; sourceTree = "<group>"; };
 		967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FORMATTER.swift"; sourceTree = "<group>"; };
-		96E1D40B2A4B1BE8000EC050 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96E1D40C2A4B1BE8000EC050 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		96E1D4132A4B297A000EC050 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepPageView.swift; sourceTree = "<group>"; };
@@ -120,6 +118,9 @@
 		9B3565BD2A3C577500005425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3565BF2A3C577500005425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		9B41C0512A4ED08D00682F40 /* StepByStepPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepPageView.swift; sourceTree = "<group>"; };
+		9B41C0522A4ED08D00682F40 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B5FAD252A45EF2000D41030 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		9B5FAD292A45EF3C00D41030 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		9B5FAD2B2A45EF4900D41030 /* GetRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipes.swift; sourceTree = "<group>"; };
@@ -245,7 +246,9 @@
 		96E1D40A2A4B1BE8000EC050 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				96E1D40B2A4B1BE8000EC050 /* ViewController.swift */,
+				9B41C0522A4ED08D00682F40 /* HomeViewController.swift */,
+				9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */,
+				9B41C0512A4ED08D00682F40 /* StepByStepPageView.swift */,
 				96E1D40C2A4B1BE8000EC050 /* HomePage.swift */,
 				96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */,
 			);
@@ -262,6 +265,8 @@
 				9B1823252A4AD4AB0047CA46 /* ViewModel.swift */,
 				9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */,
 				9B1823272A4AD4DB0047CA46 /* ViewModelState.swift */,
+				9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */,
+				9B3565B52A3C577500005425 /* HomeViewController.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -455,16 +460,6 @@
 				9B5FAD292A45EF3C00D41030 /* RecipeViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		9BC788202A403645003E834B /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				9B3565B52A3C577500005425 /* HomeViewController.swift */,
-				9B5FAD272A45EF3000D41030 /* HomePage.swift */,
-				9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */,
-			);
-			path = Pages;
 			sourceTree = "<group>";
 		};
 		9BC788212A40364C003E834B /* Components */ = {
@@ -708,9 +703,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B3C15582A4EB9980029FB78 /* RecipeViewController.swift in Sources */,
-				9B3565B62A3C577500005425 /* HomeViewController.swift in Sources */,
-				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
 				96F82E742A4B1AB60036FC03 /* ViewModel.swift in Sources */,
 				9657DC3C2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift in Sources */,
 				96F82E722A4B1A8F0036FC03 /* MultiPickerTime.swift in Sources */,
@@ -739,7 +731,6 @@
 				9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */,
 				9BC788362A4038AE003E834B /* UseCase.swift in Sources */,
 				9BC4FA992A4AF9A50045B6BD /* SpeechRecognizerView.swift in Sources */,
-				96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */,
 				9B9DE8962A4AF0AC00E8075C /* StepByStepParser.swift in Sources */,
 				9B7BCC192A48991D00328B41 /* Utensil.swift in Sources */,
 				9B5FAD262A45EF2000D41030 /* RecipeCard.swift in Sources */,
@@ -747,6 +738,8 @@
 				9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */,
 				9B5FAD302A45EF6000D41030 /* RecipeRepository.swift in Sources */,
 				9B7BCC1B2A489A1E00328B41 /* Ingredient.swift in Sources */,
+				9B41C0542A4ED08D00682F40 /* RecipeViewController.swift in Sources */,
+				9B41C0562A4ED08D00682F40 /* HomeViewController.swift in Sources */,
 				9B5FAD422A46018700D41030 /* Strings+Generated.swift in Sources */,
 				96F82E792A4B1AF50036FC03 /* ViewModelState.swift in Sources */,
 				9B5FAD412A46018700D41030 /* XCAssets+Generated.swift in Sources */,
@@ -925,7 +918,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WMK9L7H7UT;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
@@ -955,7 +948,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WMK9L7H7UT;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
