@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct SpeechRecognizerView: View {
-    var buttons: [ButtonHighlightHiddenView]
+    var buttonViews: [ButtonHighlightHiddenView]
+    
+    init(_ buttonViews: [ButtonHighlightHiddenView]) {
+        self.buttonViews = buttonViews
+    }
     
     var body: some View {
         VStack {
             HStack {
                 Image(systemName: "mic.fill").foregroundColor(I.accentColor.swiftUIColor)
-                Text("try saying:").italic()
+                Text("try saying:")
+                    .italic()
             }
-            WrappingHStack(alignment: .leading) {
-                ForEach(buttons.indices, id: \.self) {
-                    buttons[$0]
+            .font(.system(.title))
+            WrappingHStack(alignment: .center) {
+                ForEach(buttonViews.indices, id: \.self) {
+                    buttonViews[$0]
                 }
             }
+            .font(.system(.title))
         }
     }
 }
@@ -28,47 +35,23 @@ struct SpeechRecognizerView: View {
 #if DEBUG
 struct SpeechRecognizerViewPreviews: View {
     @State var buttonStates = [
-        ButtonHighlightHiddenViewModel(
-            name: S.voiceCommand("next"),
-            isHighlighted: false,
-            isHidden: false
-        ) { isHighlighted in
-            print("next isHighlighted \(isHighlighted)")
+        ButtonHighlightHiddenViewModel(name: "next", isHidden: false) {
+            print("next isHighlighted")
         },
-        ButtonHighlightHiddenViewModel(
-            name: S.voiceCommand("back"),
-            isHighlighted: false,
-            isHidden: false
-        ) { isHighlighted in
-            print("back isHighlighted \(isHighlighted)")
+        ButtonHighlightHiddenViewModel(name: "back", isHidden: false) {
+            print("back isHighlighted")
         },
-        ButtonHighlightHiddenViewModel(
-            name: S.voiceCommand("repeat"),
-            isHighlighted: false,
-            isHidden: false
-        ) { isHighlighted in
-            print("repeat isHighlighted \(isHighlighted)")
+        ButtonHighlightHiddenViewModel(name: "repeat", isHidden: false) {
+            print("repeat isHighlighted")
         },
-        ButtonHighlightHiddenViewModel(
-            name: S.voiceCommand("set timer ... minutes"),
-            isHighlighted: false,
-            isHidden: false
-        ) { isHighlighted in
-            print("set timer ... minutes isHighlighted \(isHighlighted)")
+        ButtonHighlightHiddenViewModel(key: "set timer", name: "set timer 1 minutes", isHidden: false) {
+            print("set timer 1 minutes")
         },
-        ButtonHighlightHiddenViewModel(
-            name: S.voiceCommand("start timer"),
-            isHighlighted: false,
-            isHidden: false
-        ) { isHighlighted in
-            print("start timer isHighlighted \(isHighlighted)")
+        ButtonHighlightHiddenViewModel(name: "start timer", isHidden: false) {
+            print("start timer")
         },
-        ButtonHighlightHiddenViewModel(
-            name: S.voiceCommand("stop timer"),
-            isHighlighted: false,
-            isHidden: false
-        ) { isHighlighted in
-            print("stop timer isHighlighted \(isHighlighted)")
+        ButtonHighlightHiddenViewModel(name: "stop timer", isHidden: false) {
+            print("stop timer")
         }
     ]
     
@@ -85,8 +68,8 @@ struct SpeechRecognizerViewPreviews: View {
                 )
             }
             SpeechRecognizerView(
-                buttons: buttonStates.map { buttonState in
-                    ButtonHighlightHiddenView(state: buttonState)
+                buttonStates.map { state in
+                    ButtonHighlightHiddenView(state: state)
                 }
             )
         }

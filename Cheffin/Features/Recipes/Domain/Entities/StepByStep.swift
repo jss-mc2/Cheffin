@@ -12,7 +12,42 @@ struct StepByStep: Identifiable, Hashable {
     let title: String
     let media: String
     let mediaType: InstructionMediaType
+    /// expected value: starting from 1
     let order: Int
     let instruction: String
     let timer: TimeInterval?
 }
+
+#if DEBUG
+extension StepByStep {
+    static let SAMPLEDATA = [
+        StepByStep(
+            id: UUID(),
+            title: "Trim the fat of the meat",
+            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/ingredients/sirloin_beef.png?raw=true",
+            mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
+            order: 1,
+            instruction: "Trim the fat of the [meat]",
+            timer: nil
+        ),
+        StepByStep(
+            id: UUID(),
+            title: "Heat the pan",
+            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/utensils/pan.png?raw=true",
+            mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
+            order: 2,
+            instruction: "Heat the {pan}",
+            timer: 10
+        ),
+        StepByStep(
+            id: UUID(),
+            title: "Pat meat dry",
+            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/ingredients/chicken.png?raw=true",
+            mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
+            order: 3,
+            instruction: "Pat [meat] dry",
+            timer: nil
+        )
+    ]
+}
+#endif

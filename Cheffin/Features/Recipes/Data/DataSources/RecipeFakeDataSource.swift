@@ -13,19 +13,29 @@ class RecipeFakeDataSource: RecipeRemoteDataSource {
         var recipes: [RecipeResponse] = []
         
         recipes.append(buildRecipeResponse())
+		recipes.append(buildRecipeResponse())
+
         
         return Just(recipes)
             .setFailureType(to: Failure.self)
             .eraseToAnyPublisher()
     }
     
-    private func buildUtensilResponse() -> UtensilResponse {
-        return UtensilResponse(
-            id: UUID().uuidString,
-            name: "Pan",
-            image: "https://www.w3schools.com/images/w3schools_green.jpg",
-            isEssential: true
-        )
+    private func buildUtensilResponse() -> [UtensilResponse] {
+		return [
+			UtensilResponse(
+			id: UUID().uuidString,
+			name: "Knife",
+			image: "https://pngimg.com/d/knife_PNG106098.png",
+			isEssential: true
+			),
+			UtensilResponse(
+				id: UUID().uuidString,
+				name: "Thermometer",
+				image: "https://pngimg.com/d/thermometer_PNG63.png",
+				isEssential: true
+			)
+		]
     }
     
     private func buildIngredientResponse() -> IngredientResponse {
@@ -46,19 +56,28 @@ class RecipeFakeDataSource: RecipeRemoteDataSource {
             description: "Break the egg brother",
             media: "https://www.w3schools.com/images/w3schools_green.jpg",
             mediaType: "photo",
-            usedUtensils: [buildUtensilResponse()],
+            usedUtensils: buildUtensilResponse(),
             usedIngredients: [buildIngredientResponse()]
         )
     }
     
     private func buildRecipeResponse() -> RecipeResponse {
         return RecipeResponse(
-            id: UUID().uuidString,
-            name: "Scrambled Egg",
-            description: "Scrambled Egg is good",
-            duration: "5 minutes",
-            image: "https://www.w3schools.com/images/w3schools_green.jpg",
-            utensils: [buildUtensilResponse()],
+			id: UUID().uuidString,
+			name: "Garlic-Butter Steak",
+			description: """
+		Garlic Steak Butter is a rich and flavorful \
+		compound butter that combines the savory \
+		essence of garlic with the richness of \
+		butter to create a delectable \
+		accompaniment for steaks. This buttery \
+		concoction is made by blending minced \
+		garlic into softened butter along with \
+		various complementary herbs and spices.
+		""",
+			duration: "30 - 45 Minutes",
+			image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+            utensils: buildUtensilResponse(),
             ingredients: [buildIngredientResponse()],
             instructions: [buildInstructionResponse()]
         )

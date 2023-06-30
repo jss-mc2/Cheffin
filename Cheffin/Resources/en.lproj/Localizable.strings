@@ -9,6 +9,12 @@
 "appName" = "Chefin";
 
 /*
+ ====================== Failure ======================
+ */
+
+"recipeFailure" = "We encountered error while fetching the recipes, please refresh the page.";
+
+/*
  ====================== HOME PAGE ======================
  */
 

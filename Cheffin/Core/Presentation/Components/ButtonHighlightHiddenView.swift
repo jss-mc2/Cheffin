@@ -23,12 +23,14 @@ struct ButtonHighlightHiddenView: View {
             } else {
                 Button(
                     action: {
-                        state.isHighlighted.toggle()
+                        state.isHighlighted = true
                     },
                     label: {
-                        Text(state.name)
+                        Text(S.voiceCommand(state.name))
+                            .font(.system(.title, weight: .regular))
                             .foregroundColor(foregroundColor)
                             .padding(.all, 8)
+                            .italic()
                         
                             .background(state.isHighlighted ? I.primary.swiftUIColor : .clear)
                             // to force background to respect cornerRadius.
@@ -46,15 +48,10 @@ struct ButtonHighlightHiddenView: View {
 }
 
 #if DEBUG
-struct SpeechRecognizerButtonViewPreviews: View {
-    @State var buttonState = ButtonHighlightHiddenViewModel(
-        name: S.voiceCommand("next"),
-        isHighlighted: false,
-        isHidden: false
-    ) { isHiglighted in
-        print("next isHiglighted \(isHiglighted)")
+struct ButtonHighlightHiddenViewPreviews: View {
+    @State var buttonState = ButtonHighlightHiddenViewModel(name: "next", isHidden: false) {
+        print("next")
     }
-    
     
     var body: some View {
         VStack {
@@ -71,9 +68,9 @@ struct SpeechRecognizerButtonViewPreviews: View {
     }
 }
 
-struct SpeechRecognizerButtonView_Previews: PreviewProvider {
+struct ButtonHighlightHiddenView_Previews: PreviewProvider {
     static var previews: some View {
-        SpeechRecognizerButtonViewPreviews()
+        ButtonHighlightHiddenViewPreviews()
     }
 }
 #endif
