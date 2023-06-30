@@ -56,11 +56,11 @@ final class InjectionContainer {
 
     private func registerRecipeContainer(_ container: Container) {
 
-        #if DEBUG
+//        #if DEBUG
         container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeFakeDataSource.init)
-        #else
-        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeRemoteDataSourceGithubImpl.init)
-        #endif
+//        #else
+//        container.autoregister(RecipeRemoteDataSource.self, initializer: RecipeRemoteDataSourceGithubImpl.init)
+//        #endif
         container.autoregister(RecipeRepository.self, initializer: RecipeRepositoryImpl.init)
         
         container.register(AnyUseCase<[Recipe], NoParams>.self, name: "GetRecipe") { resolver in
@@ -79,6 +79,10 @@ final class InjectionContainer {
                 ViewStepByStepModeParams>(useCase: ViewStepByStepModeImpl(parser: parser))
             return usecase.eraseToAnyUseCase()
         }
+		container.register(RecipeViewModel.self) { resolver in
+			let usecase = resolver.resolve(AnyUseCase<[Recipe], NoParams>.self, name: "GetRecipe")!
+			return RecipeViewModel(useCase: usecase)
+		}
     }
 
 }
