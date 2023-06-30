@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct TimerView: View {
-    @ObservedObject var state: TimerViewModel
+    @ObservedObject var viewModel: TimerViewModel
     
-    init(_ timerViewModel: TimerViewModel) {
-        self.state = timerViewModel
+    init(viewModel: TimerViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         Group {
-            if let displayedCountDownTime = state.displayedCountDownTime {
+            if let displayedCountDownTime = viewModel.displayedCountDownTime {
                 Button(
                     action: {
-                        state.toggleTimer()
+                        viewModel.toggleTimer()
                     },
                     label: {
                         HStack {
@@ -44,19 +44,19 @@ struct TimerView: View {
 
 #if DEBUG
 struct TimerViewPreviews: View {
-    @ObservedObject var timerViewModel = TimerViewModel(5)
+    @ObservedObject var timer = TimerViewModel(5)
     
     var body: some View {
         VStack {
             Button(
                 action: {
-                    timerViewModel.setTimer(3)
+                    timer.setTimer(3)
                 },
                 label: {
                     Text("Set timer to 3 seconds")
                 }
             )
-            TimerView(timerViewModel)
+            TimerView(viewModel: timer)
         }
     }
 }

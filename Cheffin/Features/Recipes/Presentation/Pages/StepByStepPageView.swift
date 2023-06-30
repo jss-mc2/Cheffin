@@ -9,108 +9,30 @@ import SwiftUI
 import AVFoundation
 
 struct StepByStepPageView: View {
-    let steps: [StepByStep]
-    
-    @StateObject var timerViewModel: TimerViewModel
-    @StateObject var pageViewModel: PageViewModel<StepByStepView>
-    @StateObject var speechRecognizerViewModel = SpeechRecognizerViewModel()
-    
-    var buttonStates: [ButtonHighlightHiddenViewModel] = []
+    @StateObject var viewModel: StepByStepPageViewModel
     
     init(_ steps: [StepByStep]) {
-        self.steps = steps
-        
-        var tempButtonStates: [ButtonHighlightHiddenViewModel] = []
-        let tempTimerViewModel = TimerViewModel(
-            onStartTimer: {
-                tempButtonStates.first { $0.key == "start timer" }?.isHidden = true
-                tempButtonStates.first { $0.key == "set timer" }?.isHidden = true
-                tempButtonStates.first { $0.key == "stop timer" }?.isHidden = false
-            },
-            onTimerEnd: {
-                tempButtonStates.first { $0.key == "stop alarm" }?.isHidden = false
-            }
-        )
-        let tempPageViewModel = PageViewModel(steps.map { step in StepByStepView(step) })
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(name: "next", isHidden: false) {
-                if !tempPageViewModel.nextPage() {
-                    // TODO: bon apetit page
-                }
-            }
-        )
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(name: "back", isHidden: false) {
-                if !tempPageViewModel.previousPage() {
-                    // TODO: recipe page
-                }
-            }
-        )
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(name: "repeat", isHidden: false) {
-                // TODO: repeat
-            }
-        )
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(key: "set timer", name: "set timer ... minutes", isHidden: true) {
-                tempTimerViewModel.setTimer(5)
-                tempButtonStates.first { $0.key == "start timer" }?.isHidden = false
-                tempButtonStates.first { $0.key == "stop timer" }?.isHidden = true
-            }
-        )
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(name: "start timer", isHidden: true) {
-                tempTimerViewModel.startTimer()
-                tempButtonStates.first { $0.key == "set timer" }?.isHidden = true
-                tempButtonStates.first { $0.key == "start timer" }?.isHidden = true
-                tempButtonStates.first { $0.key == "stop timer" }?.isHidden = false
-            }
-        )
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(name: "stop timer", isHidden: true) {
-                tempTimerViewModel.stopTimer()
-                tempButtonStates.first { $0.key == "start timer" }?.isHidden = false
-                tempButtonStates.first { $0.key == "set timer" }?.isHidden = false
-                tempButtonStates.first { $0.key == "stop timer" }?.isHidden = true
-            }
-        )
-        tempButtonStates.append(
-            ButtonHighlightHiddenViewModel(name: "stop alarm", isHidden: true) {
-                tempTimerViewModel.stopAlarm()
-                tempButtonStates.first { $0.key == "stop alarm" }?.isHidden = true
-            }
-        )
-        
-        self._timerViewModel = StateObject(wrappedValue: tempTimerViewModel)
-        self._pageViewModel = StateObject(wrappedValue: tempPageViewModel)
-        
-        self.buttonStates = tempButtonStates
+        self._viewModel = StateObject(wrappedValue: StepByStepPageViewModel(steps: steps))
     }
     
     var body: some View {
         VStack {
-            Text(steps[pageViewModel.currentPage].title)
-                .font(.system(.title2, weight: .semibold))
-                .padding(.top, 32)
-            ZStack {
-                ProgressView(
-                    value: Double(pageViewModel.currentPage + 1),
-                    total: Double(pageViewModel.pages.count)
-                )
-                    .progressViewStyle(LinearProgressViewStyle())
-                    .tint(.accentColor)
-                    .scaleEffect(CGSize(width: 1.1, height: 7.0))
-                Text("\(pageViewModel.currentPage + 1) of \(pageViewModel.pages.count)")
-            }
-            pageViewModel.pages[pageViewModel.currentPage]
+            StepByStepTitleView(pager: viewModel.pager, steps: viewModel.steps)
+            StepByStepProgressView(pager: viewModel.pager)
+            PageView(pager: viewModel.pager)
             Spacer()
-            TimerView(timerViewModel)
-            SpeechRecognizerView(buttonStates.map { state in
-                ButtonHighlightHiddenView(state: state)
-            })
+            TimerView(viewModel: viewModel.timer)
+            VisualCueView(
+                viewModel: viewModel.visualCuer,
+                steps: viewModel.steps,
+                pager: viewModel.pager,
+                timer: viewModel.timer
+            )
             .padding(.bottom, 32)
         }.onAppear {
-            toggleTranscribing()
+            viewModel.timer.setTimer(viewModel.steps[0].timer)
+            
+            viewModel.tog
         }
     }
 }
