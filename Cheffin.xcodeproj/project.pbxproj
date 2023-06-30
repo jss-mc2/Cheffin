@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */; };
-		967B95612A49B21A00F1E5A7 /* InstructionParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */; };
-		967B95692A49D92800F1E5A7 /* SpeechRecognizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95682A49D92800F1E5A7 /* SpeechRecognizerView.swift */; };
-		967B956B2A49E7D800F1E5A7 /* WrappingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */; };
-		967B956D2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B956C2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift */; };
 		3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 3264971B2A49F5E6005DFE42 /* SwiftUITooltip */; };
 		9657DC392A4C164A003CA477 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */; };
 		9657DC3C2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */; };
@@ -22,7 +17,6 @@
 		9657DC4D2A4C3CE6003CA477 /* StepByStepParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */; };
 		9657DC522A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC512A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
-		96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40B2A4B1BE8000EC050 /* ViewController.swift */; };
 		96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40C2A4B1BE8000EC050 /* HomePage.swift */; };
 		96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4132A4B297A000EC050 /* TimerViewModel.swift */; };
 		96E1D4182A4B2F7C000EC050 /* StepByStepPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */; };
@@ -39,10 +33,10 @@
 		9B18232E2A4AE7600047CA46 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9B18232D2A4AE7600047CA46 /* AlertToast */; };
 		9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B12A3C577500005425 /* AppDelegate.swift */; };
 		9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B32A3C577500005425 /* SceneDelegate.swift */; };
-		9B3565B62A3C577500005425 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3565B52A3C577500005425 /* HomeViewController.swift */; };
 		9B3565BB2A3C577500005425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3565BA2A3C577500005425 /* Assets.xcassets */; };
 		9B3565BE2A3C577500005425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3565BC2A3C577500005425 /* LaunchScreen.storyboard */; };
-		9B3C15582A4EB9980029FB78 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */; };
+		9B41C0542A4ED08D00682F40 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */; };
+		9B41C0562A4ED08D00682F40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41C0522A4ED08D00682F40 /* HomeViewController.swift */; };
 		9B5FAD262A45EF2000D41030 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD252A45EF2000D41030 /* RecipeCard.swift */; };
 		9B5FAD2A2A45EF3C00D41030 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD292A45EF3C00D41030 /* RecipeViewModel.swift */; };
 		9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FAD2B2A45EF4900D41030 /* GetRecipes.swift */; };
@@ -76,9 +70,9 @@
 		9BC788392A4038C9003E834B /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788382A4038C9003E834B /* Failure.swift */; };
 		9BEC5C9E2A49AD7000A1E72E /* CheffinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */; };
 		A4E5BF5E2A4E6D9F00E866FD /* IngredientsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BF5D2A4E6D9F00E866FD /* IngredientsGridView.swift */; };
-		A4E5BF642A4EAAAF00E866FD /* RecipePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BF632A4EAAAF00E866FD /* RecipePageView.swift */; };
 		A4E5BF662A4EADB500E866FD /* UtensilsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BF652A4EADB500E866FD /* UtensilsGridView.swift */; };
 		A4E5BF682A4EB13B00E866FD /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E5BF672A4EB13B00E866FD /* StepsView.swift */; };
+		A4E93A262A4ED5E300BA7871 /* RecipePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E93A252A4ED5E300BA7871 /* RecipePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,11 +86,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
-		967B95602A49B21A00F1E5A7 /* InstructionParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InstructionParserTest.swift; path = ../../../../../../../../InstructionParserTest.swift; sourceTree = "<group>"; };
-		967B95682A49D92800F1E5A7 /* SpeechRecognizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerView.swift; sourceTree = "<group>"; };
-		967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
-		967B956C2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenView.swift; sourceTree = "<group>"; };
 		9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
 		9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizerViewModel+Error.swift"; sourceTree = "<group>"; };
 		9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Authorization.swift"; sourceTree = "<group>"; };
@@ -105,12 +94,13 @@
 		9657DC452A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StepByStepPageView+SpeechRecognizerViewModel.swift"; sourceTree = "<group>"; };
 		9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParserTest.swift; sourceTree = "<group>"; };
 		9657DC512A4C3E30003CA477 /* SpeechRecognizerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModelTest.swift; sourceTree = "<group>"; };
+		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
 		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
+		967B95682A49D92800F1E5A7 /* SpeechRecognizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerView.swift; sourceTree = "<group>"; };
 		967B95722A4AC2B000F1E5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		967B95742A4AEC0000F1E5A7 /* MultiPickerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPickerTime.swift; sourceTree = "<group>"; };
 		967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FORMATTER.swift"; sourceTree = "<group>"; };
-		96E1D40B2A4B1BE8000EC050 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96E1D40C2A4B1BE8000EC050 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		96E1D4132A4B297A000EC050 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepPageView.swift; sourceTree = "<group>"; };
@@ -134,6 +124,9 @@
 		9B3565BD2A3C577500005425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B3565BF2A3C577500005425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		9B41C0512A4ED08D00682F40 /* StepByStepPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepPageView.swift; sourceTree = "<group>"; };
+		9B41C0522A4ED08D00682F40 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B5FAD252A45EF2000D41030 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		9B5FAD292A45EF3C00D41030 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		9B5FAD2B2A45EF4900D41030 /* GetRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipes.swift; sourceTree = "<group>"; };
@@ -169,6 +162,7 @@
 		A4E5BF632A4EAAAF00E866FD /* RecipePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePageView.swift; sourceTree = "<group>"; };
 		A4E5BF652A4EADB500E866FD /* UtensilsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtensilsGridView.swift; sourceTree = "<group>"; };
 		A4E5BF672A4EB13B00E866FD /* StepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		A4E93A252A4ED5E300BA7871 /* RecipePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,22 +188,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		967B953F2A496C7F00F1E5A7 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */,
-			);
-			path = Parser;
-			sourceTree = "<group>";
-		};
-		967B955A2A49B1F100F1E5A7 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				967B955C2A49B1FE00F1E5A7 /* Recipes */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
 		9657DC3A2A4C18A8003CA477 /* SpeechRecognizer */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,39 +196,6 @@
 				9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */,
 			);
 			path = SpeechRecognizer;
-			sourceTree = "<group>";
-		};
-		9657DC482A4C3C75003CA477 /* Recipes */ = {
-			isa = PBXGroup;
-			children = (
-				9657DC492A4C3C7D003CA477 /* Domain */,
-			);
-			path = Recipes;
-			sourceTree = "<group>";
-		};
-		9657DC492A4C3C7D003CA477 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				9657DC4A2A4C3C89003CA477 /* Parser */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		9657DC4A2A4C3C89003CA477 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */,
-			);
-			path = Parser;
-			sourceTree = "<group>";
-		};
-		967B95702A4ABA5D00F1E5A7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				967B956A2A49E7D800F1E5A7 /* WrappingHStack.swift */,
-				967B956C2A49F66900F1E5A7 /* ButtonHighlightHiddenView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		9657DC4E2A4C3E16003CA477 /* Core */ = {
@@ -280,7 +225,10 @@
 		96E1D40A2A4B1BE8000EC050 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				96E1D40B2A4B1BE8000EC050 /* ViewController.swift */,
+				A4E93A252A4ED5E300BA7871 /* RecipePageView.swift */,
+				9B41C0522A4ED08D00682F40 /* HomeViewController.swift */,
+				9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */,
+				9B41C0512A4ED08D00682F40 /* StepByStepPageView.swift */,
 				96E1D40C2A4B1BE8000EC050 /* HomePage.swift */,
 				96E1D4172A4B2F7C000EC050 /* StepByStepPageView.swift */,
 			);
@@ -297,6 +245,11 @@
 				9B1823252A4AD4AB0047CA46 /* ViewModel.swift */,
 				9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */,
 				9B1823272A4AD4DB0047CA46 /* ViewModelState.swift */,
+				9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */,
+				9B3565B52A3C577500005425 /* HomeViewController.swift */,
+				967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */,
+				A4E5BF632A4EAAAF00E866FD /* RecipePageView.swift */,
+				9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -492,17 +445,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		9BC788202A403645003E834B /* Pages */ = {
-			isa = PBXGroup;
-			children = (
-				9B3565B52A3C577500005425 /* HomeViewController.swift */,
-				9B5FAD272A45EF3000D41030 /* HomePage.swift */,
-				A4E5BF632A4EAAAF00E866FD /* RecipePageView.swift */,
-				9B3C15572A4EB9980029FB78 /* RecipeViewController.swift */,
-			);
-			path = Pages;
-			sourceTree = "<group>";
-		};
 		9BC788212A40364C003E834B /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,7 +546,6 @@
 			isa = PBXGroup;
 			children = (
 				9657DC4E2A4C3E16003CA477 /* Core */,
-				9657DC472A4C3C69003CA477 /* Features */,
 				9BEC5C9D2A49AD7000A1E72E /* CheffinTests.swift */,
 			);
 			path = CheffinTests;
@@ -748,11 +689,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B3C15582A4EB9980029FB78 /* RecipeViewController.swift in Sources */,
-				9B3565B62A3C577500005425 /* HomeViewController.swift in Sources */,
-				9B5FAD282A45EF3000D41030 /* HomePage.swift in Sources */,
 				A4E5BF682A4EB13B00E866FD /* StepsView.swift in Sources */,
-				967B953E2A496C6C00F1E5A7 /* StepByStepParser.swift in Sources */,
 				A4E5BF662A4EADB500E866FD /* UtensilsGridView.swift in Sources */,
 				96F82E742A4B1AB60036FC03 /* ViewModel.swift in Sources */,
 				9657DC3C2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift in Sources */,
@@ -766,7 +703,6 @@
 				9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */,
 				96F82E7A2A4B1AF50036FC03 /* ButtonHighlightHiddenViewModel.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
-				A4E5BF642A4EAAAF00E866FD /* RecipePageView.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
 				9657DC462A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift in Sources */,
 				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
@@ -784,7 +720,6 @@
 				9BC788362A4038AE003E834B /* UseCase.swift in Sources */,
 				A4E5BF5E2A4E6D9F00E866FD /* IngredientsGridView.swift in Sources */,
 				9BC4FA992A4AF9A50045B6BD /* SpeechRecognizerView.swift in Sources */,
-				96E1D40D2A4B1BE8000EC050 /* ViewController.swift in Sources */,
 				9B9DE8962A4AF0AC00E8075C /* StepByStepParser.swift in Sources */,
 				9B7BCC192A48991D00328B41 /* Utensil.swift in Sources */,
 				9B5FAD262A45EF2000D41030 /* RecipeCard.swift in Sources */,
@@ -792,6 +727,9 @@
 				9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */,
 				9B5FAD302A45EF6000D41030 /* RecipeRepository.swift in Sources */,
 				9B7BCC1B2A489A1E00328B41 /* Ingredient.swift in Sources */,
+				A4E93A262A4ED5E300BA7871 /* RecipePageView.swift in Sources */,
+				9B41C0542A4ED08D00682F40 /* RecipeViewController.swift in Sources */,
+				9B41C0562A4ED08D00682F40 /* HomeViewController.swift in Sources */,
 				9B5FAD422A46018700D41030 /* Strings+Generated.swift in Sources */,
 				96F82E792A4B1AF50036FC03 /* ViewModelState.swift in Sources */,
 				9B5FAD412A46018700D41030 /* XCAssets+Generated.swift in Sources */,
@@ -970,7 +908,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WMK9L7H7UT;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
@@ -1001,7 +939,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WMK9L7H7UT;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
