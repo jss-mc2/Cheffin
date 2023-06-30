@@ -34,7 +34,7 @@ extension StepByStep {
             id: UUID(),
             title: "Heat the pan",
             media: "https://github.com/jss-mc2/japchae-api/blob/main/media/utensils/pan.png?raw=true",
-            mediaType: InstructionMediaType.fromStringType(stringMediaType: "gif"),
+            mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
             order: 2,
             instruction: "Heat the {pan}",
             timer: 10

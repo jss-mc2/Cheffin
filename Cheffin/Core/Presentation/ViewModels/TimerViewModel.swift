@@ -23,12 +23,12 @@ class TimerViewModel: ObservableObject {
     
     @Published var displayedCountDownTime: String?
     
-    private var timer: Timer?
+    @Published var timer: Timer?
     private var endTime: Date?
     
     var onStartTimer: () -> Void
     var onTimerEnd: () -> Void
-    private var isPlayAlert = false
+    @Published var isPlayAlert = false
     
     /**
      - Parameter execute: executes after timer ends

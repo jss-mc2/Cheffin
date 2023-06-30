@@ -18,7 +18,7 @@ struct StepByStepView: View {
     
     var body: some View {
         VStack {
-            if step.mediaType == .photo || step.mediaType == .gif {
+            if step.mediaType == .photo {
                 AsyncImage(url: URL(string: step.media)) { image in
                     image
                         .resizable()
@@ -35,15 +35,15 @@ struct StepByStepView: View {
                     }
                 }
                 .padding(EdgeInsets(.init(top: -8, leading: 0, bottom: 24, trailing: 0)))
+            } else if step.mediaType == .gif {
+                // TODO: handle GIF image
             } else {
                 PlayerView(mediaUrl: step.media)
                     .padding(EdgeInsets(.init(top: -8, leading: 0, bottom: 24, trailing: 0)))
 
             }
             
-            
-            Text(step.instruction)
-                .font(.system(.largeTitle, weight: .bold))
+            StepByStepDescriptionView(step.instruction)
         }
     }
 }

@@ -13,21 +13,32 @@ class PageViewModel<Page: View>: ObservableObject {
     
     init(_ pages: [Page]) {
         self.pages = pages
+        
+#if DEBUG
+        print("\(type(of: self)) \(#function)")
+#endif
+    }
+    
+    func endOfPage() -> Bool {
+        return currentPage + 1 == pages.count
+    }
+    
+    func beginningOfPage() -> Bool {
+        return currentPage == 0
     }
     
     /**
      - Returns: false if end of page
      */
     func nextPage() -> Bool {
-        if currentPage + 1 == pages.count {
 #if DEBUG
-            print("\(#function) end of page")
+        print("\(type(of: self)) \(#function)")
 #endif
+        if endOfPage() {
             return false
-        } else {
-            currentPage += 1
         }
         
+        currentPage += 1
         return true
     }
     
@@ -35,15 +46,14 @@ class PageViewModel<Page: View>: ObservableObject {
      - Returns: false if beginning of page
      */
     func previousPage() -> Bool {
-        if currentPage == 0 {
 #if DEBUG
-            print("\(#function) beginning of page")
+        print("\(type(of: self)) \(#function)")
 #endif
+        if beginningOfPage() {
             return false
-        } else {
-            currentPage -= 1
         }
         
+        currentPage -= 1
         return true
     }
 }
