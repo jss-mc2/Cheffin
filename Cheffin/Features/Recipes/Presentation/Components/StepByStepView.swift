@@ -20,16 +20,12 @@ struct StepByStepView: View {
             AsyncImage(url: URL(string: step.media)) { image in
                 image
                     .resizable()
-                    .frame(
-                        width: UIScreen.main.bounds.width,
-                        height: UIScreen.main.bounds.height * (1 / 3)
-                    )
-                    .scaledToFit()
+                    .aspectRatio(1, contentMode: .fit)
             } placeholder: {
                 ZStack {
                     Rectangle()
                         .foregroundStyle(I.primary.swiftUIColor)
-                        .frame(height: UIScreen.main.bounds.height * (1 / 3))
+                        .aspectRatio(1, contentMode: .fit)
                     ProgressView()
                         .background(I.primary.swiftUIColor)
                         .clipShape(RoundedRectangle(cornerRadius: 10))

@@ -89,22 +89,6 @@ struct StepByStepPageView: View {
     
     var body: some View {
         VStack {
-//            Button(
-//                action: {
-//                    _ = pageViewModel.nextPage()
-//                },
-//                label: {
-//                    Text("next")
-//                }
-//            )
-//            Button(
-//                action: {
-//                    _ = pageViewModel.previousPage()
-//                },
-//                label: {
-//                    Text("back")
-//                }
-//            )
             Text(steps[pageViewModel.currentPage].title)
                 .font(.system(.title2, weight: .semibold))
                 .padding(.top, 32)
@@ -120,22 +104,6 @@ struct StepByStepPageView: View {
             }
             pageViewModel.pages[pageViewModel.currentPage]
             Spacer()
-//            Button(
-//                action: {
-//                    timerViewModel.toggleAlarm()
-//                },
-//                label: {
-//                    Text("Toggle alarm")
-//                }
-//            )
-//            Button(
-//                action: {
-//                    buttonStates.first { $0.key == "set timer" }?.isHidden.toggle()
-//                },
-//                label: {
-//                    Text("Toggle set timer isHidden variable")
-//                }
-//            )
             TimerView(timerViewModel)
             SpeechRecognizerView(buttonStates.map { state in
                 ButtonHighlightHiddenView(state: state)
