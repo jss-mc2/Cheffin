@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InstructionHighlight: View {
+struct StepByStepDescriptionView: View {
     let description: String
     
     init(_ description: String) {

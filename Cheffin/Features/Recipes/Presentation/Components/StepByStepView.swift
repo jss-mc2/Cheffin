@@ -33,7 +33,7 @@ struct StepByStepView: View {
                 }
             }
             .padding(EdgeInsets(.init(top: -8, leading: 0, bottom: 24, trailing: 0)))
-            InstructionHighlight(step.instruction)
+            StepByStepDescriptionView(step.instruction)
         }
     }
 }
