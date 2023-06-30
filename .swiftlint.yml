@@ -10,6 +10,7 @@ disabled_rules:
   - todo
   - unused_capture_list
   - blanket_disable_command
+  - shorthand_operator
   # - line_length
 
 analyzer_rules:
