@@ -37,7 +37,7 @@ struct IngredientsGridView: View {
     
     
     var body: some View {
-        LazyVGrid(columns: layout, spacing: 25) {
+        LazyVGrid(columns: layout, alignment: .center, spacing: 25) {
             ForEach(ingredients) { ingredient in
                 VStack {
                     Image(ingredient.image)

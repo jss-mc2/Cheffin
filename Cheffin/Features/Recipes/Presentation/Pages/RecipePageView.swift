@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct RecipePageView: View {
+    
+    let steps: [StepByStep]
+    
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .leading) {
                 VStack {
                     Image("recipe_image")
                         .resizable()
@@ -30,7 +33,7 @@ struct RecipePageView: View {
                 }
                 .padding(.bottom)
                 HStack {
-                    Text("Lorem ipsum dolor sit amet,")
+                    Text("Lorem ipsum dolor sit amet,asdfasdfasdfasdfasdfas dasdfasdfasdfasdfasd fasdfasdf")
                         .padding(.horizontal)
                         .multilineTextAlignment(.leading)
                         .font(.body)
@@ -60,22 +63,41 @@ struct RecipePageView: View {
                         .padding(.leading)
                     Spacer()
                 }
-                StepsView()
+                .padding(.bottom)
+                StepsView(steps: steps)
                     .padding(.bottom)
             }
-            Button("Step-by-Step Mode") {
-                print("Button pressed")
-            }
-            .padding(.horizontal)
-            .background(Color(red: 246/255, green: 200/255, blue: 79/255))
-            .foregroundStyle(.black)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
+            Button(action: {
+                        // Button action code
+                    }) {
+                        Text("Let's Cook!")
+                            .font(.headline)
+                            .frame(width: 358, height: 44)
+                            .background(Color(red: 246 / 255, green: 200 / 255, blue: 79 / 255))
+                            .cornerRadius(10)
+                            .foregroundColor(.black)
+                    }
+            
         }
     }
 }
 
 struct RecipePageView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipePageView()
+        RecipePageView(steps: StepByStep.SAMPLEDATA)
     }
 }
+
+
+
+
+
+
+//            Button("Let's Cook") {
+//                print("Button pressed")
+//            }
+//            .padding(.horizontal)
+//            .background(Color(red: 246/255, green: 200/255, blue: 79/255))
+//            .foregroundStyle(.black)
+//            .clipShape(RoundedRectangle(cornerRadius: 10))
