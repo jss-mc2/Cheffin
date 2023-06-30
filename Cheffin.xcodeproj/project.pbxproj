@@ -25,6 +25,7 @@
 		9657DC3E2A4C18F3003CA477 /* AVAudioSession+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */; };
 		9657DC402A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */; };
 		9657DC422A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */; };
+		966027032A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav in Resources */ = {isa = PBXBuildFile; fileRef = 966027022A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
 		96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40C2A4B1BE8000EC050 /* HomePage.swift */; };
 		96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4132A4B297A000EC050 /* TimerViewModel.swift */; };
@@ -110,6 +111,7 @@
 		9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSpeechRecognizer+Authorization.swift"; sourceTree = "<group>"; };
 		9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizerViewModel+MAPPING.swift"; sourceTree = "<group>"; };
 		9657DC4C2A4C3CE6003CA477 /* StepByStepParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParserTest.swift; sourceTree = "<group>"; };
+		966027022A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "mixkit-alarm-digital-clock-beep-989.wav"; sourceTree = "<group>"; };
 		967B953D2A496C6C00F1E5A7 /* StepByStepParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		967B95622A49C88600F1E5A7 /* ViewStepByStepMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStepByStepMode.swift; sourceTree = "<group>"; };
 		967B95642A49C9E100F1E5A7 /* RecipeFakeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFakeDataSource.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		9B3565C62A3C579800005425 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				966027022A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav */,
 				9B5FAD402A46018700D41030 /* Strings+Generated.swift */,
 				9B5FAD3F2A46018700D41030 /* XCAssets+Generated.swift */,
 				9B3565BA2A3C577500005425 /* Assets.xcassets */,
@@ -675,6 +678,7 @@
 				9B3565BE2A3C577500005425 /* LaunchScreen.storyboard in Resources */,
 				9B5FAD3C2A46006E00D41030 /* Localizable.strings in Resources */,
 				9B3565BB2A3C577500005425 /* Assets.xcassets in Resources */,
+				966027032A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,7 +942,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WMK9L7H7UT;
+				DEVELOPMENT_TEAM = G85YYYKRLS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
@@ -969,7 +973,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WMK9L7H7UT;
+				DEVELOPMENT_TEAM = G85YYYKRLS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";

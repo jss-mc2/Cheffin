@@ -28,6 +28,8 @@ class TimerViewModel: ObservableObject {
     
     var onStartTimer: () -> Void
     var onTimerEnd: () -> Void
+    
+    var audioPlayer: AVAudioPlayer?
     @Published var isPlayAlert = false
     
     /**
@@ -70,15 +72,27 @@ class TimerViewModel: ObservableObject {
     
     func startAlarm() {
         self.isPlayAlert = true
-        AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(1304)) {
-            if self.isPlayAlert == true {
-                self.startAlarm()
-            }
+        // Get the URL of the custom sound file
+        guard let soundURL = Bundle.main.url(
+            forResource: "mixkit-alarm-digital-clock-beep-989",
+            withExtension: "wav"
+        ) else {
+            return
+        }
+
+        do {
+            // Initialize the audio player with the custom sound file
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.numberOfLoops = -1 // Set the number of loops for continuous playback
+            audioPlayer?.play() // Start playing the audio
+        } catch {
+            print("Failed to initialize audio player: \(error)")
         }
     }
     
     func stopAlarm() {
         self.isPlayAlert = false
+        audioPlayer?.stop()
     }
     
     func startTimer() {
