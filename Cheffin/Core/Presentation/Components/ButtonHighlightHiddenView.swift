@@ -27,8 +27,10 @@ struct ButtonHighlightHiddenView: View {
                     },
                     label: {
                         Text(S.voiceCommand(state.name))
+                            .font(.system(.title, weight: .regular))
                             .foregroundColor(foregroundColor)
                             .padding(.all, 8)
+                            .italic()
                         
                             .background(state.isHighlighted ? I.primary.swiftUIColor : .clear)
                             // to force background to respect cornerRadius.

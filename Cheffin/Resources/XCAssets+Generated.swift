@@ -27,7 +27,6 @@ internal enum I {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let background = ColorAsset(name: "Background")
   internal static let closeButton = ColorAsset(name: "CloseButton")
-
   internal enum DummyImages {
     internal enum Recipe {
       internal static let garlicButterSteak = ImageAsset(name: "GarlicButterSteak")
@@ -106,7 +105,6 @@ internal extension SwiftUI.Color {
     let bundle = BundleToken.bundle
     self.init(asset.name, bundle: bundle)
   }
-
 }
 #endif
 

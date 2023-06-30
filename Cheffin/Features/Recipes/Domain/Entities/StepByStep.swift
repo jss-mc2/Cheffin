@@ -23,29 +23,29 @@ extension StepByStep {
     static let SAMPLEDATA = [
         StepByStep(
             id: UUID(),
-            title: "title1",
-            media: "https://www.w3schools.com/images/w3schools_green.jpg",
+            title: "Trim the fat of the meat",
+            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/ingredients/sirloin_beef.png?raw=true",
             mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
             order: 1,
-            instruction: "instruction1",
+            instruction: "Trim the fat of the [meat]",
             timer: nil
         ),
         StepByStep(
             id: UUID(),
-            title: "title2",
-            media: "https://www.w3schools.com/images/w3schools_green.jpg",
+            title: "Heat the pan",
+            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/utensils/pan.png?raw=true",
             mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
             order: 2,
-            instruction: "instruction2",
+            instruction: "Heat the {pan}",
             timer: 10
         ),
         StepByStep(
             id: UUID(),
-            title: "title3",
-            media: "https://www.w3schools.com/images/w3schools_green.jpg",
+            title: "Pat meat dry",
+            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/ingredients/chicken.png?raw=true",
             mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
             order: 3,
-            instruction: "instruction3",
+            instruction: "Pat [meat] dry",
             timer: nil
         )
     ]
