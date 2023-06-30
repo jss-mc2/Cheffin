@@ -31,11 +31,10 @@ struct StepByStepPageView: View {
             .padding(.bottom, 32)
         }.onAppear {
             viewModel.timer.setTimer(viewModel.steps[0].timer)
-            
-            viewModel.toggleTranscribing()
+            viewModel.startTranscribing()
         }
 		.onDisappear {
-			viewModel.toggleTranscribing()
+			viewModel.stopTranscribing()
 		}
     }
 }
