@@ -12,7 +12,7 @@ extension StepByStepPageView {
     /**
      - Parameters:
         - words: expected value
-            -  one hour 25 minutes 20 seconds
+            - one hour 25 minutes 20 seconds
             - 1 hour 25 minute 20 second
      */
     internal func transcribeTime(_ words: [String]) -> TimeInterval {
