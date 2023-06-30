@@ -11,16 +11,24 @@ extension StepByStepPageView {
     
     /**
      - Parameters:
-        - words: singular only i.e. "one hour 25 minute 20 second"
+        - words: expected value
+            - one hour 25 minutes 20 seconds
+            - 1 hour 25 minute 20 second
      */
-    private func transcribeTime(_ words: [String]) -> TimeInterval {
+    internal func transcribeTime(_ words: [String]) -> TimeInterval {
         var timeInterval: TimeInterval = 0
         
-        for i in 0..<words.count - 1 {
-            let value = words[i]
-            let unit = words[i + 1]
+        let convertedWords = words.map { word in
+            return SpeechRecognizerViewModel.MAPPING[word] ?? word
+        }
+        
+        for i in 0..<convertedWords.count - 1 {
+            let value = convertedWords[i]
+            let unit = convertedWords[i + 1]
             
+#if DEBUG
             print(value, unit)
+#endif
             if let intValue = Double(value) {
                 switch unit {
                 case "hour":
