@@ -24,8 +24,8 @@ extension StepByStep {
         StepByStep(
             id: UUID(),
             title: "Trim the fat of the meat",
-            media: "https://github.com/jss-mc2/japchae-api/blob/main/media/ingredients/sirloin_beef.png?raw=true",
-            mediaType: InstructionMediaType.fromStringType(stringMediaType: "photo"),
+            media: "https://github.com/jss-mc2/japchae-api/raw/main/media/recipes/sirloin_steak/1.mp4",
+            mediaType: InstructionMediaType.fromStringType(stringMediaType: "video"),
             order: 1,
             instruction: "Trim the fat of the [meat]",
             timer: nil

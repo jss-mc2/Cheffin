@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 3264971B2A49F5E6005DFE42 /* SwiftUITooltip */; };
+		327950E92A4EEFE0004AF17E /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327950E82A4EEFE0004AF17E /* PlayerView.swift */; };
 		9618C3542A4EEA0800CB94F7 /* StepByStepDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618C3532A4EEA0800CB94F7 /* StepByStepDescriptionView.swift */; };
 		9618C3562A4EEDE200CB94F7 /* StepByStepPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618C3552A4EEDE100CB94F7 /* StepByStepPageViewModel.swift */; };
 		9618C3582A4EEF0200CB94F7 /* StepByStepPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618C3572A4EEF0200CB94F7 /* StepByStepPageView.swift */; };
@@ -89,6 +90,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		327950E82A4EEFE0004AF17E /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		9618C3532A4EEA0800CB94F7 /* StepByStepDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepDescriptionView.swift; sourceTree = "<group>"; };
 		9618C3552A4EEDE100CB94F7 /* StepByStepPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepPageViewModel.swift; sourceTree = "<group>"; };
 		9618C3572A4EEF0200CB94F7 /* StepByStepPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepPageView.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				A4E5BF652A4EADB500E866FD /* UtensilsGridView.swift */,
 				A4E5BF672A4EB13B00E866FD /* StepsView.swift */,
 				96E1D41D2A4B4D31000EC050 /* StepByStepView.swift */,
+				327950E82A4EEFE0004AF17E /* PlayerView.swift */,
 				9618C3532A4EEA0800CB94F7 /* StepByStepDescriptionView.swift */,
 				9618C35B2A4EF46C00CB94F7 /* StepByStepProgressView.swift */,
 				9618C35D2A4EF4FE00CB94F7 /* StepByStepTitleView.swift */,
@@ -732,6 +735,7 @@
 				9B5FAD2C2A45EF4900D41030 /* GetRecipes.swift in Sources */,
 				9618C3562A4EEDE200CB94F7 /* StepByStepPageViewModel.swift in Sources */,
 				96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */,
+				327950E92A4EEFE0004AF17E /* PlayerView.swift in Sources */,
 				9618C3622A4EF66B00CB94F7 /* VisualCueViewModel.swift in Sources */,
 				96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */,
 				9618C35C2A4EF46C00CB94F7 /* StepByStepProgressView.swift in Sources */,
@@ -930,7 +934,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9299QHCW64;
+				DEVELOPMENT_TEAM = WMK9L7H7UT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
@@ -961,7 +965,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9299QHCW64;
+				DEVELOPMENT_TEAM = WMK9L7H7UT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
