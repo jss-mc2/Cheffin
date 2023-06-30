@@ -33,20 +33,25 @@ struct RecipeCard: View {
             VStack(alignment: .leading) {
                 // MARK: Recipe Description
                 Text(recipe.name)
-                    .font(.system(.title, weight: .bold))
+					.font(.system(size: 22, weight: .bold))
+					.foregroundColor(I.blackText.swiftUIColor)
                 HStack {
                     Image(systemName: "clock")
                     Text(recipe.duration)
                         .font(.footnote)
                 }
                 .font(.system(.headline, weight: .medium))
+				.foregroundColor(I.blackText.swiftUIColor)
                 Text(recipe.description)
                     .font(.subheadline)
                     .padding(.vertical, 4)
                     .lineLimit(4)
                     .truncationMode(.tail)
+					.foregroundColor(I.blackText.swiftUIColor)
+				
                 Text("\(S.essentialUtensils):")
                     .font(.system(.subheadline, weight: .semibold))
+					.foregroundColor(I.blackText.swiftUIColor)
                 HStack {
                     ForEach(recipe.utensils.filter { utensil in
                         utensil.isEssential
