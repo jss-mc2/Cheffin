@@ -19,30 +19,23 @@ struct PageView<Page: View>: View {
     }
     
     var body: some View {
-        HStack {
-            if !pageViewModel.beginningOfPage() {
-                Button(
-                    action: { _ = pageViewModel.previousPage() },
-                    label: { Text("<") }
-                )
+        pageViewModel.pages[pageViewModel.currentPage]
+            .onTapGesture { location in
+                if location.x > UIScreen.main.bounds.width / 2 {
+                    _ = pageViewModel.nextPage()
+                } else {
+                    _ = pageViewModel.previousPage()
+                }
             }
-            pageViewModel.pages[pageViewModel.currentPage]
-            if !pageViewModel.endOfPage() {
-                Button(
-                    action: { _ = pageViewModel.nextPage() },
-                    label: { Text(">") }
-                )
+            .onAppear {
+#if DEBUG
+                print("\(type(of: self)) \(#function) appeared")
+#endif
             }
-        }
-        .onAppear {
+            .onDisappear {
 #if DEBUG
-            print("\(type(of: self)) \(#function) appeared")
+                print("\(type(of: self)) \(#function) disappeared")
 #endif
-        }
-        .onDisappear {
-#if DEBUG
-            print("\(type(of: self)) \(#function) disappeared")
-#endif
-        }
+            }
     }
 }

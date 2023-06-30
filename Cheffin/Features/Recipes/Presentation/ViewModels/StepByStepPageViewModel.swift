@@ -204,12 +204,16 @@ class StepByStepPageViewModel: ObservableObject {
     
     func toggleTranscribing() {
         if !speechRecognizer.isTranscribing {
-            speechRecognizer.initSpeechRecognizer()
-            speechRecognizer.transcribe = transcribeNavigation
-            speechRecognizer.startTranscribing()
+            startTranscribing()
         } else {
             stopTranscribing()
         }
+    }
+    
+    internal func startTranscribing() {
+        speechRecognizer.initSpeechRecognizer()
+        speechRecognizer.transcribe = transcribeNavigation
+        speechRecognizer.startTranscribing()
     }
     
     internal func stopTranscribing() {

@@ -7,27 +7,18 @@
 
 import SwiftUI
 
-
-struct Step: Identifiable {
-    
-    let id = UUID()
-    let order: Int
-    let step: String
-}
-
-
 struct StepsView: View {
     
-    let steps: [StepByStep]
+    let instructions: [Instruction]
     
     
     var body: some View {
-        ForEach(steps) { item in
+        ForEach(instructions) { item in
             HStack {
-                Text(String(item.order))
+				Text(String(item.order))
                     .padding(.horizontal)
                     .font(Font.headline)
-                Text(item.title)
+                Text(item.description)
                 Spacer()
             }
         }
@@ -37,6 +28,11 @@ struct StepsView: View {
 
 struct StepsView_Previews: PreviewProvider {
     static var previews: some View {
-        StepsView(steps: StepByStep.SAMPLEDATA)
+		let fakeData = RecipeFakeDataSource()
+		let response: [RecipeResponse] = fakeData.getRecipes()
+		let recipe = response.map {
+			$0.toDomain()
+		}
+		StepsView(instructions: recipe[0].instructions)
     }
 }

@@ -8,14 +8,8 @@
 import SwiftUI
 
 struct UtensilsGridView: View {
-    
-    let utensils = [
-        Utensil(id: UUID(), name: "Laddle", image: "laddle", isEssential: true),
-        Utensil(id: UUID(), name: "Knife", image: "knife", isEssential: true),
-        Utensil(id: UUID(), name: "Choping Board", image: "chopping_board", isEssential: true),
-        Utensil(id: UUID(), name: "Soup Pot", image: "soup_pot", isEssential: true)
-        
-    ]
+	
+	let utensils: [Utensil]
     
     let layout = [
         GridItem(.fixed(62), spacing: 25, alignment: nil),
@@ -29,7 +23,14 @@ struct UtensilsGridView: View {
         LazyVGrid(columns: layout, spacing: 25) {
             ForEach(utensils) { utensil in
                 VStack {
-                    Image(utensil.image)
+					AsyncImage(url: URL(string: utensil.image), content: { image in
+						image.resizable()
+							.frame(width: UIScreen.main.bounds.width * (1 / 10),
+								   height: UIScreen.main.bounds.width * (1 / 10)
+							)
+					}, placeholder: {
+						ProgressView()
+					})
                     Text("\(utensil.name)")
                         .font(.caption)
                         .multilineTextAlignment(.center)
@@ -41,6 +42,13 @@ struct UtensilsGridView: View {
 
 struct UtensilsGridView_Previews: PreviewProvider {
     static var previews: some View {
-        UtensilsGridView()
+		let utensils = [
+			Utensil(id: UUID(), name: "Laddle", image: "laddle", isEssential: true),
+			Utensil(id: UUID(), name: "Knife", image: "knife", isEssential: true),
+			Utensil(id: UUID(), name: "Choping Board", image: "chopping_board", isEssential: true),
+			Utensil(id: UUID(), name: "Soup Pot", image: "soup_pot", isEssential: true)
+			
+		]
+        UtensilsGridView(utensils: utensils)
     }
 }

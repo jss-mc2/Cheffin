@@ -47,7 +47,8 @@ class HomeViewController: UIViewController {
     }
 	
 	func navigateToRecipePage(recipe: Recipe) {
-		let recipeVC = RecipeViewController(recipe: recipe)
+		let viewModel = InjectionContainer.shared.container.resolve(RecipeDetailViewModel.self)!
+		let recipeVC = RecipeViewController(recipe: recipe, viewModel: viewModel)
 		navigationController?.pushViewController(recipeVC, animated: true)
 	}
 
