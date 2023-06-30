@@ -32,7 +32,7 @@ struct StepByStepPageView: View {
         }.onAppear {
             viewModel.timer.setTimer(viewModel.steps[0].timer)
             
-            viewModel.tog
+            viewModel.toggleTranscribing()
         }
     }
 }
