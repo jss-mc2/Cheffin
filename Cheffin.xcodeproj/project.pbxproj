@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */ = {isa = PBXBuildFile; productRef = 3264971B2A49F5E6005DFE42 /* SwiftUITooltip */; };
+		9618C3542A4EEA0800CB94F7 /* InstructionHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618C3532A4EEA0800CB94F7 /* InstructionHighlight.swift */; };
 		9657DC392A4C164A003CA477 /* SpeechRecognizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */; };
 		9657DC3C2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */; };
 		9657DC3E2A4C18F3003CA477 /* AVAudioSession+Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9618C3532A4EEA0800CB94F7 /* InstructionHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionHighlight.swift; sourceTree = "<group>"; };
 		9657DC382A4C164A003CA477 /* SpeechRecognizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerViewModel.swift; sourceTree = "<group>"; };
 		9657DC3B2A4C18C4003CA477 /* SpeechRecognizerViewModel+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SpeechRecognizerViewModel+Error.swift"; sourceTree = "<group>"; };
 		9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+Authorization.swift"; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				9BC4FA982A4AF9A50045B6BD /* SpeechRecognizerView.swift */,
 				9B5FAD252A45EF2000D41030 /* RecipeCard.swift */,
 				96E1D41D2A4B4D31000EC050 /* StepByStepView.swift */,
+				9618C3532A4EEA0800CB94F7 /* InstructionHighlight.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				96F82E7A2A4B1AF50036FC03 /* ButtonHighlightHiddenViewModel.swift in Sources */,
 				9B7BCC1D2A489A6400328B41 /* Instruction.swift in Sources */,
 				9B7BCC212A48AB2400328B41 /* RecipeResponse.swift in Sources */,
+				9618C3542A4EEA0800CB94F7 /* InstructionHighlight.swift in Sources */,
 				9657DC462A4C2150003CA477 /* StepByStepPageView+SpeechRecognizerViewModel.swift in Sources */,
 				9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */,
 				9B18232A2A4AE6E00047CA46 /* FailureHandler.swift in Sources */,
