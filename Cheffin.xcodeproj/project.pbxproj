@@ -27,6 +27,8 @@
 		9657DC422A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657DC412A4C1938003CA477 /* SpeechRecognizerViewModel+MAPPING.swift */; };
 		966027032A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav in Resources */ = {isa = PBXBuildFile; fileRef = 966027022A4F509A001F8873 /* mixkit-alarm-digital-clock-beep-989.wav */; };
 		967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */; };
+		967D09992A50307300C184CF /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D09982A50307300C184CF /* TextToSpeech.swift */; };
+		967D09B52A504E7800C184CF /* String+Delimiters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967D09B42A504E7800C184CF /* String+Delimiters.swift */; };
 		96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D40C2A4B1BE8000EC050 /* HomePage.swift */; };
 		96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4132A4B297A000EC050 /* TimerViewModel.swift */; };
 		96E1D41A2A4B3AE7000EC050 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1D4192A4B3AE7000EC050 /* PageViewModel.swift */; };
@@ -118,6 +120,8 @@
 		967B95722A4AC2B000F1E5A7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		967B95742A4AEC0000F1E5A7 /* MultiPickerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPickerTime.swift; sourceTree = "<group>"; };
 		967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FORMATTER.swift"; sourceTree = "<group>"; };
+		967D09982A50307300C184CF /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		967D09B42A504E7800C184CF /* String+Delimiters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Delimiters.swift"; sourceTree = "<group>"; };
 		96E1D40C2A4B1BE8000EC050 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		96E1D4132A4B297A000EC050 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		96E1D4192A4B3AE7000EC050 /* PageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				96E1D4132A4B297A000EC050 /* TimerViewModel.swift */,
 				96E1D4192A4B3AE7000EC050 /* PageViewModel.swift */,
 				9618C3692A4F137B00CB94F7 /* ButtonHighlightViewModel.swift */,
+				967D09982A50307300C184CF /* TextToSpeech.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */,
 				9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */,
 				9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */,
+				967D09B42A504E7800C184CF /* String+Delimiters.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -743,6 +749,8 @@
 				9618C3562A4EEDE200CB94F7 /* StepByStepPageViewModel.swift in Sources */,
 				96E1D4142A4B297A000EC050 /* TimerViewModel.swift in Sources */,
 				327950E92A4EEFE0004AF17E /* PlayerView.swift in Sources */,
+				967D09992A50307300C184CF /* TextToSpeech.swift in Sources */,
+				967D09B52A504E7800C184CF /* String+Delimiters.swift in Sources */,
 				9618C3622A4EF66B00CB94F7 /* VisualCueViewModel.swift in Sources */,
 				96E1D40E2A4B1BE8000EC050 /* HomePage.swift in Sources */,
 				9618C35C2A4EF46C00CB94F7 /* StepByStepProgressView.swift in Sources */,
