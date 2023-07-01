@@ -58,6 +58,20 @@ class SpeechRecognizerViewModel: ObservableObject {
         }
     }
     
+    /**
+     destroy if you have no intention of resuming transcriber
+     */
+    func destroyTranscriber() {
+        reset()
+        recognizer = nil
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.soloAmbient)
+        } catch {
+            print("\(type(of: self)) \(#function) fail to set AVAudioSession category")
+        }
+    }
+    
     func stopTranscribing() {
         reset()
     }
@@ -148,6 +162,7 @@ class SpeechRecognizerViewModel: ObservableObject {
 #if DEBUG
                 print("\(#function) error: " + (error?.localizedDescription ?? ""))
 #endif
+                return
             }
             restartTranscribing()
             return

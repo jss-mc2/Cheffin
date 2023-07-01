@@ -7,19 +7,25 @@
 
 import Speech
 
-class TextToSpeech: ObservableObject {
+class TextToSpeech: NSObject, AVSpeechSynthesizerDelegate {
     private let voice: AVSpeechSynthesisVoice?
     private let synthesizer: AVSpeechSynthesizer?
     
-    init() {
+    private var completion: (() -> Void)?
+    
+    override init() {
         // Retrieve the default voice for the user's locale.
         voice = AVSpeechSynthesisVoice(language: AVSpeechSynthesisVoice.currentLanguageCode())
         
         // Create a speech synthesizer.
         synthesizer = AVSpeechSynthesizer()
+        
+        super.init()
+        
+        synthesizer?.delegate = self
     }
     
-    public func speak(string: String) {
+    public func speak(string: String, completion: (() -> Void)? = nil) {
         // Create an utterance.
         let utterance = AVSpeechUtterance(string: string)
 
@@ -38,6 +44,13 @@ class TextToSpeech: ObservableObject {
         // Assign the voice to the utterance.
         utterance.voice = voice
         
+        self.completion = completion
+        
         synthesizer?.speak(utterance)
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        completion?()
+        completion = nil
     }
 }

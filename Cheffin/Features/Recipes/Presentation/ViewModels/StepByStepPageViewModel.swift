@@ -10,7 +10,7 @@ import SwiftUI
 class StepByStepPageViewModel: ObservableObject {
     let steps: [StepByStep]
     
-    var speechRecognizer = SpeechRecognizerViewModel()
+    var speechRecognizer: SpeechRecognizerViewModel
     var textToSpeech: TextToSpeech
     
     var buttonHighlightVM: [String: ButtonHighlightViewModel] = [:]
@@ -27,6 +27,7 @@ class StepByStepPageViewModel: ObservableObject {
             onTimerEnd: {}
         )
         let tempPager = PageViewModel(steps.map { step in StepByStepView(step) })
+        let tempSpeechRecognizer = SpeechRecognizerViewModel()
         let tempTextToSpeech = TextToSpeech()
         
         buttonHighlightVM["next"] = ButtonHighlightViewModel(
@@ -45,12 +46,18 @@ class StepByStepPageViewModel: ObservableObject {
         )
         buttonHighlightVM["repeat"] = ButtonHighlightViewModel(
             action: {
+                tempSpeechRecognizer.destroyTranscriber()
+                
                 let delimiters: [Character] = ["[", "]", "{", "}", "<", ">"]
                 let cleanedWords = String.removeDelimiters(
                     steps[tempPager.currentPage].instruction,
                     delimiters: delimiters
                 )
-                tempTextToSpeech.speak(string: cleanedWords)
+                
+                tempTextToSpeech.speak(string: cleanedWords) {
+                    tempSpeechRecognizer.initSpeechRecognizer()
+                    tempSpeechRecognizer.startTranscribing()
+                }
             },
             label: "repeat"
         )
@@ -79,6 +86,7 @@ class StepByStepPageViewModel: ObservableObject {
         self.timer = tempTimer
         self.pager = tempPager
         self.textToSpeech = tempTextToSpeech
+        self.speechRecognizer = tempSpeechRecognizer
     }
     
     /**
