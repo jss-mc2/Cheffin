@@ -65,11 +65,7 @@ class SpeechRecognizerViewModel: ObservableObject {
         reset()
         recognizer = nil
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.soloAmbient)
-        } catch {
-            print("\(type(of: self)) \(#function) fail to set AVAudioSession category")
-        }
+        AVAudioSession.preferBluetoothOutput()
     }
     
     func stopTranscribing() {

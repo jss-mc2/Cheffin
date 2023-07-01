@@ -28,13 +28,7 @@ class StepByStepPageViewModel: ObservableObject {
         let tempTimer = TimerViewModel(
             onStartTimer: {},
             onTimerEnd: {
-                do {
-                    // TODO: play on bluetooth.
-                    try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
-                    try AVAudioSession.sharedInstance().setMode(.default)
-                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                    try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
-                } catch { }
+                AVAudioSession.preferSpeakerOutput()
             }
         )
         
@@ -53,6 +47,7 @@ class StepByStepPageViewModel: ObservableObject {
                 completion: {
                     tempSpeechRecognizer.initSpeechRecognizer()
                     tempSpeechRecognizer.startTranscribing()
+                    AVAudioSession.preferSpeakerOutput()
                 }
             )
         }
