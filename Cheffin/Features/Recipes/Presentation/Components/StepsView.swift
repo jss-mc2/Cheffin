@@ -13,13 +13,17 @@ struct StepsView: View {
     
     
     var body: some View {
-        ForEach(instructions) { item in
-            HStack {
-				Text(String(item.order))
-                    .padding(.horizontal)
-                    .font(Font.headline)
-                Text(item.description)
-                Spacer()
+        VStack(alignment: .leading) {
+            ForEach(instructions) { item in
+                HStack(alignment: .top) {
+                    Text(String(item.order))
+                        .frame(maxWidth: 22, alignment: .leading)
+                        .padding(.leading)
+                        .font(Font.headline)
+                    Text(item.description)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
         }
     }
@@ -33,6 +37,6 @@ struct StepsView_Previews: PreviewProvider {
 		let recipe = response.map {
 			$0.toDomain()
 		}
-		StepsView(instructions: recipe[0].instructions)
+        StepsView(instructions: recipe[0].instructions)
     }
 }
