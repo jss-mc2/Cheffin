@@ -129,7 +129,7 @@ struct Tooltip: View {
         self.tooltipConfig.animationOffset = 10
         self.tooltipConfig.animationTime = 1
         self.tooltipConfig.borderColor = .white
-        self.tooltipConfig.backgroundColor = .white
+        self.tooltipConfig.backgroundColor = I.background.swiftUIColor
         self.utensil = utensil
     }
     
