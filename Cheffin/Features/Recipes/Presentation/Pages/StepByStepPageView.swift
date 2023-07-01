@@ -57,13 +57,20 @@ struct StepByStepPageView: View {
                     dismiss() // dismiss StepByStepPageView, magic is it?
                     controller.navigateToFinish()
                 } else {
-                    _ = viewModel.pager.nextPage()
+                    if let button = viewModel.visualCuer.buttonHighlightVM[.next] {
+                        button.action()
+                        button.isHighlighted = true
+                    }
                 }
             } else {
                 if viewModel.pager.beginningOfPage() {
+                    print("hello")
                     dismiss()
                 } else {
-                    _ = viewModel.pager.previousPage()
+                    if let button = viewModel.visualCuer.buttonHighlightVM[.previous] {
+                        button.action()
+                        button.isHighlighted = true
+                    }
                 }
             }
         }
@@ -90,7 +97,7 @@ struct StepByStepPageView: View {
             }
             
             viewModel.visualCuer.buttonHighlightVM[.previous]?.action = {
-                if viewModel.pager.previousPage() {
+                if viewModel.pager.beginningOfPage() {
                     dismiss()
                 } else {
                     _ = viewModel.pager.previousPage()

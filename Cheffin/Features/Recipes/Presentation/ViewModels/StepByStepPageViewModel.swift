@@ -32,15 +32,13 @@ class StepByStepPageViewModel: ObservableObject {
         let tempVisualCuer = VisualCueViewModel()
         
         tempVisualCuer.buttonHighlightVM[.readTheText]?.action = {
-            tempSpeechRecognizer.destroyTranscriber()
-            
             let delimiters: [Character] = ["[", "]", "{", "}", "<", ">"]
             let cleanedWords = String.removeDelimiters(
                 steps[tempPager.currentPage].instruction,
                 delimiters: delimiters
             )
             
-            tempTextToSpeech.speak(string: cleanedWords) {
+            tempTextToSpeech.speak(before: { tempSpeechRecognizer.destroyTranscriber() }, string: cleanedWords) {
                 tempSpeechRecognizer.initSpeechRecognizer()
                 tempSpeechRecognizer.startTranscribing()
             }
