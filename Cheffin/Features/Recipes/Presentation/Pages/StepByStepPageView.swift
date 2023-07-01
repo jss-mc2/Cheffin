@@ -9,12 +9,14 @@ import SwiftUI
 import AVFoundation
 
 struct StepByStepPageView: View {
+    let controller: RecipeViewController
     @StateObject var viewModel: StepByStepPageViewModel
     
     @Environment(\.dismiss)
     private var dismiss
     
-    init(_ steps: [StepByStep]) {
+    init(controller: RecipeViewController, steps: [StepByStep]) {
+        self.controller = controller
         self._viewModel = StateObject(wrappedValue: StepByStepPageViewModel(steps: steps))
     }
     
@@ -51,33 +53,53 @@ struct StepByStepPageView: View {
         .background(.blue.opacity(0.0001))
         .onTapGesture { location in
             if location.x > UIScreen.main.bounds.width / 2 {
-                _ = viewModel.pager.nextPage()
+                if viewModel.pager.endOfPage() {
+                    dismiss() // dismiss StepByStepPageView, magic is it?
+                    controller.navigateToFinish()
+                } else {
+                    _ = viewModel.pager.nextPage()
+                }
             } else {
-                _ = viewModel.pager.previousPage()
+                if viewModel.pager.beginningOfPage() {
+                    dismiss()
+                } else {
+                    _ = viewModel.pager.previousPage()
+                }
             }
         }
         .onAppear {
             viewModel.timer.setTimer(viewModel.steps[0].timer)
             viewModel.startTranscribing()
+            if let button = viewModel.visualCuer.buttonHighlightVM[.readTheText] {
+                button.action()
+                button.isHighlighted = true
+            }
+            
+            viewModel.visualCuer.buttonHighlightVM[.next]?.action = {
+                if viewModel.pager.endOfPage() {
+                    dismiss()
+                    controller.navigateToFinish()
+                } else {
+                    _ = viewModel.pager.nextPage()
+                    if let button = viewModel.visualCuer.buttonHighlightVM[.readTheText] {
+                        button.action()
+                        button.isHighlighted = true
+                    }
+                }
+                viewModel.timer.setTimer(viewModel.steps[viewModel.pager.currentPage].timer)
+            }
+            
+            viewModel.visualCuer.buttonHighlightVM[.previous]?.action = {
+                if viewModel.pager.previousPage() {
+                    dismiss()
+                } else {
+                    _ = viewModel.pager.previousPage()
+                }
+                viewModel.timer.setTimer(viewModel.steps[viewModel.pager.currentPage].timer)
+            }
         }
 		.onDisappear {
 			viewModel.stopTranscribing()
 		}
     }
 }
-
-#if DEBUG
-struct StepByStepPageViewPreviews: View {
-    let steps: [StepByStep] = StepByStep.SAMPLEDATA
-    
-    var body: some View {
-        StepByStepPageView(steps)
-    }
-}
-
-struct StepByStepPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        StepByStepPageViewPreviews()
-    }
-}
-#endif
