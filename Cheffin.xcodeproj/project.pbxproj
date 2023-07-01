@@ -70,6 +70,11 @@
 		9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */; };
 		9B9DE8962A4AF0AC00E8075C /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DE8952A4AF0AC00E8075C /* StepByStepParser.swift */; };
 		9BC4FA9D2A4AF9C90045B6BD /* WrappingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */; };
+		9BC54AAD2A50662F00B06D56 /* FinishPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC54AAC2A50662F00B06D56 /* FinishPage.swift */; };
+		9BC54AB52A50720B00B06D56 /* LottieUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC54AB42A50720B00B06D56 /* LottieUI */; };
+		9BC54AB72A507ADF00B06D56 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC54AB62A507ADF00B06D56 /* CameraCaptureView.swift */; };
+		9BC54AB92A507CD900B06D56 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC54AB82A507CD900B06D56 /* ActivityViewController.swift */; };
+		9BC54ABB2A50803900B06D56 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC54ABA2A50803900B06D56 /* FinishViewController.swift */; };
 		9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788282A4036DE003E834B /* InjectionContainer.swift */; };
 		9BC7882C2A40373C003E834B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882B2A40373C003E834B /* Swinject */; };
 		9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882E2A40375A003E834B /* SwinjectAutoregistration */; };
@@ -166,6 +171,10 @@
 		9B9DE8952A4AF0AC00E8075C /* StepByStepParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
 		9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenViewModel.swift; sourceTree = "<group>"; };
+		9BC54AAC2A50662F00B06D56 /* FinishPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPage.swift; sourceTree = "<group>"; };
+		9BC54AB62A507ADF00B06D56 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
+		9BC54AB82A507CD900B06D56 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		9BC54ABA2A50803900B06D56 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		9BC788282A4036DE003E834B /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 		9BC788352A4038AE003E834B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BC788382A4038C9003E834B /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -186,6 +195,7 @@
 				3264971C2A49F5E6005DFE42 /* SwiftUITooltip in Frameworks */,
 				9B5FAD452A4601D600D41030 /* SnapKit in Frameworks */,
 				9B18232E2A4AE7600047CA46 /* AlertToast in Frameworks */,
+				9BC54AB52A50720B00B06D56 /* LottieUI in Frameworks */,
 				9BC7882C2A40373C003E834B /* Swinject in Frameworks */,
 				9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */,
 			);
@@ -251,6 +261,8 @@
 				9B41C0522A4ED08D00682F40 /* HomeViewController.swift */,
 				9B41C0502A4ED08D00682F40 /* RecipeViewController.swift */,
 				96E1D40C2A4B1BE8000EC050 /* HomePage.swift */,
+				9BC54AAC2A50662F00B06D56 /* FinishPage.swift */,
+				9BC54ABA2A50803900B06D56 /* FinishViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -455,6 +467,7 @@
 				96F82E6B2A4B19F60036FC03 /* TimerView.swift */,
 				9618C3592A4EF25B00CB94F7 /* PageView.swift */,
 				9618C3672A4EF7C700CB94F7 /* ButtonHighlight.swift */,
+				9BC54AB82A507CD900B06D56 /* ActivityViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -483,6 +496,7 @@
 				9618C35B2A4EF46C00CB94F7 /* StepByStepProgressView.swift */,
 				9618C35D2A4EF4FE00CB94F7 /* StepByStepTitleView.swift */,
 				9618C3652A4EF76900CB94F7 /* VisualCueView.swift */,
+				9BC54AB62A507ADF00B06D56 /* CameraCaptureView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -602,6 +616,7 @@
 				9B5FAD442A4601D600D41030 /* SnapKit */,
 				9B18232D2A4AE7600047CA46 /* AlertToast */,
 				3264971B2A49F5E6005DFE42 /* SwiftUITooltip */,
+				9BC54AB42A50720B00B06D56 /* LottieUI */,
 			);
 			productName = Cheffin;
 			productReference = 9B3565AE2A3C577500005425 /* Cheffin.app */;
@@ -659,6 +674,7 @@
 				9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9B18232C2A4AE7600047CA46 /* XCRemoteSwiftPackageReference "AlertToast" */,
 				3264971A2A49F5E6005DFE42 /* XCRemoteSwiftPackageReference "SwiftUI-Tooltip" */,
+				9BC54AB32A50720B00B06D56 /* XCRemoteSwiftPackageReference "LottieUI" */,
 			);
 			productRefGroup = 9B3565AF2A3C577500005425 /* Products */;
 			projectDirPath = "";
@@ -726,6 +742,7 @@
 				96F82E722A4B1A8F0036FC03 /* MultiPickerTime.swift in Sources */,
 				96F82E702A4B1A710036FC03 /* ViewStepByStepMode.swift in Sources */,
 				96F82E6E2A4B1A2E0036FC03 /* RecipeFakeDataSource.swift in Sources */,
+				9BC54AB92A507CD900B06D56 /* ActivityViewController.swift in Sources */,
 				96F82E6C2A4B19F60036FC03 /* TimerView.swift in Sources */,
 				9BC4FA9D2A4AF9C90045B6BD /* WrappingHStack.swift in Sources */,
 				9618C35A2A4EF25B00CB94F7 /* PageView.swift in Sources */,
@@ -749,6 +766,7 @@
 				9B3239DB2A4F2C2500FC280D /* RecipeDetailViewModel.swift in Sources */,
 				9B7BCC1F2A489D8800328B41 /* StepByStep.swift in Sources */,
 				967B95772A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift in Sources */,
+				9BC54AAD2A50662F00B06D56 /* FinishPage.swift in Sources */,
 				9BC788392A4038C9003E834B /* Failure.swift in Sources */,
 				9B3565B22A3C577500005425 /* AppDelegate.swift in Sources */,
 				9BC788362A4038AE003E834B /* UseCase.swift in Sources */,
@@ -759,6 +777,7 @@
 				9B7BCC252A48AB7100328B41 /* IngredientResponse.swift in Sources */,
 				9618C36A2A4F137B00CB94F7 /* ButtonHighlightViewModel.swift in Sources */,
 				9B3565B42A3C577500005425 /* SceneDelegate.swift in Sources */,
+				9BC54AB72A507ADF00B06D56 /* CameraCaptureView.swift in Sources */,
 				9B5FAD302A45EF6000D41030 /* RecipeRepository.swift in Sources */,
 				9B7BCC1B2A489A1E00328B41 /* Ingredient.swift in Sources */,
 				9B41C0542A4ED08D00682F40 /* RecipeViewController.swift in Sources */,
@@ -780,6 +799,7 @@
 				96E1D41E2A4B4D31000EC050 /* StepByStepView.swift in Sources */,
 				9B5FAD342A45EFA900D41030 /* RecipeApiResponse.swift in Sources */,
 				9B5FAD362A45EFB700D41030 /* RecipeRepositoryImpl.swift in Sources */,
+				9BC54ABB2A50803900B06D56 /* FinishViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,9 +962,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G85YYYKRLS;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs camera usage to capture your excellent dish.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Listen to keywords \"Next Page\", \"Previous Page\" to navigate and \"Set Timer\" to set the timer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -973,9 +994,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G85YYYKRLS;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs camera usage to capture your excellent dish.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Listen to keywords \"Next Page\", \"Previous Page\" to navigate and \"Set Timer\" to set the timer.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1090,6 +1112,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		9BC54AB32A50720B00B06D56 /* XCRemoteSwiftPackageReference "LottieUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jasudev/LottieUI.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		9BC7882A2A40373C003E834B /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -1123,6 +1153,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B5FAD432A4601D600D41030 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		9BC54AB42A50720B00B06D56 /* LottieUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BC54AB32A50720B00B06D56 /* XCRemoteSwiftPackageReference "LottieUI" */;
+			productName = LottieUI;
 		};
 		9BC7882B2A40373C003E834B /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
