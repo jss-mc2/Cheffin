@@ -97,6 +97,7 @@ class SpeechRecognizerViewModel: ObservableObject {
             self.task = recognizer.recognitionTask(with: request) { [weak self] result, error in
                 self?.recognitionHandler(audioEngine: audioEngine, result: result, error: error)
             }
+            AVAudioSession.preferSpeakerOutput()
         } catch {
             self.reset()
             self.handleError(error)

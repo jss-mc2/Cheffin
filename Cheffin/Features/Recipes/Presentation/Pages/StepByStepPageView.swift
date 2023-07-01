@@ -102,6 +102,7 @@ struct StepByStepPageView: View {
                     dismiss()
                 } else {
                     _ = viewModel.pager.previousPage()
+                    viewModel.textToSpeech.debouncer?.cancel()
                 }
                 viewModel.timer.setTimer(viewModel.steps[viewModel.pager.currentPage].timer)
             }

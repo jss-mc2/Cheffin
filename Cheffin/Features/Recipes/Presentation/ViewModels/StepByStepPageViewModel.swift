@@ -47,7 +47,6 @@ class StepByStepPageViewModel: ObservableObject {
                 completion: {
                     tempSpeechRecognizer.initSpeechRecognizer()
                     tempSpeechRecognizer.startTranscribing()
-                    AVAudioSession.preferSpeakerOutput()
                 }
             )
         }

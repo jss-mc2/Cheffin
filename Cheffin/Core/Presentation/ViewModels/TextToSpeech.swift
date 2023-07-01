@@ -11,7 +11,7 @@ class TextToSpeech: NSObject, AVSpeechSynthesizerDelegate {
     private let voice: AVSpeechSynthesisVoice?
     private let synthesizer: AVSpeechSynthesizer?
     
-    private var debouncer: DispatchWorkItem?
+    var debouncer: DispatchWorkItem?
     
     private var before: (() -> Void)?
     private var completion: (() -> Void)?
@@ -32,7 +32,7 @@ class TextToSpeech: NSObject, AVSpeechSynthesizerDelegate {
         // cancel any previously scheduled debouncer
         debouncer?.cancel()
         
-        let debounceTime = 0.5 // 0.5s
+        let debounceTime = 2.0
         
         let debouncer = DispatchWorkItem {
             print("\(#function) debouncing")
