@@ -26,7 +26,7 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
 		self.viewModel.generateStepByStep(recipe: recipe)
 		let hostingController = SwiftUIKitViewController(
-			shouldShowNavigationBar: true,
+			shouldShowNavigationBar: false,
 			rootView: RecipePageView(recipe: recipe, viewModel: self.viewModel)
 		)
 		

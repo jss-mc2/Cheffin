@@ -70,6 +70,7 @@
 		9B7BCC2A2A48ACCB00328B41 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BCC292A48ACCB00328B41 /* ApiConstants.swift */; };
 		9B9DE8962A4AF0AC00E8075C /* StepByStepParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9DE8952A4AF0AC00E8075C /* StepByStepParser.swift */; };
 		9BC4FA9D2A4AF9C90045B6BD /* WrappingHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */; };
+		9BC54AA72A502F0100B06D56 /* Image+CenterCrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC54AA62A502F0100B06D56 /* Image+CenterCrop.swift */; };
 		9BC788292A4036DE003E834B /* InjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC788282A4036DE003E834B /* InjectionContainer.swift */; };
 		9BC7882C2A40373C003E834B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882B2A40373C003E834B /* Swinject */; };
 		9BC7882F2A40375A003E834B /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC7882E2A40375A003E834B /* SwinjectAutoregistration */; };
@@ -166,6 +167,7 @@
 		9B9DE8952A4AF0AC00E8075C /* StepByStepParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepParser.swift; sourceTree = "<group>"; };
 		9BC4FA9B2A4AF9C90045B6BD /* WrappingHStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappingHStack.swift; sourceTree = "<group>"; };
 		9BC4FA9F2A4AF9DF0045B6BD /* ButtonHighlightHiddenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonHighlightHiddenViewModel.swift; sourceTree = "<group>"; };
+		9BC54AA62A502F0100B06D56 /* Image+CenterCrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CenterCrop.swift"; sourceTree = "<group>"; };
 		9BC788282A4036DE003E834B /* InjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionContainer.swift; sourceTree = "<group>"; };
 		9BC788352A4038AE003E834B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		9BC788382A4038C9003E834B /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				967B95762A4B062F00F1E5A7 /* TimeInterval+FORMATTER.swift */,
 				9657DC3D2A4C18F3003CA477 /* AVAudioSession+Authorization.swift */,
 				9657DC3F2A4C1917003CA477 /* SFSpeechRecognizer+Authorization.swift */,
+				9BC54AA62A502F0100B06D56 /* Image+CenterCrop.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				9B5FAD492A46021400D41030 /* SwiftUIKitViewController.swift in Sources */,
 				9618C3682A4EF7C700CB94F7 /* ButtonHighlight.swift in Sources */,
 				96E1D41E2A4B4D31000EC050 /* StepByStepView.swift in Sources */,
+				9BC54AA72A502F0100B06D56 /* Image+CenterCrop.swift in Sources */,
 				9B5FAD342A45EFA900D41030 /* RecipeApiResponse.swift in Sources */,
 				9B5FAD362A45EFB700D41030 /* RecipeRepositoryImpl.swift in Sources */,
 			);
@@ -942,7 +946,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G85YYYKRLS;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
@@ -973,7 +977,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = G85YYYKRLS;
+				DEVELOPMENT_TEAM = 9299QHCW64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to navigate in the app. Audio recordings are discarded after navigating.";
