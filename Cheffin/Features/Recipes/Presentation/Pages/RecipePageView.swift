@@ -103,6 +103,7 @@ struct RecipePageView: View {
 							)
 							.cornerRadius(10)
 							.foregroundColor(.black)
+                            .padding()
 					}
 					.buttonStyle(.borderedProminent)
 					.tint(I.primary.swiftUIColor)

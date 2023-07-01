@@ -30,12 +30,10 @@ struct ButtonHighlight: View {
                 viewModel.action()
             },
             label: {
-                Text(S.voiceCommand(viewModel.label))
-                    .font(.system(.title, weight: .regular))
+                let textResponsive = Text(S.voiceCommand(viewModel.label))
                     .foregroundColor(foregroundColor)
                     .padding(.all, 8)
                     .italic()
-                
                     .background(viewModel.isHighlighted ? I.primary.swiftUIColor : .clear)
                     // to force background to respect cornerRadius.
                     .cornerRadius(cornerRadius)
@@ -44,6 +42,12 @@ struct ButtonHighlight: View {
                         RoundedRectangle(cornerRadius: cornerRadius)
                             .stroke(I.primary.swiftUIColor, lineWidth: 2)
                     )
+                
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    textResponsive.font(.body).fontWeight(.regular)
+                } else if UIDevice.current.userInterfaceIdiom == .pad {
+                    textResponsive.font(.title2).fontWeight(.regular)
+                }
             }
         )
         .onAppear {

@@ -994,7 +994,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9299QHCW64;
+				DEVELOPMENT_TEAM = G85YYYKRLS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs camera usage to capture your excellent dish.";
@@ -1026,7 +1026,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9299QHCW64;
+				DEVELOPMENT_TEAM = G85YYYKRLS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cheffin/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) needs camera usage to capture your excellent dish.";
