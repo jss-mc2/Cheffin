@@ -27,7 +27,7 @@ class RecipeViewController: UIViewController {
 		self.viewModel.generateStepByStep(recipe: recipe)
 		let hostingController = SwiftUIKitViewController(
 			shouldShowNavigationBar: false,
-            rootView: RecipePageView(controller: self, recipe: recipe, viewModel: self.viewModel)
+			rootView: RecipePageView(recipe: recipe, viewModel: self.viewModel)
 		)
 		
 		addChild(hostingController)
@@ -40,11 +40,6 @@ class RecipeViewController: UIViewController {
 		}
 		hostingController.didMove(toParent: self)
         // Do any additional setup after loading the view.
-    }
-    
-    func navigateToFinish() {
-        let controller = FinishViewController(name: recipe.name)
-        navigationController?.pushViewController(controller, animated: true)
     }
     
 

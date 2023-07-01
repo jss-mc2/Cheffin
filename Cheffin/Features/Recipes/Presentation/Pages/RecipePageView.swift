@@ -9,9 +9,7 @@ import SwiftUI
 
 struct RecipePageView: View {
     
-    let controller: RecipeViewController
-    
-    var recipe: Recipe
+	 var recipe: Recipe
 	@State var isStepByStepModeOn = false
 	@StateObject var viewModel: RecipeDetailViewModel
 	@Environment(\.dismiss)
@@ -133,7 +131,7 @@ struct RecipePageView: View {
 				.padding(EdgeInsets(top: 48, leading: 24, bottom: 48, trailing: 24))
 			}
 			.sheet(isPresented: $isStepByStepModeOn) {
-                StepByStepPageView(controller: controller, steps: viewModel.state.stepBySteps)
+				StepByStepPageView(viewModel.state.stepBySteps)
 				
 			}
 		}
@@ -149,8 +147,7 @@ struct RecipePageView_Previews: PreviewProvider {
 			$0.toDomain()
 		}
 		let viewModel = InjectionContainer.shared.container.resolve(RecipeDetailViewModel.self)!
-        let controller = RecipeViewController(recipe: recipe[0], viewModel: viewModel)
-        RecipePageView(controller: controller, recipe: recipe[0], viewModel: viewModel)
+        RecipePageView(recipe: recipe[0], viewModel: viewModel)
     }
 }
 

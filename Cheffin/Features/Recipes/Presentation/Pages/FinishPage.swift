@@ -22,15 +22,14 @@ struct FinishPage: View {
 		VStack {
 			HStack {
 				Spacer()
-                Button {
-                    controller.navigateToHome()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.largeTitle)
-                }.tint(I.closeButton.swiftUIColor)
+				Image(systemName: "xmark")
+					.font(.largeTitle)
+					.onTapGesture {
+						controller.navigateToHome()
+					}
+
 			}
-			.padding()
-            
+			.padding(.horizontal)
 			Spacer()
 			LottieView(state: confetti)
 				.frame(width: UIScreen.main.bounds.width * (1 / 1.5), height: UIScreen.main.bounds.height * (1 / 3))

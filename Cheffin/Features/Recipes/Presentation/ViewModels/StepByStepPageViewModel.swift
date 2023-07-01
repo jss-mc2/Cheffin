@@ -31,6 +31,16 @@ class StepByStepPageViewModel: ObservableObject {
         
         let tempVisualCuer = VisualCueViewModel()
         
+        tempVisualCuer.buttonHighlightVM[.next]?.action = {
+            _ = tempPager.nextPage()
+            tempTimer.setTimer(steps[tempPager.currentPage].timer)
+        }
+        
+        tempVisualCuer.buttonHighlightVM[.previous]?.action = {
+            _ = tempPager.previousPage()
+            tempTimer.setTimer(steps[tempPager.currentPage].timer)
+        }
+        
         tempVisualCuer.buttonHighlightVM[.readTheText]?.action = {
             tempSpeechRecognizer.destroyTranscriber()
             
