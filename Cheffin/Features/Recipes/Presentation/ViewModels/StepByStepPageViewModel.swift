@@ -11,6 +11,7 @@ class StepByStepPageViewModel: ObservableObject {
     let steps: [StepByStep]
     
     var speechRecognizer = SpeechRecognizerViewModel()
+    var textToSpeech: TextToSpeech
     
     var buttonHighlightVM: [String: ButtonHighlightViewModel] = [:]
     var visualCuer: VisualCueViewModel
@@ -26,6 +27,7 @@ class StepByStepPageViewModel: ObservableObject {
             onTimerEnd: {}
         )
         let tempPager = PageViewModel(steps.map { step in StepByStepView(step) })
+        let tempTextToSpeech = TextToSpeech()
         
         buttonHighlightVM["next"] = ButtonHighlightViewModel(
             action: {
@@ -44,6 +46,7 @@ class StepByStepPageViewModel: ObservableObject {
         buttonHighlightVM["repeat"] = ButtonHighlightViewModel(
             action: {
               // TODO
+                tempTextToSpeech.speak(string: steps[tempPager.currentPage].instruction)
             },
             label: "repeat"
         )
@@ -71,6 +74,7 @@ class StepByStepPageViewModel: ObservableObject {
         
         self.timer = tempTimer
         self.pager = tempPager
+        self.textToSpeech = tempTextToSpeech
     }
     
     /**
@@ -143,7 +147,7 @@ class StepByStepPageViewModel: ObservableObject {
                 default:
                     let lastThreeWords = words.suffix(3).joined(separator: " ")
                     switch lastThreeWords {
-                    case "read the text":
+                    case "read the text", "read my text":
                         executeCommonAction(for: lastThreeWords)
                     default:
                         break
@@ -171,7 +175,7 @@ class StepByStepPageViewModel: ObservableObject {
             let buttonHighlightVM = buttonHighlightVM["previous"]!
             buttonHighlightVM.action()
             buttonHighlightVM.isHighlighted = true
-        case "repeat", "read the text":
+        case "repeat", "read the text", "read my text":
             let buttonHighlightVM = buttonHighlightVM["repeat"]!
             buttonHighlightVM.action()
             buttonHighlightVM.isHighlighted = true
