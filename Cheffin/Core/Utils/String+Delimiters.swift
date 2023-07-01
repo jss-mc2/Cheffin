@@ -20,7 +20,9 @@ extension String {
     
     /**
      - Parameters:
-        - string: "something something Add [steak] to {pan} for <5 minutes>"
+        - string:
+            - "Pat the [Meat] dry"
+            - "something something Add [steak] to {pan} for <5 minutes>"
      */
     static func separateString(_ string: String, delimiters: [Character]) -> [String] {
         var result: [String] = []
@@ -49,6 +51,10 @@ extension String {
             } else {
                 currentString.append(char)
             }
+        }
+        
+        if !currentString.isEmpty {
+            result.append(currentString)
         }
         
         return result
