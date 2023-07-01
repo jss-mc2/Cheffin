@@ -45,8 +45,12 @@ class StepByStepPageViewModel: ObservableObject {
         )
         buttonHighlightVM["repeat"] = ButtonHighlightViewModel(
             action: {
-              // TODO
-                tempTextToSpeech.speak(string: steps[tempPager.currentPage].instruction)
+                let delimiters: [Character] = ["[", "]", "{", "}", "<", ">"]
+                let cleanedWords = String.removeDelimiters(
+                    steps[tempPager.currentPage].instruction,
+                    delimiters: delimiters
+                )
+                tempTextToSpeech.speak(string: cleanedWords)
             },
             label: "repeat"
         )

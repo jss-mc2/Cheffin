@@ -38,16 +38,6 @@ class TextToSpeech: ObservableObject {
         // Assign the voice to the utterance.
         utterance.voice = voice
         
-//        // Set the preferred audio output route to the headphones.
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.defaultToSpeaker, .allowBluetoothA2DP])
-//            try AVAudioSession.sharedInstance().overrideOutputAudioPort(.none)
-//            try AVAudioSession.sharedInstance().setPreferredOutputNumberOfChannels(0)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//        } catch {
-//            print("Failed to set preferred audio output route: \(error)")
-//        }
-        
         synthesizer?.speak(utterance)
     }
 }
