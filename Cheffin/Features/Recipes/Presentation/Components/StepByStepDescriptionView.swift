@@ -39,8 +39,6 @@ struct StepByStepDescriptionView: View {
         let delimiters: [Character] = ["[", "]", "{", "}", "<", ">"]
         let strings = String.separateString(description, delimiters: delimiters)
         
-        print("\(type(of: self)) \(#function) \(strings)")
-        
         var result = Text("")
         
         for string in strings {
@@ -54,8 +52,6 @@ struct StepByStepDescriptionView: View {
                     .font(.system(.largeTitle, weight: .bold))
             }
         }
-        
-        print("\(type(of: self)) \(#function) \(result)")
         
         return result
     }

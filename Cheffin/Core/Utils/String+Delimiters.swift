@@ -56,7 +56,7 @@ extension String {
         if !currentString.isEmpty {
             result.append(currentString)
         }
-        
+
         return result
     }
 }

@@ -11,61 +11,69 @@ import SwiftUITooltip
 struct RecipeCard: View {
     
     @State var recipe: Recipe
+	let onTap: () -> Void
     
     var body: some View {
-        VStack {
-            // MARK: Recipe Image
-            AsyncImage(url: URL(string: recipe.image)) { image in
-                image
-                    .resizable()
-                    .frame(height: UIScreen.main.bounds.height * (1 / 4))
-                    .scaledToFit()
-            } placeholder: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundStyle(I.primary.swiftUIColor)
-                        .frame(height: UIScreen.main.bounds.height * (1 / 4))
-                    ProgressView()
-                        .background(I.primary.swiftUIColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-            }
-            VStack(alignment: .leading) {
-                // MARK: Recipe Description
-                Text(recipe.name)
-					.font(.system(size: 22, weight: .bold))
+		ViewThatFits {
+			VStack {
+				// MARK: Recipe Image
+				AsyncImage(url: URL(string: recipe.image)) { image in
+					image
+						.resizable()
+						.scaledToFill()
+						.frame(height: UIScreen.main.bounds.height * (1 / 4))
+						.clipped()
+
+				} placeholder: {
+					ProgressView()
+				}
+				.contentShape(Rectangle())
+
+				VStack(alignment: .leading) {
+					// MARK: Recipe Description
+					Text(recipe.name)
+						.font(.system(size: 22, weight: .bold))
+						.foregroundColor(I.blackText.swiftUIColor)
+					HStack {
+						Image(systemName: "clock")
+						Text(recipe.duration)
+							.font(.footnote)
+					}
+					.font(.system(.headline, weight: .medium))
 					.foregroundColor(I.blackText.swiftUIColor)
-                HStack {
-                    Image(systemName: "clock")
-                    Text(recipe.duration)
-                        .font(.footnote)
-                }
-                .font(.system(.headline, weight: .medium))
-				.foregroundColor(I.blackText.swiftUIColor)
-                Text(recipe.description)
-                    .font(.subheadline)
-                    .padding(.vertical, 4)
-                    .lineLimit(4)
-                    .truncationMode(.tail)
-					.foregroundColor(I.blackText.swiftUIColor)
+					Text(recipe.description)
+						.font(.subheadline)
+						.padding(.vertical, 4)
+						.lineLimit(4)
+						.truncationMode(.tail)
+						.foregroundColor(I.blackText.swiftUIColor)
+					
+					Text("\(S.essentialUtensils):")
+						.font(.system(.subheadline, weight: .semibold))
+						.foregroundColor(I.blackText.swiftUIColor)
+					HStack {
+						ForEach(recipe.utensils.filter { utensil in
+							utensil.isEssential
+						}) { utensil in
+							Tooltip(utensil: utensil)
+						}
+					}
+					.padding(.bottom)
+				}
+				.padding(.horizontal)
 				
-                Text("\(S.essentialUtensils):")
-                    .font(.system(.subheadline, weight: .semibold))
-					.foregroundColor(I.blackText.swiftUIColor)
-                HStack {
-                    ForEach(recipe.utensils.filter { utensil in
-                        utensil.isEssential
-                    }) { utensil in
-                        Tooltip(utensil: utensil)
-                    }
-                }
-                .padding(.bottom)
-            }
-            .padding(.horizontal)
-        }
-        .foregroundStyle(I.textPrimary.swiftUIColor)
-        .background(I.primary.swiftUIColor)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+			}
+			
+			
+			.foregroundStyle(I.textPrimary.swiftUIColor)
+			.background(I.primary.swiftUIColor)
+			.onTapGesture {
+				onTap()
+			}
+		.cornerRadius(10)
+		}
+		
+		
     }
 }
 
@@ -104,7 +112,7 @@ struct RecipeCard_Previews: PreviewProvider {
             instructions: []
         )
         RecipeCard(
-            recipe: recipe
+			recipe: recipe, onTap: {}
         )
     }
 }

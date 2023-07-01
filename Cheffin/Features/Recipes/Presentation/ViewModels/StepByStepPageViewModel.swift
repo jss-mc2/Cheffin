@@ -12,6 +12,7 @@ class StepByStepPageViewModel: ObservableObject {
     
     var speechRecognizer: SpeechRecognizerViewModel
     var textToSpeech: TextToSpeech
+
     var visualCuer: VisualCueViewModel
     
     var timer: TimerViewModel
