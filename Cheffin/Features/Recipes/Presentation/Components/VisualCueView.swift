@@ -34,39 +34,25 @@ struct VisualCueView<Page: View>: View {
             }
             .font(.system(.title))
             WrappingHStack(alignment: .center) {
-                ButtonHighlight(
-                    viewModel: viewModel.buttonHighlightVM["previous"]!
-                )
+                ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.previous]!)
     
-                ButtonHighlight(
-                    viewModel: viewModel.buttonHighlightVM["next"]!
-                )
+                ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.next]!)
     
-                ButtonHighlight(
-                    viewModel: viewModel.buttonHighlightVM["repeat"]!
-                )
+                ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.readTheText]!)
     
                 if timer.displayedCountDownTime != nil {
                     if timer.timer == nil {
-                        ButtonHighlight(
-                            viewModel: viewModel.buttonHighlightVM["set timer"]!
-                        )
+                        ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.setTimer]!)
                         
-                        ButtonHighlight(
-                            viewModel: viewModel.buttonHighlightVM["start timer"]!
-                        )
+                        ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.startTimer]!)
                     }
                     
                     if timer.timer != nil {
-                        ButtonHighlight(
-                            viewModel: viewModel.buttonHighlightVM["stop timer"]!
-                        )
+                        ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.stopTimer]!)
                     }
                     
                     if timer.isPlayAlert {
-                        ButtonHighlight(
-                            viewModel: viewModel.buttonHighlightVM["stop alarm"]!
-                        )
+                        ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.stopAlarm]!)
                     }
                 }
             }

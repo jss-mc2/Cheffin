@@ -12,6 +12,8 @@ struct StepByStepDescriptionView: View {
     
     init(_ description: String) {
         self.description = description
+        
+        print("\(type(of: self)) \(#function) \(description)")
     }
     
     var body: some View {

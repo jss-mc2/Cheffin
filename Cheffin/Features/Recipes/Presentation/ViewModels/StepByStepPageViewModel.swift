@@ -12,8 +12,7 @@ class StepByStepPageViewModel: ObservableObject {
     
     var speechRecognizer: SpeechRecognizerViewModel
     var textToSpeech: TextToSpeech
-    
-    var buttonHighlightVM: [String: ButtonHighlightViewModel] = [:]
+
     var visualCuer: VisualCueViewModel
     
     var timer: TimerViewModel
@@ -30,58 +29,40 @@ class StepByStepPageViewModel: ObservableObject {
         let tempSpeechRecognizer = SpeechRecognizerViewModel()
         let tempTextToSpeech = TextToSpeech()
         
-        buttonHighlightVM["next"] = ButtonHighlightViewModel(
-            action: {
-                _ = tempPager.nextPage()
-                tempTimer.setTimer(steps[tempPager.currentPage].timer)
-            },
-            label: "next"
-        )
-        buttonHighlightVM["previous"] = ButtonHighlightViewModel(
-            action: {
-                _ = tempPager.previousPage()
-                tempTimer.setTimer(steps[tempPager.currentPage].timer)
-            },
-            label: "previous"
-        )
-        buttonHighlightVM["repeat"] = ButtonHighlightViewModel(
-            action: {
-                tempSpeechRecognizer.destroyTranscriber()
-                
-                let delimiters: [Character] = ["[", "]", "{", "}", "<", ">"]
-                let cleanedWords = String.removeDelimiters(
-                    steps[tempPager.currentPage].instruction,
-                    delimiters: delimiters
-                )
-                
-                tempTextToSpeech.speak(string: cleanedWords) {
-                    tempSpeechRecognizer.initSpeechRecognizer()
-                    tempSpeechRecognizer.startTranscribing()
-                }
-            },
-            label: "repeat"
-        )
-        buttonHighlightVM["set timer"] = ButtonHighlightViewModel(label: "set timer ... minutes")
-        buttonHighlightVM["start timer"] = ButtonHighlightViewModel(
-            action: {
-                tempTimer.startTimer()
-            },
-            label: "start timer"
-        )
-        buttonHighlightVM["stop timer"] = ButtonHighlightViewModel(
-            action: {
-                tempTimer.stopTimer()
-            },
-            label: "stop timer"
-        )
-        buttonHighlightVM["stop alarm"] = ButtonHighlightViewModel(
-            action: {
-                tempTimer.stopAlarm()
-            },
-            label: "stop alarm"
-        )
+        let tempVisualCuer = VisualCueViewModel()
         
-        self.visualCuer = VisualCueViewModel(buttonHighlightVM: buttonHighlightVM)
+        tempVisualCuer.buttonHighlightVM[.next]?.action = {
+            _ = tempPager.nextPage()
+            tempTimer.setTimer(steps[tempPager.currentPage].timer)
+        }
+        
+        tempVisualCuer.buttonHighlightVM[.previous]?.action = {
+            _ = tempPager.previousPage()
+            tempTimer.setTimer(steps[tempPager.currentPage].timer)
+        }
+        
+        tempVisualCuer.buttonHighlightVM[.readTheText]?.action = {
+            tempSpeechRecognizer.destroyTranscriber()
+            
+            let delimiters: [Character] = ["[", "]", "{", "}", "<", ">"]
+            let cleanedWords = String.removeDelimiters(
+                steps[tempPager.currentPage].instruction,
+                delimiters: delimiters
+            )
+            
+            tempTextToSpeech.speak(string: cleanedWords) {
+                tempSpeechRecognizer.initSpeechRecognizer()
+                tempSpeechRecognizer.startTranscribing()
+            }
+        }
+        
+        tempVisualCuer.buttonHighlightVM[.startTimer]?.action = { tempTimer.startTimer() }
+        
+        tempVisualCuer.buttonHighlightVM[.stopTimer]?.action = { tempTimer.stopTimer() }
+        
+        tempVisualCuer.buttonHighlightVM[.stopAlarm]?.action = { tempTimer.stopAlarm() }
+        
+        self.visualCuer = tempVisualCuer
         
         self.timer = tempTimer
         self.pager = tempPager
@@ -178,31 +159,33 @@ class StepByStepPageViewModel: ObservableObject {
     }
     
     private func executeCommonAction(for action: String) {
+        func performAction(_ state: ButtonHighlightViewModel?) {
+            guard let state else {
+                return
+            }
+            state.action()
+            state.isHighlighted = true
+        }
+        
         switch action {
         case "next", "next page", "next step":
-            let buttonHighlightVM = buttonHighlightVM["next"]!
-            buttonHighlightVM.action()
-            buttonHighlightVM.isHighlighted = true
+            let state = visualCuer.buttonHighlightVM[.next]
+            performAction(state)
         case "previous", "previous page", "previous step":
-            let buttonHighlightVM = buttonHighlightVM["previous"]!
-            buttonHighlightVM.action()
-            buttonHighlightVM.isHighlighted = true
+            let state = visualCuer.buttonHighlightVM[.previous]
+            performAction(state)
         case "repeat", "read the text", "read my text":
-            let buttonHighlightVM = buttonHighlightVM["repeat"]!
-            buttonHighlightVM.action()
-            buttonHighlightVM.isHighlighted = true
+            let state = visualCuer.buttonHighlightVM[.readTheText]
+            performAction(state)
         case "start timer":
-            let buttonHighlightVM = buttonHighlightVM["start timer"]!
-            buttonHighlightVM.action()
-            buttonHighlightVM.isHighlighted = true
+            let state = visualCuer.buttonHighlightVM[.startTimer]
+            performAction(state)
         case "stop timer":
-            let buttonHighlightVM = buttonHighlightVM["stop timer"]!
-            buttonHighlightVM.action()
-            buttonHighlightVM.isHighlighted = true
+            let state = visualCuer.buttonHighlightVM[.stopTimer]
+            performAction(state)
         case "stop alarm":
-            let buttonHighlightVM = buttonHighlightVM["stop alarm"]!
-            buttonHighlightVM.action()
-            buttonHighlightVM.isHighlighted = true
+            let state = visualCuer.buttonHighlightVM[.stopAlarm]
+            performAction(state)
         default:
             break
         }
@@ -212,10 +195,12 @@ class StepByStepPageViewModel: ObservableObject {
     
     private func executeSetTimerAction(for words: [String]) {
         let countDownDuration = transcribeTime(words)
-        let buttonHighlightVM = buttonHighlightVM["set timer"]!
-        timer.setTimer(countDownDuration)
-        buttonHighlightVM.isHighlighted = true
         speechRecognizer.restartTranscribing()
+        timer.setTimer(countDownDuration)
+        
+        if let buttonHighlightVM = visualCuer.buttonHighlightVM[.setTimer] {
+            buttonHighlightVM.isHighlighted = true
+        }
     }
     
     func toggleTranscribing() {
