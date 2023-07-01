@@ -84,6 +84,7 @@ struct StepByStepPageView: View {
             
             viewModel.visualCuer.buttonHighlightVM[.next]?.action = {
                 if viewModel.pager.endOfPage() {
+                    viewModel.timer.stopAlarm()
                     dismiss()
                     controller.navigateToFinish()
                 } else {
