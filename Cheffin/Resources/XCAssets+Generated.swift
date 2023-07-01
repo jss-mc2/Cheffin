@@ -40,6 +40,36 @@ internal enum I {
   internal static let highlight = ColorAsset(name: "Highlight")
   internal static let primary = ColorAsset(name: "Primary")
   internal static let textPrimary = ColorAsset(name: "TextPrimary")
+  internal static let anise = ImageAsset(name: "anise")
+  internal static let butter = ImageAsset(name: "butter")
+  internal static let carrot = ImageAsset(name: "carrot")
+  internal static let chicken = ImageAsset(name: "chicken")
+  internal static let chickenCube = ImageAsset(name: "chicken_Cube")
+  internal static let choppingBoard = ImageAsset(name: "chopping_Board")
+  internal static let clock = ImageAsset(name: "clock")
+  internal static let confetti = DataAsset(name: "confetti")
+  internal static let garlic = ImageAsset(name: "garlic")
+  internal static let ginger = ImageAsset(name: "ginger")
+  internal static let greenBeans = ImageAsset(name: "green_beans")
+  internal static let knife = ImageAsset(name: "knife")
+  internal static let laddle = ImageAsset(name: "laddle")
+  internal static let leek = ImageAsset(name: "leek")
+  internal static let oil = ImageAsset(name: "oil")
+  internal static let pan = ImageAsset(name: "pan")
+  internal static let pepper = ImageAsset(name: "pepper")
+  internal static let potato = ImageAsset(name: "potato")
+  internal static let recipeImage = ImageAsset(name: "recipe_image")
+  internal static let rosemary = ImageAsset(name: "rosemary")
+  internal static let salt = ImageAsset(name: "salt")
+  internal static let shallot = ImageAsset(name: "shallot")
+  internal static let sirloinBeef = ImageAsset(name: "sirloin_Beef")
+  internal static let soupPot = ImageAsset(name: "soup_Pot")
+  internal static let spoon = ImageAsset(name: "spoon")
+  internal static let starAnise = ImageAsset(name: "star_Anise")
+  internal static let thyme = ImageAsset(name: "thyme")
+  internal static let tongs = ImageAsset(name: "tongs")
+  internal static let unpeeledGarlic = ImageAsset(name: "unpeeled_Garlic")
+  internal static let water = ImageAsset(name: "water")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
@@ -108,6 +138,30 @@ internal extension SwiftUI.Color {
   }
 }
 #endif
+
+internal struct DataAsset {
+  internal fileprivate(set) var name: String
+
+  @available(iOS 9.0, tvOS 9.0, watchOS 6.0, macOS 10.11, *)
+  internal var data: NSDataAsset {
+    guard let data = NSDataAsset(asset: self) else {
+      fatalError("Unable to load data asset named \(name).")
+    }
+    return data
+  }
+}
+
+@available(iOS 9.0, tvOS 9.0, watchOS 6.0, macOS 10.11, *)
+internal extension NSDataAsset {
+  convenience init?(asset: DataAsset) {
+    let bundle = BundleToken.bundle
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    self.init(name: asset.name, bundle: bundle)
+    #elseif os(macOS)
+    self.init(name: NSDataAsset.Name(asset.name), bundle: bundle)
+    #endif
+  }
+}
 
 internal struct ImageAsset {
   internal fileprivate(set) var name: String
