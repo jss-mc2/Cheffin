@@ -29,10 +29,14 @@ struct VisualCueView<Page: View>: View {
         VStack {
             HStack {
                 Image(systemName: "mic.fill").foregroundColor(I.accentColor.swiftUIColor)
-                Text("try saying:")
-                    .italic()
+                let textResponsive = Text("try saying:").italic()
+                    
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    textResponsive.font(.body).fontWeight(.regular)
+                } else if UIDevice.current.userInterfaceIdiom == .pad {
+                    textResponsive.font(.title2).fontWeight(.regular)
+                }
             }
-            .font(.system(.title))
             WrappingHStack(alignment: .center) {
                 ButtonHighlight(
                     viewModel: viewModel.buttonHighlightVM["previous"]!
