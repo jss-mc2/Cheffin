@@ -14,6 +14,7 @@ struct StepByStepView: View {
     
     init(_ step: StepByStep) {
         self.step = step
+        print("\(type(of: self)) \(#function)")
     }
     
     var body: some View {
@@ -37,10 +38,9 @@ struct StepByStepView: View {
                 .padding(EdgeInsets(.init(top: -8, leading: 0, bottom: 24, trailing: 0)))
             } else if step.mediaType == .gif {
                 // TODO: handle GIF image
-            } else {
+            } else if step.mediaType == .video {
                 PlayerView(mediaUrl: step.media)
                     .padding(EdgeInsets(.init(top: -8, leading: 0, bottom: 24, trailing: 0)))
-
             }
             
             StepByStepDescriptionView(step.instruction)

@@ -11,9 +11,19 @@ import AVFoundation
 struct PlayerView: UIViewRepresentable {
     let mediaUrl: String
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PlayerView>) {
+        print("\(type(of: self)) \(#function)")
+        guard let playerView = uiView as? LoopingPlayerUIView else {
+            return
+        }
+        
+        if playerView.url != mediaUrl {
+            playerView.url = mediaUrl
+            playerView.updatePlayer(with: mediaUrl)
+        }
     }
 
     func makeUIView(context: Context) -> UIView {
+        print("\(type(of: self)) \(#function)")
         return LoopingPlayerUIView(frame: .zero, url: self.mediaUrl)
     }
 }
@@ -22,16 +32,21 @@ struct PlayerView: UIViewRepresentable {
 class LoopingPlayerUIView: UIView {
     private let playerLayer = AVPlayerLayer()
     private var playerLooper: AVPlayerLooper?
-    let url: String
+    var url: String
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     init(frame: CGRect, url: String) {
+        print("\(type(of: self)) \(#function)")
         self.url = url
         super.init(frame: frame)
-
+        
+        setupPlayer(with: url)
+    }
+    
+    func setupPlayer(with url: String) {
         // Load the resource
         let fileUrl = URL(string: url)!
         let asset = AVAsset(url: fileUrl)
@@ -48,6 +63,13 @@ class LoopingPlayerUIView: UIView {
 
         // Start the movie
         player.play()
+    }
+    
+    func updatePlayer(with url: String) {
+        playerLayer.player?.pause()
+        playerLayer.removeFromSuperlayer()
+        
+        setupPlayer(with: url)
     }
 
     override func layoutSubviews() {

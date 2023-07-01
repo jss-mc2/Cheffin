@@ -12,15 +12,15 @@ struct IngredientsGridView: View {
 	let ingredients: [Ingredient]
     
     let layout = [
-        GridItem(.fixed(62), spacing: 25, alignment: nil),
-        GridItem(.fixed(62), spacing: 25, alignment: nil),
-        GridItem(.fixed(62), spacing: 25, alignment: nil),
-        GridItem(.fixed(62), spacing: 25, alignment: nil)
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center),
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center),
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center),
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center)
     ]
     
     
     var body: some View {
-        LazyVGrid(columns: layout, alignment: .center, spacing: 25) {
+        LazyVGrid(columns: layout, alignment: .center, spacing: 10) {
             ForEach(ingredients) { ingredient in
                 VStack {
 					AsyncImage(url: URL(string: ingredient.image)) { image in
@@ -33,7 +33,7 @@ struct IngredientsGridView: View {
 					}
 
                     Text("\(ingredient.amount) \(ingredient.unit) \(ingredient.name)")
-                        .font(.caption)
+						.font(.caption)
                         .multilineTextAlignment(.center)
                 }
             }

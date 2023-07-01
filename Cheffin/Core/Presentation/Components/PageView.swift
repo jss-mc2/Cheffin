@@ -20,13 +20,6 @@ struct PageView<Page: View>: View {
     
     var body: some View {
         pageViewModel.pages[pageViewModel.currentPage]
-            .onTapGesture { location in
-                if location.x > UIScreen.main.bounds.width / 2 {
-                    _ = pageViewModel.nextPage()
-                } else {
-                    _ = pageViewModel.previousPage()
-                }
-            }
             .onAppear {
 #if DEBUG
                 print("\(type(of: self)) \(#function) appeared")

@@ -16,20 +16,31 @@ struct StepByStepPageView: View {
     }
     
     var body: some View {
-        VStack {
-            StepByStepTitleView(pager: viewModel.pager, steps: viewModel.steps)
-            StepByStepProgressView(pager: viewModel.pager)
-            PageView(pager: viewModel.pager)
-            Spacer()
-            TimerView(viewModel: viewModel.timer)
-            VisualCueView(
-                viewModel: viewModel.visualCuer,
-                steps: viewModel.steps,
-                pager: viewModel.pager,
-                timer: viewModel.timer
-            )
-            .padding(.bottom, 32)
-        }.onAppear {
+        ZStack {
+            VStack {
+                StepByStepTitleView(pager: viewModel.pager, steps: viewModel.steps)
+                StepByStepProgressView(pager: viewModel.pager)
+                PageView(pager: viewModel.pager)
+                Spacer()
+                TimerView(viewModel: viewModel.timer)
+                VisualCueView(
+                    viewModel: viewModel.visualCuer,
+                    steps: viewModel.steps,
+                    pager: viewModel.pager,
+                    timer: viewModel.timer
+                )
+                .padding(.bottom, 32)
+            }
+        }
+        // TODO: tech debt hack to allow onTapGesture on empty view.
+        .onTapGesture { location in
+            if location.x > UIScreen.main.bounds.width / 2 {
+                _ = viewModel.pager.nextPage()
+            } else {
+                _ = viewModel.pager.previousPage()
+            }
+        }
+        .onAppear {
             viewModel.timer.setTimer(viewModel.steps[0].timer)
             viewModel.startTranscribing()
         }

@@ -12,15 +12,15 @@ struct UtensilsGridView: View {
 	let utensils: [Utensil]
     
     let layout = [
-        GridItem(.fixed(62), spacing: 25, alignment: nil),
-        GridItem(.fixed(62), spacing: 25, alignment: nil),
-        GridItem(.fixed(62), spacing: 25, alignment: nil),
-        GridItem(.fixed(62), spacing: 25, alignment: nil)
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center),
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center),
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center),
+		GridItem(.flexible(minimum: UIScreen.main.bounds.width * (1 / 8)), spacing: 10, alignment: .center)
     ]
     
     
     var body: some View {
-        LazyVGrid(columns: layout, spacing: 25) {
+        LazyVGrid(columns: layout, spacing: 10) {
             ForEach(utensils) { utensil in
                 VStack {
 					AsyncImage(url: URL(string: utensil.image), content: { image in
@@ -32,7 +32,7 @@ struct UtensilsGridView: View {
 						ProgressView()
 					})
                     Text("\(utensil.name)")
-                        .font(.caption)
+						.font(.caption)
                         .multilineTextAlignment(.center)
                 }
             }
