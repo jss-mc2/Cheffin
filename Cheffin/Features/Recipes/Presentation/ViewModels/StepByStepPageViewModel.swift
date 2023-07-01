@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFAudio
 
 class StepByStepPageViewModel: ObservableObject {
     let steps: [StepByStep]
@@ -21,13 +22,21 @@ class StepByStepPageViewModel: ObservableObject {
     init(steps: [StepByStep]) {
         self.steps = steps
         
-        let tempTimer = TimerViewModel(
-            onStartTimer: {},
-            onTimerEnd: {}
-        )
         let tempPager = PageViewModel(steps.map { step in StepByStepView(step) })
         let tempSpeechRecognizer = SpeechRecognizerViewModel()
         let tempTextToSpeech = TextToSpeech()
+        let tempTimer = TimerViewModel(
+            onStartTimer: {},
+            onTimerEnd: {
+                do {
+                    // TODO: play on bluetooth.
+                    try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+                    try AVAudioSession.sharedInstance().setMode(.default)
+                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                    try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+                } catch { }
+            }
+        )
         
         let tempVisualCuer = VisualCueViewModel()
         
@@ -38,10 +47,14 @@ class StepByStepPageViewModel: ObservableObject {
                 delimiters: delimiters
             )
             
-            tempTextToSpeech.speak(before: { tempSpeechRecognizer.destroyTranscriber() }, string: cleanedWords) {
-                tempSpeechRecognizer.initSpeechRecognizer()
-                tempSpeechRecognizer.startTranscribing()
-            }
+            tempTextToSpeech.speak(
+                before: { tempSpeechRecognizer.destroyTranscriber() },
+                string: cleanedWords,
+                completion: {
+                    tempSpeechRecognizer.initSpeechRecognizer()
+                    tempSpeechRecognizer.startTranscribing()
+                }
+            )
         }
         
         tempVisualCuer.buttonHighlightVM[.startTimer]?.action = { tempTimer.startTimer() }

@@ -162,7 +162,6 @@ class SpeechRecognizerViewModel: ObservableObject {
 #if DEBUG
                 print("\(#function) error: " + (error?.localizedDescription ?? ""))
 #endif
-                return
             }
             restartTranscribing()
             return

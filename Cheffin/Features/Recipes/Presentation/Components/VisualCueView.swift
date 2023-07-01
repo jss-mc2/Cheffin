@@ -54,10 +54,10 @@ struct VisualCueView<Page: View>: View {
                     if timer.timer != nil {
                         ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.stopTimer]!)
                     }
-                    
-                    if timer.isPlayAlert {
-                        ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.stopAlarm]!)
-                    }
+                }
+                
+                if timer.isPlayAlert {
+                    ButtonHighlight(viewModel: viewModel.buttonHighlightVM[.stopAlarm]!)
                 }
             }
             .font(.system(.title))
