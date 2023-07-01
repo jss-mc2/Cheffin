@@ -140,6 +140,24 @@ class StepByStepPageViewModel: ObservableObject {
                     default:
                         break
                     }
+                    let lastFourWords = words.suffix(4)
+                    if lastFourWords.indices.contains(3) {
+                        switch lastFourWords.prefix(3) {
+                        case ["go", "to", "page"]:
+                            if let intValue = Int(lastFourWords[3]) {
+                                if pager.goToPage(intValue) {
+                                    if let button = visualCuer.buttonHighlightVM[.readTheText] {
+                                        button.action()
+                                        button.isHighlighted = true
+                                    }
+                                }
+                            }
+                            
+                            speechRecognizer.restartTranscribing()
+                        default:
+                            break
+                        }
+                    }
                 }
             }
         }
@@ -191,10 +209,15 @@ class StepByStepPageViewModel: ObservableObject {
     private func executeSetTimerAction(for words: [String]) {
         let countDownDuration = transcribeTime(words)
         speechRecognizer.restartTranscribing()
+        
+        if countDownDuration == 0 {
+            return
+        }
+        
         timer.setTimer(countDownDuration)
         
-        if let buttonHighlightVM = visualCuer.buttonHighlightVM[.setTimer] {
-            buttonHighlightVM.isHighlighted = true
+        if let state = visualCuer.buttonHighlightVM[.setTimer] {
+            state.isHighlighted = true
         }
     }
     
