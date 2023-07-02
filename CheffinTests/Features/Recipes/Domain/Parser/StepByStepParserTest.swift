@@ -38,6 +38,14 @@ final class StepByStepParserTest: XCTestCase {
             ),
             "Add [steak] to {pan} rest for 1 hour and 5 minutes"
         )
+        
+        XCTAssertEqual(
+            i.parseUtensils(
+                description: "Season again to liking with salt,  black pepper, 4 chicken stock cubes, and shaved nutmeg",
+                usedUtensils: ["Salt", "Black pepper", "Chicken stock cubes", "Nutmeg"]
+            ),
+            "Season again to liking with {Salt},  {Black pepper}, 4 {Chicken stock cubes}, and shaved {Nutmeg}"
+        )
     }
     
     func testParseTimer() throws {
