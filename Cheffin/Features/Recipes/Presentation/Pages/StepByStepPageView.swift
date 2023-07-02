@@ -85,6 +85,7 @@ struct StepByStepPageView: View {
             viewModel.visualCuer.buttonHighlightVM[.next]?.action = {
                 if viewModel.pager.endOfPage() {
                     viewModel.timer.stopAlarm()
+                    viewModel.stopTranscribing()
                     dismiss()
                     controller.navigateToFinish()
                 } else {
@@ -102,7 +103,10 @@ struct StepByStepPageView: View {
                     dismiss()
                 } else {
                     _ = viewModel.pager.previousPage()
-                    viewModel.textToSpeech.debouncer?.cancel()
+                    if let button = viewModel.visualCuer.buttonHighlightVM[.readTheText] {
+                        button.action()
+                        button.isHighlighted = true
+                    }
                 }
                 viewModel.timer.setTimer(viewModel.steps[viewModel.pager.currentPage].timer)
             }
