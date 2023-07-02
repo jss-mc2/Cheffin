@@ -60,7 +60,7 @@ struct RecipePageView: View {
 								.multilineTextAlignment(.leading)
 								.font(.body)
 						}
-						.padding(.bottom)
+						.padding(.bottom, 35)
 					}
 					
 					Group {
@@ -70,7 +70,7 @@ struct RecipePageView: View {
 								.padding(.leading)
 						}
 						IngredientsGridView(ingredients: recipe.ingredients)
-							.padding(.bottom)
+							.padding(.bottom, 35)
 						
 						HStack {
 							Text(S.utensils)
@@ -79,7 +79,7 @@ struct RecipePageView: View {
 							Spacer()
 						}
 						UtensilsGridView(utensils: recipe.utensils)
-							.padding(.bottom)
+							.padding(.bottom, 35)
 					}
 					
 					Group {
@@ -99,17 +99,13 @@ struct RecipePageView: View {
 					} label: {
 						Text("Let's Cook!")
 							.font(.headline)
-							.frame(
-								maxWidth: .infinity
-
-							)
+							.frame(maxWidth: .infinity)
 							.cornerRadius(10)
 							.foregroundColor(.black)
                             .padding()
 					}
 					.buttonStyle(.borderedProminent)
 					.tint(I.primary.swiftUIColor)
-
 					.padding()
 
 				}
