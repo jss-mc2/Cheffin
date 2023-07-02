@@ -129,7 +129,7 @@ struct RecipePageView: View {
 				}
 				.padding(EdgeInsets(top: 48, leading: 24, bottom: 48, trailing: 24))
 			}
-			.sheet(isPresented: $isStepByStepModeOn) {
+			.fullScreenCover(isPresented: $isStepByStepModeOn) {
                 StepByStepPageView(controller: controller, steps: viewModel.state.stepBySteps)
 				
 			}
