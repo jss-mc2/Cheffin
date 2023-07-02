@@ -111,9 +111,7 @@ struct RecipeCard_Previews: PreviewProvider {
             ingredients: [],
             instructions: []
         )
-        RecipeCard(
-			recipe: recipe, onTap: {}
-        )
+        RecipeCard(recipe: recipe) {}
     }
 }
 

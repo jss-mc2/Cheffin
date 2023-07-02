@@ -14,7 +14,7 @@ internal enum S {
   ///   Cheffin
   /// 
   ///   Created by Adryan Eka Vandra on 23/06/23.
-  internal static let appName = S.tr("Localizable", "appName", fallback: "Chefin")
+  internal static let appName = S.tr("Localizable", "appName", fallback: "Cheffin")
   /// ====================== BON-APETIT PAGE ======================
   internal static let bonApetit = S.tr("Localizable", "bonApetit", fallback: "Bon Apetit!")
   /// Congratulations on successfully making your %@!
@@ -46,7 +46,7 @@ internal enum S {
     return S.tr("Localizable", "voiceCommand", String(describing: p1), fallback: "\"%@\"")
   }
   /// ====================== HOME PAGE ======================
-  internal static let welcomeToChefin = S.tr("Localizable", "welcomeToChefin", fallback: "Welcome to Chefin!")
+  internal static let welcomeToCheffin = S.tr("Localizable", "welcomeToCheffin", fallback: "Welcome to Cheffin!")
   /// What do you want to cook today?
   internal static let whatDoYouWantToCookToday = S.tr("Localizable", "whatDoYouWantToCookToday?", fallback: "What do you want to cook today?")
 }

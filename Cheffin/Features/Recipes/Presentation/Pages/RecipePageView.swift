@@ -112,8 +112,6 @@ struct RecipePageView: View {
 
 					.padding()
 
-
-
 				}
 				
 				VStack {
@@ -153,16 +151,3 @@ struct RecipePageView_Previews: PreviewProvider {
         RecipePageView(controller: controller, recipe: recipe[0], viewModel: viewModel)
     }
 }
-
-
-
-
-
-
-//            Button("Let's Cook") {
-//                print("Button pressed")
-//            }
-//            .padding(.horizontal)
-//            .background(Color(red: 246/255, green: 200/255, blue: 79/255))
-//            .foregroundStyle(.black)
-//            .clipShape(RoundedRectangle(cornerRadius: 10))

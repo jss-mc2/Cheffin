@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CameraCaptureView: UIViewControllerRepresentable {
 	@Binding var capturedImage: UIImage?
-	@Environment(\.presentationMode) var presentationMode
+	@Environment(\.presentationMode)
+	var presentationMode
 	
 	func makeUIViewController(context: UIViewControllerRepresentableContext<CameraCaptureView>) -> UIImagePickerController {
 		let imagePicker = UIImagePickerController()
@@ -34,7 +35,7 @@ struct CameraCaptureView: UIViewControllerRepresentable {
 			self.presentationMode = presentationMode
 		}
 		
-		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 			guard let image = info[.originalImage] as? UIImage else {
 				return
 			}
