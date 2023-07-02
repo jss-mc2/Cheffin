@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import Cheffin
 
-final class StepByStepParserTest: XCTestCase {
+final class StringsDelimitersTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,6 +25,11 @@ final class StepByStepParserTest: XCTestCase {
         XCTAssertEqual(
             String.separateString("something something Add [steak] to {pan} for <5 minutes>", delimiters: delimiters),
             ["something something Add ", "[steak]", " to ", "{pan}", " for ", "<5 minutes>"]
+        )
+        
+        XCTAssertEqual(
+            String.separateString("Season again to liking with {Salt},  {Black pepper}, 4 {Chicken stock cubes}, and shaved {Nutmeg}", delimiters: delimiters),
+            ["Season again to liking with ", "{Salt}", ",  ", "{Black pepper}", ", 4 ", "{Chicken stock cubes}", ", and shaved ", "{Nutmeg}"]
         )
         
         XCTAssertEqual(
