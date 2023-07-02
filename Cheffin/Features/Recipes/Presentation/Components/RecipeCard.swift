@@ -20,10 +20,8 @@ struct RecipeCard: View {
 				AsyncImage(url: URL(string: recipe.image)) { image in
 					image
 						.resizable()
-						.scaledToFill()
-						.frame(height: UIScreen.main.bounds.height * (1 / 4))
+                        .aspectRatio(2, contentMode: .fit)
 						.clipped()
-
 				} placeholder: {
 					ProgressView()
 				}
