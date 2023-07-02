@@ -44,12 +44,13 @@ struct RecipePageView: View {
 								.padding(.horizontal)
 								.font(Font.title.weight(.bold))
 						}
+                        .padding(.bottom, -1)
 						HStack {
 							Image("clock")
 								.padding(.leading)
 							Text(recipe.duration)
 						}
-						.padding(.bottom)
+						.padding(.bottom, 10)
 					}
 				
 					Group {
