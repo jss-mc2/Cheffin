@@ -91,7 +91,6 @@ struct RecipePageView: View {
 						.padding(.bottom)
 						
 						StepsView(instructions: recipe.instructions)
-							.padding(.bottom)
 						
 					}
 					Button {
