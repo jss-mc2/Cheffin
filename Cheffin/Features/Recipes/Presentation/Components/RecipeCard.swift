@@ -57,6 +57,10 @@ struct RecipeCard: View {
 						}
 					}
 					.padding(.bottom)
+                    .frame(
+                        width: UIScreen.main.bounds.width * (1/5),
+                        height: UIScreen.main.bounds.height * (1/15)
+                    )
 				}
 				.padding(.horizontal)
 				
