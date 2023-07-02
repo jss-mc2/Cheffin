@@ -15,7 +15,7 @@ struct HomePage: View {
     var body: some View {
 		ScrollView {
 			VStack(alignment: .leading) {
-				Text(S.welcomeToChefin)
+				Text(S.welcomeToCheffin)
 					.font(.system(size: 28, weight: .bold))
 				
 				Text(S.whatDoYouWantToCookToday)

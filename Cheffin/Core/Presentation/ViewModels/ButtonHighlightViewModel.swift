@@ -10,7 +10,7 @@ import Foundation
 class ButtonHighlightViewModel: ObservableObject {
     var action: () -> Void
     let label: String
-    @Published var isHighlighted: Bool = false {
+    @Published var isHighlighted = false {
         didSet {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.isHighlighted = false

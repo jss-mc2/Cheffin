@@ -6,7 +6,7 @@
   
 */
 
-"appName" = "Chefin";
+"appName" = "Cheffin";
 
 /*
  ====================== Failure ======================
@@ -18,7 +18,7 @@
  ====================== HOME PAGE ======================
  */
 
-"welcomeToChefin" = "Welcome to Chefin!";
+"welcomeToCheffin" = "Welcome to Cheffin!";
 "whatDoYouWantToCookToday?" = "What do you want to cook today?";
 "essentialUtensils" = "Essential Utensils";
 

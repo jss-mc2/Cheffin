@@ -18,7 +18,6 @@ struct StepByStep: Identifiable, Hashable {
     let timer: TimeInterval?
 }
 
-#if DEBUG
 extension StepByStep {
     static let SAMPLEDATA = [
         StepByStep(
@@ -50,4 +49,3 @@ extension StepByStep {
         )
     ]
 }
-#endif
