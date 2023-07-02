@@ -25,9 +25,17 @@ struct FinishPage: View {
                 Button {
                     controller.navigateToHome()
                 } label: {
-                    Image(systemName: "xmark")
-                        .font(.largeTitle)
+					
+					Image(systemName: "xmark")
+						.font(.largeTitle)
+					.contentShape(Rectangle())
+
+
+                   
                 }.tint(I.closeButton.swiftUIColor)
+					.contentShape(Rectangle())
+
+
 			}
 			.padding()
             

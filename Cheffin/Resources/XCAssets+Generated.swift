@@ -28,48 +28,11 @@ internal enum I {
   internal static let background = ColorAsset(name: "Background")
   internal static let blackText = ColorAsset(name: "BlackText")
   internal static let closeButton = ColorAsset(name: "CloseButton")
-  internal enum DummyImages {
-    internal enum Recipe {
-      internal static let garlicButterSteak = ImageAsset(name: "GarlicButterSteak")
-    }
-    internal enum Utensils {
-      internal static let knife = ImageAsset(name: "Knife")
-      internal static let thermometer = ImageAsset(name: "Thermometer")
-    }
-  }
   internal static let highlight = ColorAsset(name: "Highlight")
   internal static let primary = ColorAsset(name: "Primary")
   internal static let textPrimary = ColorAsset(name: "TextPrimary")
-  internal static let anise = ImageAsset(name: "anise")
-  internal static let butter = ImageAsset(name: "butter")
-  internal static let carrot = ImageAsset(name: "carrot")
-  internal static let chicken = ImageAsset(name: "chicken")
-  internal static let chickenCube = ImageAsset(name: "chicken_Cube")
-  internal static let choppingBoard = ImageAsset(name: "chopping_Board")
   internal static let clock = ImageAsset(name: "clock")
   internal static let confetti = DataAsset(name: "confetti")
-  internal static let garlic = ImageAsset(name: "garlic")
-  internal static let ginger = ImageAsset(name: "ginger")
-  internal static let greenBeans = ImageAsset(name: "green_beans")
-  internal static let knife = ImageAsset(name: "knife")
-  internal static let laddle = ImageAsset(name: "laddle")
-  internal static let leek = ImageAsset(name: "leek")
-  internal static let oil = ImageAsset(name: "oil")
-  internal static let pan = ImageAsset(name: "pan")
-  internal static let pepper = ImageAsset(name: "pepper")
-  internal static let potato = ImageAsset(name: "potato")
-  internal static let recipeImage = ImageAsset(name: "recipe_image")
-  internal static let rosemary = ImageAsset(name: "rosemary")
-  internal static let salt = ImageAsset(name: "salt")
-  internal static let shallot = ImageAsset(name: "shallot")
-  internal static let sirloinBeef = ImageAsset(name: "sirloin_Beef")
-  internal static let soupPot = ImageAsset(name: "soup_Pot")
-  internal static let spoon = ImageAsset(name: "spoon")
-  internal static let starAnise = ImageAsset(name: "star_Anise")
-  internal static let thyme = ImageAsset(name: "thyme")
-  internal static let tongs = ImageAsset(name: "tongs")
-  internal static let unpeeledGarlic = ImageAsset(name: "unpeeled_Garlic")
-  internal static let water = ImageAsset(name: "water")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
