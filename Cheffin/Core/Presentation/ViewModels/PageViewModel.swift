@@ -27,6 +27,21 @@ class PageViewModel<Page: View>: ObservableObject {
         return currentPage == 0
     }
     
+    func goToPage(_ pageNumber: Int) -> Bool {
+        print("\(type(of: self)) \(#function)")
+        if pageNumber < 1 {
+            return false
+        }
+        
+        if pageNumber > pages.count {
+            return false
+        }
+        
+        currentPage = pageNumber - 1
+        
+        return true
+    }
+    
     /**
      - Returns: false if end of page
      */

@@ -51,6 +51,7 @@ class TimerViewModel: ObservableObject {
         if timer != nil {
             stopTimer()
         }
+        
         userSetCountDownTime = countDownTime
     }
     

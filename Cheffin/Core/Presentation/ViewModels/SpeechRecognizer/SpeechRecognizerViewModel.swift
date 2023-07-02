@@ -65,11 +65,7 @@ class SpeechRecognizerViewModel: ObservableObject {
         reset()
         recognizer = nil
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.soloAmbient)
-        } catch {
-            print("\(type(of: self)) \(#function) fail to set AVAudioSession category")
-        }
+        AVAudioSession.preferBluetoothOutput()
     }
     
     func stopTranscribing() {
@@ -101,6 +97,7 @@ class SpeechRecognizerViewModel: ObservableObject {
             self.task = recognizer.recognitionTask(with: request) { [weak self] result, error in
                 self?.recognitionHandler(audioEngine: audioEngine, result: result, error: error)
             }
+            AVAudioSession.preferSpeakerOutput()
         } catch {
             self.reset()
             self.handleError(error)
@@ -162,7 +159,6 @@ class SpeechRecognizerViewModel: ObservableObject {
 #if DEBUG
                 print("\(#function) error: " + (error?.localizedDescription ?? ""))
 #endif
-                return
             }
             restartTranscribing()
             return

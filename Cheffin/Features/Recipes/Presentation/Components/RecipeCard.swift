@@ -138,10 +138,10 @@ struct Tooltip: View {
             image
                 .resizable()
                 .frame(
-                    width: UIScreen.main.bounds.width * (1 / 20),
-                    height: UIScreen.main.bounds.height * (1 / 20)
-                    )
-                .scaledToFit()
+                    maxWidth: UIScreen.main.bounds.width * (1 / 10),
+                    maxHeight: UIScreen.main.bounds.height * (1 / 10)
+                )
+                .clipped()
         } placeholder: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
@@ -152,6 +152,7 @@ struct Tooltip: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             withAnimation {
                 tooltipVisible.toggle()
@@ -159,6 +160,11 @@ struct Tooltip: View {
         }
         .tooltip(self.tooltipVisible, side: .top, config: tooltipConfig) {
             Text(utensil.name)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        self.tooltipVisible.toggle()
+                    }
+                }
         }
     }
 }
