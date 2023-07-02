@@ -29,6 +29,8 @@ class TextToSpeech: NSObject, AVSpeechSynthesizerDelegate {
     }
     
     public func speak(before: (() -> Void)? = nil, string: String, completion: (() -> Void)? = nil) {
+        synthesizer?.stopSpeaking(at: .immediate)
+        
         // cancel any previously scheduled debouncer
         debouncer?.cancel()
         

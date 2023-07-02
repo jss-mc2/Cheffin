@@ -144,7 +144,7 @@ class StepByStepPageViewModel: ObservableObject {
                     if lastFourWords.indices.contains(3) {
                         switch lastFourWords.prefix(3) {
                         case ["go", "to", "page"]:
-                            if let intValue = Int(lastFourWords[3]) {
+                            if let intValue = Int(lastFourWords.last!) {
                                 if pager.goToPage(intValue) {
                                     if let button = visualCuer.buttonHighlightVM[.readTheText] {
                                         button.action()
