@@ -24,6 +24,7 @@ struct StepsView: View {
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+                .padding(.bottom, 5)
             }
         }
     }
