@@ -7,3 +7,43 @@
 */
 
 "appName" = "Cheffin";
+
+/*
+ ====================== Failure ======================
+ */
+
+"recipeFailure" = "We encountered error while fetching the recipes, please refresh the page.";
+
+/*
+ ====================== HOME PAGE ======================
+ */
+
+"welcomeToCheffin" = "Welcome to Cheffin!";
+"whatDoYouWantToCookToday?" = "What do you want to cook today?";
+"essentialUtensils" = "Essential Utensils";
+
+/*
+ ====================== RECIPE PAGE ======================
+ */
+
+"ingredients" = "Ingredients";
+"utensils" = "Utensils";
+"stepByStep" = "Step-By-Step";
+"stepByStepMode" = "Step-By-Step Mode";
+
+/*
+ ====================== STEP-BY-STEP PAGE ======================
+ */
+
+"stepOf" = "%d of %d";
+"trySaying" = "try saying";
+"voiceCommand" = "\"%@\"";
+
+/*
+ ====================== BON-APETIT PAGE ======================
+ */
+
+"bonApetit" = "Bon Apetit!";
+"congratulationMessage" = "Congratulations on successfully making your %@!";
+"takeAPicture" = "Take a picture";
+
